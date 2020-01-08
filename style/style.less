@@ -1,0 +1,222 @@
+@color1: #3ddb84;
+@color2: #092f42;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Heebo", sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+.mainBlock {
+    section {
+        min-height: 100vh;
+        background-color: #f7f7f7;
+        padding: 5vh 0;
+    }
+    i.circle {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: auto;
+        width: 90vh;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+    .contentWrapper {
+        position: relative;
+        width: 50%;
+        margin: auto;
+        height: 100%;
+    }
+}
+
+.sectionWelcome {
+    i.circle {
+        background-color: @color1;
+    }
+    .contentWrapper {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h1 {
+        color: @color2;
+        font-size: 4.5em;
+        line-height: 1.1;
+        margin: 0;
+    }
+    p {
+        color: @color2;
+        opacity: 0.4;
+        font-size: 1.5em;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+    .customerCount {
+        background-color: #fff;
+        font-size: 1.2em;
+        color: @color2;
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+        font-style: normal;
+        width: 10em;
+        height: 10em;
+        right: 0;
+        bottom: 10%;
+        strong {
+            display: block;
+            font-size: 2.3em;
+            line-height: 1;
+        }
+        small {
+            font-weight: bold;
+            opacity: 0.4;
+        }
+    }
+}
+
+.sectionPreview {
+    i.circle {
+        background-color: @color1;
+    }
+    .contentWrapper {
+        width: 90vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: @color2;
+    }
+    h2 {
+        font-size: 4.5em;
+        line-height: 1.1;
+        margin: 0;
+    }
+    .liveControl {
+        margin: 1em 0;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .livePreviewBox {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        > * {
+            flex-shrink: 0;
+        }
+        figure {
+            margin: 0;
+            background-color: #ccc;
+            border-radius: 1em;
+            overflow: hidden;
+            &:before {
+                content: '';
+                display: block;
+                padding-bottom: 50%;
+            }
+        }
+    }
+    .livePreview {
+        width: 60%;
+    }
+    .campaignPoints {
+        width: 40%;
+        text-align: left;
+    }
+}
+
+section.sectionReady {
+    background-color: @color2;
+    i.circle {
+        background: conic-gradient(rgba(11,77,109,0), rgba(11,77,109,1));
+    }
+    .contentWrapper {
+        background-clip: content-box;
+        background-color: @color2;
+        color: #fff;
+        display: flex;
+        width: 90vh;
+        border-radius: 50%;
+        padding: 4em;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+    h3 {
+        font-size: 4.5em;
+    }
+}
+
+.sectionSetup {
+    i.circle {
+        background-color: @color2;
+    }
+    .contentWrapper {
+        width: 90vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    h2 {
+        font-size: 4.5em;
+        line-height: 1.1;
+        margin: 0;
+        color: @color1;
+    }
+    h4 {
+        color: #fff;
+        opacity: 0.3;
+        font-size: 1.3em;
+        line-height: 1.4;
+        margin: 0.8em 0;
+    }
+    nav {
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 1em 2em;
+        border-radius: 2em;
+        font-size: 0.8em;
+        a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            opacity: 0.5;
+            &:not(:last-child):after {
+                content: '>';
+                display: inline-block;
+                margin: 0 1em;
+            }
+        }
+    }
+    .setupSteps {
+        font-size: 3em;
+        color: @color1;
+        padding: 2em 0;
+    }
+}
+
+.step1.swiper-slide-active a[data-slide="0"],
+.step2.swiper-slide-active a[data-slide="1"],
+.step3.swiper-slide-active a[data-slide="2"] {
+    opacity: 1;
+}

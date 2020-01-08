@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Heebo", sans-serif;
+}
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.mainBlock section {
+  min-height: 100vh;
+  background-color: #f7f7f7;
+  padding: 5vh 0;
+}
+.mainBlock i.circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin: auto;
+  width: 90vh;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.mainBlock i.circle:before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+}
+.mainBlock .contentWrapper {
+  position: relative;
+  width: 50%;
+  margin: auto;
+  height: 100%;
+}
+.sectionWelcome i.circle {
+  background-color: #3ddb84;
+}
+.sectionWelcome .contentWrapper {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sectionWelcome h1 {
+  color: #092f42;
+  font-size: 4.5em;
+  line-height: 1.1;
+  margin: 0;
+}
+.sectionWelcome p {
+  color: #092f42;
+  opacity: 0.4;
+  font-size: 1.5em;
+  line-height: 1.4;
+  font-weight: bold;
+}
+.sectionWelcome .customerCount {
+  background-color: #fff;
+  font-size: 1.2em;
+  color: #092f42;
+  border-radius: 50%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+  font-style: normal;
+  width: 10em;
+  height: 10em;
+  right: 0;
+  bottom: 10%;
+}
+.sectionWelcome .customerCount strong {
+  display: block;
+  font-size: 2.3em;
+  line-height: 1;
+}
+.sectionWelcome .customerCount small {
+  font-weight: bold;
+  opacity: 0.4;
+}
+.sectionPreview i.circle {
+  background-color: #3ddb84;
+}
+.sectionPreview .contentWrapper {
+  width: 90vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #092f42;
+}
+.sectionPreview h2 {
+  font-size: 4.5em;
+  line-height: 1.1;
+  margin: 0;
+}
+.sectionPreview .liveControl {
+  margin: 1em 0;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.sectionPreview .livePreviewBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.sectionPreview .livePreviewBox > * {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.sectionPreview .livePreviewBox figure {
+  margin: 0;
+  background-color: #ccc;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.sectionPreview .livePreviewBox figure:before {
+  content: '';
+  display: block;
+  padding-bottom: 50%;
+}
+.sectionPreview .livePreview {
+  width: 60%;
+}
+.sectionPreview .campaignPoints {
+  width: 40%;
+  text-align: left;
+}
+section.sectionReady {
+  background-color: #092f42;
+}
+section.sectionReady i.circle {
+  background: conic-gradient(rgba(11, 77, 109, 0), #0b4d6d);
+}
+section.sectionReady .contentWrapper {
+  background-clip: content-box;
+  background-color: #092f42;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90vh;
+  border-radius: 50%;
+  padding: 4em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+section.sectionReady h3 {
+  font-size: 4.5em;
+}
+.sectionSetup i.circle {
+  background-color: #092f42;
+}
+.sectionSetup .contentWrapper {
+  width: 90vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.sectionSetup h2 {
+  font-size: 4.5em;
+  line-height: 1.1;
+  margin: 0;
+  color: #3ddb84;
+}
+.sectionSetup h4 {
+  color: #fff;
+  opacity: 0.3;
+  font-size: 1.3em;
+  line-height: 1.4;
+  margin: 0.8em 0;
+}
+.sectionSetup nav {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1em 2em;
+  border-radius: 2em;
+  font-size: 0.8em;
+}
+.sectionSetup nav a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+.sectionSetup nav a:not(:last-child):after {
+  content: '>';
+  display: inline-block;
+  margin: 0 1em;
+}
+.sectionSetup .setupSteps {
+  font-size: 3em;
+  color: #3ddb84;
+  padding: 2em 0;
+}
+.step1.swiper-slide-active a[data-slide="0"],
+.step2.swiper-slide-active a[data-slide="1"],
+.step3.swiper-slide-active a[data-slide="2"] {
+  opacity: 1;
+}
