@@ -7,10 +7,14 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+.mainBlock.noTransit {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
 .mainBlock section {
   min-height: 100vh;
   background-color: #f7f7f7;
-  padding: 5vh 0;
+  padding: 0;
 }
 .mainBlock i.circle {
   position: absolute;
@@ -180,6 +184,7 @@ section.sectionReady .contentWrapper {
   display: -ms-flexbox;
   display: flex;
   width: 90vh;
+  height: 90vh;
   border-radius: 50%;
   padding: 4em;
   -webkit-box-align: center;
@@ -248,9 +253,20 @@ section.sectionReady h3 {
   font-size: 3em;
   color: #3ddb84;
   padding: 2em 0;
+  opacity: 0;
+  -webkit-transition: opacity 1.5s;
+  transition: opacity 1.5s;
 }
-.step1.swiper-slide-active a[data-slide="0"],
-.step2.swiper-slide-active a[data-slide="1"],
-.step3.swiper-slide-active a[data-slide="2"] {
+.sectionSetup.active .setupSteps {
   opacity: 1;
+}
+.step1.active a[data-slide="2"],
+.step2.active a[data-slide="3"],
+.step3.active a[data-slide="4"] {
+  opacity: 1;
+}
+@media only screen and (max-width: 1500px) {
+  .mainBlock {
+    font-size: 12px;
+  }
 }
