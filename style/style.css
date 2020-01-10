@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "agb";
+  src: url("../fonts/huge_agb-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +12,27 @@ body {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+.btn {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.8em 3em;
+  font-size: 1.7em;
+  border-radius: 2em;
+  font-weight: bold;
+  border-width: 0.3em;
+  border-style: solid;
+  -webkit-transition: background-color 0.4s, color 0.4s;
+  transition: background-color 0.4s, color 0.4s;
+}
+.btn.btnColor1 {
+  background-color: #3ddb84;
+  border-color: #3ddb84;
+  color: #092f42;
+}
+.btn.btnColor1:hover {
+  background-color: #092f42;
+  color: #3ddb84;
 }
 .mainBlock.noTransit {
   -webkit-transition: none !important;
@@ -24,19 +51,19 @@ body {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   margin: auto;
-  width: 90vh;
+  width: 95vh;
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
 }
 .mainBlock i.circle:before {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 100%;
 }
 .mainBlock .contentWrapper {
   position: relative;
-  width: 50%;
+  width: 95vh;
   margin: auto;
   height: 100%;
 }
@@ -59,22 +86,31 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
+.sectionWelcome figure {
+  margin: 0 0 1em;
+  width: 50%;
+}
+.sectionWelcome img {
+  width: 100%;
+}
 .sectionWelcome h1 {
   color: #092f42;
-  font-size: 4.5em;
+  font-family: "agb";
+  font-size: 4em;
   line-height: 1.1;
   margin: 0;
 }
 .sectionWelcome p {
   color: #092f42;
   opacity: 0.4;
+  font-family: "agb";
   font-size: 1.5em;
   line-height: 1.4;
   font-weight: bold;
 }
 .sectionWelcome .customerCount {
   background-color: #fff;
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #092f42;
   border-radius: 50%;
   position: absolute;
@@ -96,8 +132,12 @@ body {
   font-style: normal;
   width: 10em;
   height: 10em;
-  right: 0;
-  bottom: 10%;
+  right: 2%;
+  bottom: 8%;
+}
+.sectionWelcome .customerCount img {
+  width: 2.5em;
+  margin: 0 0 0.5em;
 }
 .sectionWelcome .customerCount strong {
   display: block;
@@ -109,10 +149,9 @@ body {
   opacity: 0.4;
 }
 .sectionPreview i.circle {
-  background-color: #3ddb84;
+  background-color: #092f42;
 }
 .sectionPreview .contentWrapper {
-  width: 90vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,14 +166,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #092f42;
+  color: #3ddb84;
 }
 .sectionPreview h2 {
-  font-size: 4.5em;
+  font-size: 3.5em;
+  font-family: "agb";
   line-height: 1.1;
   margin: 0;
 }
 .sectionPreview .liveControl {
+  color: #fff;
   margin: 1em 0;
   font-size: 1.2em;
   font-weight: bold;
@@ -143,38 +184,46 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 2em 0 0;
+  -webkit-transform: translateX(-8%);
+          transform: translateX(-8%);
+}
+.sectionPreview .livePreviewBox figure {
   width: 100%;
+  margin: 0;
+  border-radius: 1em;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+}
+.sectionPreview .livePreviewBox img {
+  width: 100%;
+  vertical-align: middle;
+}
+.sectionPreview .livePreviewBox .livePreview {
+  min-width: 60%;
+  width: 60%;
+}
+.sectionPreview .livePreviewBox .campaignPoints {
+  padding-left: 3em;
+  text-align: left;
+  min-width: 40%;
+  width: 40%;
+  color: #fff;
 }
 .sectionPreview .livePreviewBox > * {
   -ms-flex-negative: 0;
       flex-shrink: 0;
-}
-.sectionPreview .livePreviewBox figure {
-  margin: 0;
-  background-color: #ccc;
-  border-radius: 1em;
-  overflow: hidden;
-}
-.sectionPreview .livePreviewBox figure:before {
-  content: '';
-  display: block;
-  padding-bottom: 50%;
-}
-.sectionPreview .livePreview {
-  width: 60%;
-}
-.sectionPreview .campaignPoints {
-  width: 40%;
-  text-align: left;
 }
 section.sectionReady {
   background-color: #092f42;
 }
 section.sectionReady i.circle {
   background: conic-gradient(rgba(11, 77, 109, 0), #0b4d6d);
+  width: 90vh;
 }
 section.sectionReady .contentWrapper {
   background-clip: content-box;
@@ -183,10 +232,14 @@ section.sectionReady .contentWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 90vh;
   height: 90vh;
   border-radius: 50%;
-  padding: 4em;
+  padding: 3.5em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -197,13 +250,19 @@ section.sectionReady .contentWrapper {
   overflow: hidden;
 }
 section.sectionReady h3 {
-  font-size: 4.5em;
+  font-size: 3.8em;
+  font-family: "agb";
+}
+section.sectionReady .btn {
+  font-size: 1.3em;
+  display: block;
+  width: 50%;
+  max-width: 350px;
 }
 .sectionSetup i.circle {
   background-color: #092f42;
 }
 .sectionSetup .contentWrapper {
-  width: 90vh;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -220,7 +279,8 @@ section.sectionReady h3 {
           justify-content: center;
 }
 .sectionSetup h2 {
-  font-size: 4.5em;
+  font-size: 3.5em;
+  font-family: "agb";
   line-height: 1.1;
   margin: 0;
   color: #3ddb84;
@@ -228,8 +288,9 @@ section.sectionReady h3 {
 .sectionSetup h4 {
   color: #fff;
   opacity: 0.3;
-  font-size: 1.3em;
-  line-height: 1.4;
+  font-family: "agb";
+  font-size: 1.2em;
+  line-height: 1.6;
   margin: 0.8em 0;
 }
 .sectionSetup nav {
@@ -237,6 +298,7 @@ section.sectionReady h3 {
   padding: 1em 2em;
   border-radius: 2em;
   font-size: 0.8em;
+  margin: 1em 0;
 }
 .sectionSetup nav a {
   color: #fff;
@@ -245,17 +307,79 @@ section.sectionReady h3 {
   opacity: 0.5;
 }
 .sectionSetup nav a:not(:last-child):after {
-  content: '>';
+  content: ">";
   display: inline-block;
   margin: 0 1em;
 }
 .sectionSetup .setupSteps {
-  font-size: 3em;
-  color: #3ddb84;
-  padding: 2em 0;
   opacity: 0;
   -webkit-transition: opacity 1.5s;
   transition: opacity 1.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 4em 0 0;
+  -webkit-transform: translateX(-8%);
+          transform: translateX(-8%);
+}
+.sectionSetup .setupSteps figure {
+  min-width: 60%;
+  margin: 0;
+  border-radius: 1em;
+  overflow: hidden;
+  -webkit-box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+          box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+}
+.sectionSetup .setupSteps img {
+  width: 100%;
+  vertical-align: middle;
+}
+.sectionSetup .setupSteps .stepInfo {
+  padding-left: 4em;
+  text-align: left;
+  min-width: 40%;
+}
+.sectionSetup .setupSteps .stepInfo i {
+  color: #092f42;
+  width: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5em;
+  border-radius: 50%;
+  background: #3ddb84;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: normal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "agb";
+  font-size: 1.1em;
+}
+.sectionSetup .setupSteps .stepInfo h5 {
+  font-family: "agb";
+  color: #3ddb84;
+  font-size: 1.5em;
+  margin: 1em 0;
+}
+.sectionSetup .setupSteps .stepInfo h5:after {
+  content: "";
+  display: block;
+  height: 0.15em;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0.7em 0 0;
+}
+.sectionSetup .setupSteps .stepInfo p {
+  color: #fff;
+  opacity: 0.5;
+  font-size: 0.9em;
+  padding-right: 20%;
 }
 .sectionSetup.active .setupSteps {
   opacity: 1;
@@ -268,5 +392,12 @@ section.sectionReady h3 {
 @media only screen and (max-width: 1500px) {
   .mainBlock {
     font-size: 12px;
+  }
+  .mainBlock .contentWrapper,
+  .mainBlock i.circle {
+    width: 95vh;
+  }
+  .mainBlock .sectionWelcome .contentWrapper {
+    font-size: 0.8em;
   }
 }

@@ -19,6 +19,7 @@ var init = function () {
     }
     var mainBlk = document.querySelector('.mainBlock')
     new fullpage('.mainBlock', {
+        anchors:['1', '2', '3', '4', '5', '6'],
         autoScrolling: true,
         fadingEffect: 'slides',
         onLeave: function (origin, destination, direction) {
