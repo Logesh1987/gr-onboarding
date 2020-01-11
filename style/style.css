@@ -1,3 +1,4 @@
+@import 'icon.css';
 @font-face {
   font-family: "agb";
   src: url("../fonts/huge_agb-webfont.woff") format("woff");
@@ -150,6 +151,8 @@ body {
 }
 .sectionPreview i.circle {
   background-color: #092f42;
+  -webkit-transition: background-color 0.4s;
+  transition: background-color 0.4s;
 }
 .sectionPreview .contentWrapper {
   text-align: center;
@@ -173,50 +176,173 @@ body {
   font-family: "agb";
   line-height: 1.1;
   margin: 0;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
 }
 .sectionPreview .liveControl {
   color: #fff;
   margin: 1em 0;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sectionPreview .liveControl p {
   font-size: 1.2em;
   font-weight: bold;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.sectionPreview .liveControl small {
+  color: #216383;
+  text-align: left;
+  font-size: 0.65em;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.sectionPreview .liveControl .previewSwitch {
+  margin: 0 1em;
 }
 .sectionPreview .livePreviewBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 2em 0 0;
   -webkit-transform: translateX(-8%);
           transform: translateX(-8%);
 }
-.sectionPreview .livePreviewBox figure {
+.sectionPreview .livePreviewBox > * {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.sectionPreview .livePreview {
+  min-width: 60%;
+  width: 60%;
+}
+.sectionPreview .livePreview figure {
   width: 100%;
   margin: 0;
   border-radius: 1em;
   overflow: hidden;
   -webkit-box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
           box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
+  position: relative;
 }
-.sectionPreview .livePreviewBox img {
+.sectionPreview .livePreview img {
   width: 100%;
   vertical-align: middle;
 }
-.sectionPreview .livePreviewBox .livePreview {
-  min-width: 60%;
-  width: 60%;
+.sectionPreview .livePreview img.enabled {
+  display: none;
 }
-.sectionPreview .livePreviewBox .campaignPoints {
-  padding-left: 3em;
+.sectionPreview .livePreview p {
+  font-size: 0.7em;
+  text-align: right;
+  display: block;
+  padding-left: 20vh;
+  color: #fff;
+  min-height: 2.7em;
+  -webkit-transition: color 0.4s;
+  transition: color 0.4s;
+}
+.sectionPreview .livePreview p .enabled {
+  display: none;
+}
+.sectionPreview .campaignPoints {
+  font-size: 0.9em;
+  padding-left: 3.5em;
   text-align: left;
   min-width: 40%;
   width: 40%;
   color: #fff;
 }
-.sectionPreview .livePreviewBox > * {
+.sectionPreview .campaignPoints ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.sectionPreview .campaignPoints li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sectionPreview .campaignPoints li:not(:last-child) {
+  margin-bottom: 2em;
+}
+.sectionPreview .campaignPoints span {
+  text-decoration: line-through;
+  opacity: 0.5;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.sectionPreview .campaignPoints .bullet {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  color: #fff;
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-size: 1.6em;
+  margin-right: 1.2em;
+  line-height: 0.7;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.sectionPreview .campaignPoints .bullet:before {
+  content: "\e906";
+}
+.sectionPreview.preview-active i.circle {
+  background-color: #3ddb84;
+}
+.sectionPreview.preview-active .liveControl,
+.sectionPreview.preview-active h2 {
+  color: #092f42;
+}
+.sectionPreview.preview-active .livePreview img {
+  display: none;
+}
+.sectionPreview.preview-active .livePreview img.enabled {
+  display: block;
+}
+.sectionPreview.preview-active .livePreview p small {
+  color: #092f42;
+  display: none;
+}
+.sectionPreview.preview-active .livePreview p small.enabled {
+  display: block;
+}
+.sectionPreview.preview-active .campaignPoints span {
+  color: #092f42;
+  text-decoration: none;
+  opacity: 1;
+}
+.sectionPreview.preview-active .campaignPoints .bullet {
+  background-color: #fff;
+  color: #092f42;
+}
+.sectionPreview.preview-active .campaignPoints .bullet:before {
+  content: '\e903';
 }
 section.sectionReady {
   background-color: #092f42;
@@ -400,4 +526,61 @@ section.sectionReady .btn {
   .mainBlock .sectionWelcome .contentWrapper {
     font-size: 0.8em;
   }
+}
+.previewSwitch {
+  cursor: pointer;
+  width: 6.5em;
+  height: 1.7em;
+  background-color: #fff;
+  border-radius: 2em;
+  position: relative;
+}
+.previewSwitch i {
+  width: 45%;
+  background-color: #f00;
+  display: block;
+  border-radius: 50%;
+  margin-top: -0.6em;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.previewSwitch i:before {
+  display: block;
+  padding-bottom: 100%;
+  content: '';
+}
+.previewSwitch strong {
+  text-transform: uppercase;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  color: #000;
+  line-height: 2.2;
+  padding: 0 1em;
+  font-size: 0.8em;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+.previewSwitch strong:first-of-type {
+  color: #ff851e;
+  text-align: left;
+  opacity: 0;
+}
+.previewSwitch strong:last-of-type {
+  color: #f00;
+  text-align: right;
+}
+.previewSwitch.active i {
+  background-color: #ff851e;
+  left: 57%;
+}
+.previewSwitch.active strong:first-of-type {
+  opacity: 1;
+}
+.previewSwitch.active strong:last-of-type {
+  opacity: 0;
 }

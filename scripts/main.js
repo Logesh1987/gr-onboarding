@@ -33,10 +33,17 @@ var init = function () {
 
     mainBlk.addEventListener('click', function(e) {
         if(e.target.hasAttribute('data-slide')) {
-            console.log('sadsad')
             e.preventDefault()
             fullpage_api.silentMoveTo(parseInt(e.target.getAttribute('data-slide')))
         }
+    })
+
+    var previewSwitch = document.querySelector('.previewSwitch');
+    var previewSection = document.querySelector('.sectionPreview');
+    previewSwitch.addEventListener('click', function(e) {
+        e.preventDefault();
+        previewSwitch.classList.toggle('active')
+        previewSection.classList.toggle('preview-active')
     })
 
 }
