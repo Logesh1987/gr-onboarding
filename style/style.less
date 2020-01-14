@@ -157,7 +157,8 @@ body {
 .sectionPreview {
   i.circle {
     background-color: @color2;
-    transition:  background-color 0.4s;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
   .contentWrapper {
@@ -167,6 +168,8 @@ body {
     align-items    : center;
     justify-content: center;
     color          : @color1;
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
   h2 {
@@ -189,13 +192,28 @@ body {
       transition:  color 0.4s;
     }
     small {
-      color: #216383;
+      color: #3f8fb5;
       text-align: left;
       font-size: 0.65em;
       transition:  color 0.4s;
+      position: relative;
     }
     .previewSwitch {
       margin: 0 1em;
+    }
+    svg {
+      width: 4em;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      stroke: aquamarine;
+      transform: translate(-60%, 120%) rotate(10deg);
+      stroke: rgba(255, 255, 255, 0.8);
+    }
+    path {
+      fill:none;
+      stroke:inherit;
+      stroke-miterlimit:10;
     }
   }
 
@@ -330,6 +348,20 @@ body {
           content: '\e903';
         }
       }
+    }
+    .liveControl {
+      small {
+        color: @color2;
+      }
+      svg {
+        stroke: @color2;
+      }
+    }
+  }
+  &.active {
+    .contentWrapper,
+    .circle {
+      opacity: 1;
     }
   }
 }

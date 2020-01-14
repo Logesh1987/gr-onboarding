@@ -151,8 +151,9 @@ body {
 }
 .sectionPreview i.circle {
   background-color: #092f42;
-  -webkit-transition: background-color 0.4s;
-  transition: background-color 0.4s;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .sectionPreview .contentWrapper {
   text-align: center;
@@ -170,6 +171,9 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   color: #3ddb84;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
 }
 .sectionPreview h2 {
   font-size: 3.5em;
@@ -197,14 +201,30 @@ body {
   transition: color 0.4s;
 }
 .sectionPreview .liveControl small {
-  color: #216383;
+  color: #3f8fb5;
   text-align: left;
   font-size: 0.65em;
   -webkit-transition: color 0.4s;
   transition: color 0.4s;
+  position: relative;
 }
 .sectionPreview .liveControl .previewSwitch {
   margin: 0 1em;
+}
+.sectionPreview .liveControl svg {
+  width: 4em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  stroke: aquamarine;
+  -webkit-transform: translate(-60%, 120%) rotate(10deg);
+          transform: translate(-60%, 120%) rotate(10deg);
+  stroke: rgba(255, 255, 255, 0.8);
+}
+.sectionPreview .liveControl path {
+  fill: none;
+  stroke: inherit;
+  stroke-miterlimit: 10;
 }
 .sectionPreview .livePreviewBox {
   display: -webkit-box;
@@ -343,6 +363,16 @@ body {
 }
 .sectionPreview.preview-active .campaignPoints .bullet:before {
   content: '\e903';
+}
+.sectionPreview.preview-active .liveControl small {
+  color: #092f42;
+}
+.sectionPreview.preview-active .liveControl svg {
+  stroke: #092f42;
+}
+.sectionPreview.active .contentWrapper,
+.sectionPreview.active .circle {
+  opacity: 1;
 }
 section.sectionReady {
   background-color: #092f42;

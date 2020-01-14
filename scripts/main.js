@@ -23,7 +23,7 @@ var init = function () {
         autoScrolling: true,
         fadingEffect: 'slides',
         onLeave: function (origin, destination, direction) {
-            if (between(origin.index, 1, 3) && between(destination.index, 1, 3)) {
+            if ((between(origin.index, 1, 3) && between(destination.index, 1, 3)) || (between(origin.index, 4, 5) && between(destination.index, 4, 5))) {
                 mainBlk.classList.add('noTransit')
             } else {
                 mainBlk.classList.remove('noTransit')
@@ -38,13 +38,18 @@ var init = function () {
         }
     })
 
-    var previewSwitch = document.querySelector('.previewSwitch');
-    var previewSection = document.querySelector('.sectionPreview');
-    previewSwitch.addEventListener('click', function(e) {
-        e.preventDefault();
-        previewSwitch.classList.toggle('active')
-        previewSection.classList.toggle('preview-active')
+    var previewSwitch = document.querySelectorAll('.previewSwitch');
+    previewSwitch.forEach(function(ele) {
+        ele.addEventListener('click', function() {
+            fullpage_api.silentMoveTo(parseInt(ele.getAttribute('data-slide')))
+        })
     })
+    // var previewSection = document.querySelector('.sectionPreview');
+    // previewSwitch.addEventListener('click', function(e) {
+    //     e.preventDefault();
+    //     previewSwitch.classList.toggle('active')
+    //     previewSection.classList.toggle('preview-active')
+    // })
 
 }
 
