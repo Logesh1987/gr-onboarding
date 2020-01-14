@@ -40,8 +40,41 @@ body {
       color           : @color1;
     }
   }
+  &.btnGrey {
+    color: #6E6E6E;
+    border-color: #6E6E6E;
+    border-width: 0.15em;
+    padding: 0.4em 1.4em;
+    font-weight: normal;
+    text-transform: none;
+    &:hover {
+      color: #fff;
+      background-color: #6E6E6E;
+    }
+  }
 }
 
+header {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  padding: 2em 3em;
+  left: 0;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    width: 150px;
+    img {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  .btn {
+    font-size: 0.9em;
+  }
+}
 .mainBlock {
   &.noTransit {
     transition: none !important;
@@ -84,7 +117,21 @@ body {
   i.circle {
     background-color: @color1;
   }
-
+  i.icon-mouse {
+    color: @color2;
+    position: absolute;
+    font-size: 2.2em;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    text-align: center;
+    span {
+      display: block;
+      font-family: "Heebo", sans-serif;
+      font-size: 0.35em;
+      margin-top: 1em;
+    }
+  }
   .contentWrapper {
     text-align     : center;
     display        : flex;
@@ -135,10 +182,10 @@ body {
     height          : 10em;
     right           : 2%;
     bottom          : 8%;
-
-    img {
-      width : 2.5em;
-      margin: 0 0 0.5em;
+    i {
+      color: #dc3a61;
+      font-size: 2.2em;
+      margin-bottom: 0.3em;
     }
 
     strong {

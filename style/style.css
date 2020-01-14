@@ -35,6 +35,45 @@ body {
   background-color: #092f42;
   color: #3ddb84;
 }
+.btn.btnGrey {
+  color: #6E6E6E;
+  border-color: #6E6E6E;
+  border-width: 0.15em;
+  padding: 0.4em 1.4em;
+  font-weight: normal;
+  text-transform: none;
+}
+.btn.btnGrey:hover {
+  color: #fff;
+  background-color: #6E6E6E;
+}
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  padding: 2em 3em;
+  left: 0;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+header .logo {
+  width: 150px;
+}
+header .logo img {
+  width: 100%;
+  vertical-align: middle;
+}
+header .btn {
+  font-size: 0.9em;
+}
 .mainBlock.noTransit {
   -webkit-transition: none !important;
   transition: none !important;
@@ -70,6 +109,22 @@ body {
 }
 .sectionWelcome i.circle {
   background-color: #3ddb84;
+}
+.sectionWelcome i.icon-mouse {
+  color: #092f42;
+  position: absolute;
+  font-size: 2.2em;
+  left: 50%;
+  bottom: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+}
+.sectionWelcome i.icon-mouse span {
+  display: block;
+  font-family: "Heebo", sans-serif;
+  font-size: 0.35em;
+  margin-top: 1em;
 }
 .sectionWelcome .contentWrapper {
   text-align: center;
@@ -136,9 +191,10 @@ body {
   right: 2%;
   bottom: 8%;
 }
-.sectionWelcome .customerCount img {
-  width: 2.5em;
-  margin: 0 0 0.5em;
+.sectionWelcome .customerCount i {
+  color: #dc3a61;
+  font-size: 2.2em;
+  margin-bottom: 0.3em;
 }
 .sectionWelcome .customerCount strong {
   display: block;
