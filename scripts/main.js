@@ -17,12 +17,18 @@ var init = function () {
     var between = function (x, min, max) {
         return x >= min && x <= max;
     }
+    var guidePageWrapper = document.querySelector('.guidePageWrapper')
     var mainBlk = document.querySelector('.mainBlock')
     new fullpage('.mainBlock', {
-        anchors:['1', '2', '3', '4', '5', '6'],
+        anchors:['1', '2', '3', '4', '5', '6', '7'],
         autoScrolling: true,
         fadingEffect: 'slides',
+        afterRender: function(){
+            guidePageWrapper.setAttribute('data-active', fullpage_api.getActiveSection().anchor);
+            guidePageWrapper.querySelector('.sectionWelcome').classList.add('play');
+        },
         onLeave: function (origin, destination, direction) {
+            guidePageWrapper.setAttribute('data-active', destination.anchor)
             if ((between(origin.index, 1, 3) && between(destination.index, 1, 3)) || (between(origin.index, 4, 5) && between(destination.index, 4, 5))) {
                 mainBlk.classList.add('noTransit')
             } else {

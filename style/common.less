@@ -1,0 +1,143 @@
+@color1: #3ddb84;
+@color2: #092f42;
+
+@font-face {
+	font-family: "agb";
+	src: url("../fonts/huge_agb-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Heebo", sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.btn {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0.8em 3em;
+	font-size: 1.7em;
+	border-radius: 2em;
+	font-weight: bold;
+	border-width: 0.3em;
+	border-style: solid;
+	transition: background-color 0.4s, color 0.4s;
+
+	&.btnColor1 {
+		background-color: @color1;
+		border-color: @color1;
+		color: @color2;
+
+		&:hover {
+			background-color: @color2;
+			color: @color1;
+		}
+	}
+
+	&.btnColor2 {
+		background-color: @color2;
+		border-color: @color2;
+		color: @color1;
+
+		&:hover {
+			background-color: @color1;
+			color: @color2;
+		}
+	}
+
+	&.btnWhite {
+		background-color: #fff;
+		border-color: #fff;
+		color: @color2;
+
+		&:hover {
+			background-color: transparent;
+			color: #fff;
+		}
+	}
+
+	&.btnGrey {
+		color: #6e6e6e;
+		border-color: #6e6e6e;
+		border-width: 0.15em;
+		padding: 0.4em 1.4em;
+		font-weight: normal;
+		text-transform: none;
+
+		&:hover {
+			color: #fff;
+			background-color: #6e6e6e;
+		}
+	}
+	&.btnBlack {
+		cursor: pointer;
+		color: #fff;
+		background-color: #000;
+		border-color: #000;
+		border-width: 0.15em;
+		padding: 0.4em 1.4em;
+		text-transform: none;
+
+		&:hover {
+			color: #000;
+			background-color: #fff;
+			border-color: #fff;
+		}
+	}
+}
+
+header {
+	display: flex;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+	padding: 2em 3em;
+	left: 0;
+	top: 0;
+	align-items: center;
+	justify-content: space-between;
+
+	.logo {
+		width: 150px;
+
+		img {
+			width: 100%;
+			vertical-align: middle;
+		}
+	}
+
+	.btn {
+		font-size: 0.9em;
+	}
+
+	.setupPage & {
+		background-color: #28a08c;
+
+		.btn {
+			color: #fff;
+			border-color: currentColor;
+
+			&:hover {
+				color: #6e6e6e;
+				border-color: #fff;
+				background-color: #fff;
+			}
+		}
+	}
+}
+
+@keyframes heartBeat {
+	0%, 28%, 70% {
+	  transform: scale(1);
+	}
+  
+	14%, 42% {
+	  transform: scale(1.2);
+	}
+  }

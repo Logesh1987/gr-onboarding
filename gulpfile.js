@@ -6,7 +6,7 @@ var del = require('del');
 
 function styles() {
     return gulp
-        .src('./style/*.less')
+        .src('./style/style.less')
         .pipe(less({
             plugins: [autoprefix]
         }))
