@@ -27,6 +27,7 @@ body {
 	font-weight: bold;
 	border-width: 0.3em;
 	border-style: solid;
+	outline: none;
 	transition: background-color 0.4s, color 0.4s;
 
 	&.btnColor1 {
@@ -73,6 +74,30 @@ body {
 		&:hover {
 			color: #fff;
 			background-color: #6e6e6e;
+		}
+	}
+	&.btnOrange {
+		cursor: pointer;
+		color: #fff;
+		font-size: 1.4em;
+		border-color: #FF6332;
+		background-color: #FF6332;
+		box-shadow: 0 0.2em 0 0 #D0481D;
+		border-width: 0.15em;
+		padding: 0.4em 1.4em;
+		font-weight: normal;
+		text-transform: none;
+		i {
+			display: inline-block;
+			vertical-align: middle;
+			padding-left: 0.5em;
+		}
+
+		&:hover {
+			color: #FF6332;
+			border-color: #fff;
+			background-color: #fff;
+			box-shadow: 0 0.2em 0 0 #fff;
 		}
 	}
 	&.btnBlack {

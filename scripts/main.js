@@ -13,49 +13,94 @@ var init = function () {
     //     effect: 'slide',
     //     parallax: true
     // });
-
-    var between = function (x, min, max) {
-        return x >= min && x <= max;
+    var step = 1;
+    var increaseStep = function () {
+        if (step < 3) {
+            step += 1
+            sectionSetup.setAttribute('data-step', step)
+        }
+        return step;
+    }
+    var decreaseStep = function () {
+        if (step > 1) {
+            step -= 1
+            sectionSetup.setAttribute('data-step', step)
+        }
+        return step;
+    }
+    var stepNext = function (e) {
+        e.preventDefault()
+        if (step == 3) {
+            fullpage_api.moveSectionDown();
+        } else increaseStep()
+    }
+    var stepPrev = function (e) {
+        e.preventDefault()
+        if (step == 1) {
+            fullpage_api.moveSectionUp();
+        } else decreaseStep()
     }
     var guidePageWrapper = document.querySelector('.guidePageWrapper')
     var mainBlk = document.querySelector('.mainBlock')
+    var sectionSetup = document.querySelector('.sectionSetup')
     new fullpage('.mainBlock', {
-        anchors:['1', '2', '3', '4', '5', '6', '7'],
         autoScrolling: true,
         fadingEffect: 'slides',
-        afterRender: function(){
-            guidePageWrapper.setAttribute('data-active', fullpage_api.getActiveSection().anchor);
+        afterRender: function () {
+            guidePageWrapper.setAttribute('data-active', fullpage_api.getActiveSection().index + 1);
             guidePageWrapper.querySelector('.sectionWelcome').classList.add('play');
         },
         onLeave: function (origin, destination, direction) {
-            guidePageWrapper.setAttribute('data-active', destination.anchor)
-            if ((between(origin.index, 1, 3) && between(destination.index, 1, 3)) || (between(origin.index, 4, 5) && between(destination.index, 4, 5))) {
-                mainBlk.classList.add('noTransit')
+            if (origin.index == 1) {
+                if (direction == "down") {
+                    if (step == 3) {
+                        guidePageWrapper.setAttribute('data-active', destination.index + 1)
+                        return true
+                    }
+                    else {
+                        increaseStep()
+                        return false
+                    }
+                } else {
+                    if (step == 1) {
+                        guidePageWrapper.setAttribute('data-active', destination.index + 1)
+                        return true
+                    }
+                    else {
+                        decreaseStep()
+                        return false
+                    }
+                }
             } else {
-                mainBlk.classList.remove('noTransit')
+                guidePageWrapper.setAttribute('data-active', destination.index + 1)
+
             }
+            // return true
         }
     });
-
-    mainBlk.addEventListener('click', function(e) {
-        if(e.target.hasAttribute('data-slide')) {
+    document.querySelector('.ctaPrev').addEventListener('click', stepPrev)
+    document.querySelector('.ctaNext').addEventListener('click', stepNext)
+    mainBlk.addEventListener('click', function (e) {
+        if (e.target.hasAttribute('data-slide')) {
             e.preventDefault()
             fullpage_api.silentMoveTo(parseInt(e.target.getAttribute('data-slide')))
         }
     })
 
     var previewSwitch = document.querySelectorAll('.previewSwitch');
-    previewSwitch.forEach(function(ele) {
-        ele.addEventListener('click', function() {
+    previewSwitch.forEach(function (ele) {
+        ele.addEventListener('click', function () {
             fullpage_api.silentMoveTo(parseInt(ele.getAttribute('data-slide')))
         })
     })
-    // var previewSection = document.querySelector('.sectionPreview');
-    // previewSwitch.addEventListener('click', function(e) {
-    //     e.preventDefault();
-    //     previewSwitch.classList.toggle('active')
-    //     previewSection.classList.toggle('preview-active')
-    // })
+    var stepsNav = document.querySelector('.stepsNav');
+    stepsNav.addEventListener('click', function(e) {
+        if(e.target.tagName == "A") {
+            e.preventDefault();
+            step = e.target.getAttribute('data-step')
+            sectionSetup.setAttribute('data-step', e.target.getAttribute('data-step'))
+        }
+    })
 
 }
 
