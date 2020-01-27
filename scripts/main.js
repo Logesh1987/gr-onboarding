@@ -85,7 +85,7 @@ var init = function () {
     stepsNav.addEventListener('click', function(e) {
         if(e.target.tagName == "A") {
             e.preventDefault();
-            step = e.target.getAttribute('data-step')
+            step = parseInt(e.target.getAttribute('data-step'))
             sectionSetup.setAttribute('data-step', e.target.getAttribute('data-step'))
         }
     })
