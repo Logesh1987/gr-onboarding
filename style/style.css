@@ -121,6 +121,8 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
 }
 header .logo {
   width: 150px;
@@ -131,6 +133,9 @@ header .logo img {
 }
 header .btn {
   font-size: 0.9em;
+}
+.guidePageWrapper[data-active="3"] header {
+  opacity: 0;
 }
 .setupPage header {
   background-color: #28a08c;
@@ -277,6 +282,7 @@ header .btn {
   color: #000;
   font-family: 'Heebo';
   font-size: 3em;
+  line-height: 1;
   margin: 0.5em 0;
   -webkit-transition: all 0.7s 0.8s;
   transition: all 0.7s 0.8s;
@@ -342,8 +348,8 @@ header .btn {
   font-style: normal;
   width: 10em;
   height: 10em;
-  right: 2%;
-  bottom: 8%;
+  right: 4%;
+  bottom: 9%;
   -webkit-transform: scale(0.3);
           transform: scale(0.3);
   opacity: 0;
@@ -615,6 +621,34 @@ header .btn {
   line-height: 1.2;
   margin: 0;
 }
+section.sectionReady {
+  position: relative;
+}
+section.sectionReady.play .contentWrapper {
+  opacity: 1;
+}
+section.sectionReady.play span.circle .donut {
+  stroke-dashoffset: 0;
+}
+section.sectionReady span.circle {
+  background: conic-gradient(#093042 100%, #3bda82 100%);
+  width: 90vh;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+}
+section.sectionReady span.circle svg {
+  width: 100%;
+}
+section.sectionReady span.circle .donut {
+  stroke-dashoffset: -1455;
+  -webkit-transition: stroke-dashoffset 1s 0.5s;
+  transition: stroke-dashoffset 1s 0.5s;
+}
 section.sectionReady .contentWrapper {
   color: #fff;
   display: -webkit-box;
@@ -635,16 +669,66 @@ section.sectionReady .contentWrapper {
           justify-content: center;
   text-align: center;
   overflow: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 1s 1s;
+  transition: opacity 1s 1s;
 }
 section.sectionReady h3 {
-  font-size: 3.8em;
+  color: #3ddb84;
+  font-size: 3em;
   font-family: "agb";
+  margin: 0;
+}
+section.sectionReady ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 4em 0;
+}
+section.sectionReady ul:before {
+  content: '';
+  width: 1px;
+  position: absolute;
+  height: 100%;
+  background-color: rgba(49, 131, 169, 0.5);
+  left: 50%;
+  top: 0;
+}
+section.sectionReady li {
+  padding: 0 4em;
+}
+section.sectionReady li i[class*="icon-"] {
+  color: #7AC6FB;
+  font-size: 2em;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto 1em;
+}
+section.sectionReady p {
+  color: #3183A9;
+  line-height: 1.2;
+  margin: 0;
 }
 section.sectionReady .btn {
   font-size: 1.3em;
   display: block;
-  width: 50%;
-  max-width: 350px;
 }
 @media only screen and (max-width: 1500px) {
   .mainBlock {

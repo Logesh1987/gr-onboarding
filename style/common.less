@@ -127,6 +127,7 @@ header {
 	top: 0;
 	align-items: center;
 	justify-content: space-between;
+	transition: opacity 0.5s;
 
 	.logo {
 		width: 150px;
@@ -140,7 +141,9 @@ header {
 	.btn {
 		font-size: 0.9em;
 	}
-
+	.guidePageWrapper[data-active="3"] & {
+		opacity: 0;
+	}
 	.setupPage & {
 		background-color: #28a08c;
 

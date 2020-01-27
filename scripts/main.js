@@ -1,18 +1,4 @@
 var init = function () {
-    // var sMain = new Swiper('.mainBlock', {
-    //     direction: 'vertical',
-    //     // initialSlide: 1,
-    //     cssMode: true,
-    //     parallax: true,
-    //     mousewheel: {
-    //         sensitivity: 1
-    //     },
-    // });
-    // var sSetup = new Swiper('.setupBlock', {
-    //     direction: 'vertical',
-    //     effect: 'slide',
-    //     parallax: true
-    // });
     var step = 1;
     var increaseStep = function () {
         if (step < 3) {
@@ -47,6 +33,7 @@ var init = function () {
         autoScrolling: true,
         fadingEffect: 'slides',
         afterRender: function () {
+            // fullpage_api.moveTo(2);
             guidePageWrapper.setAttribute('data-active', fullpage_api.getActiveSection().index + 1);
             guidePageWrapper.querySelector('.sectionWelcome').classList.add('play');
         },
@@ -55,6 +42,7 @@ var init = function () {
                 if (direction == "down") {
                     if (step == 3) {
                         guidePageWrapper.setAttribute('data-active', destination.index + 1)
+                        destination.item.classList.add('play')
                         return true
                     }
                     else {
@@ -64,6 +52,7 @@ var init = function () {
                 } else {
                     if (step == 1) {
                         guidePageWrapper.setAttribute('data-active', destination.index + 1)
+                        destination.item.classList.add('play')
                         return true
                     }
                     else {
@@ -75,7 +64,6 @@ var init = function () {
                 guidePageWrapper.setAttribute('data-active', destination.index + 1)
 
             }
-            // return true
         }
     });
     document.querySelector('.ctaPrev').addEventListener('click', stepPrev)
