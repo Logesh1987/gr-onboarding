@@ -72,10 +72,11 @@ body {
   font-size: 1.4em;
   border-color: #FF6332;
   background-color: #FF6332;
-  -webkit-box-shadow: 0 0.2em 0 0 #D0481D;
-          box-shadow: 0 0.2em 0 0 #D0481D;
+  -webkit-box-shadow: 0 6px 0 0 #D0481D;
+          box-shadow: 0 6px 0 0 #D0481D;
   border-width: 0.15em;
   padding: 0.4em 1.4em;
+  position: relative;
   font-weight: normal;
   text-transform: none;
 }
@@ -85,11 +86,14 @@ body {
   padding-left: 0.5em;
 }
 .btn.btnOrange:hover {
-  color: #FF6332;
-  border-color: #fff;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0.2em 0 0 #fff;
-          box-shadow: 0 0.2em 0 0 #fff;
+  -webkit-box-shadow: 0 4px 0 0 #D0481D;
+          box-shadow: 0 4px 0 0 #D0481D;
+  top: 2px;
+}
+.btn.btnOrange:active {
+  -webkit-box-shadow: 0 0 0 0 #D0481D;
+          box-shadow: 0 0 0 0 #D0481D;
+  top: 6px;
 }
 .btn.btnBlack {
   cursor: pointer;
@@ -530,7 +534,7 @@ header .btn {
   font-size: 0.9em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #43616F;
+  color: #43616f;
 }
 .sectionSetup .bottomNav .back i {
   color: #fff;
@@ -562,9 +566,6 @@ header .btn {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 4em 0 0;
   -webkit-transform: translateX(-5%);
           transform: translateX(-5%);
@@ -584,48 +585,61 @@ header .btn {
   vertical-align: middle;
 }
 .sectionSetup .setupSteps .stepInfo {
+  margin-top: 2em;
   text-align: left;
-  min-width: 32%;
+  min-width: 40%;
+  font-size: 1.15em;
+  padding-left: 1em;
 }
-.sectionSetup .setupSteps .stepInfo ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.sectionSetup .setupSteps .stepInfo i {
+  color: #092f42;
+  width: 2.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 2.5em;
+  border-radius: 50%;
+  background: #3ddb84;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-style: normal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "agb";
+  font-size: 1.1em;
 }
-.sectionSetup .setupSteps .stepInfo li {
-  position: relative;
-  padding-left: 5em;
+.sectionSetup .setupSteps .stepInfo h5 {
+  color: #3ddb84;
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.3;
+  margin: 1em 0;
 }
-.sectionSetup .setupSteps .stepInfo li:before {
-  font-family: 'icomoon' !important;
-  font-size: 3em;
-  content: "\e901";
-  color: #3D6477;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-.sectionSetup .setupSteps .stepInfo li:not(:last-child) {
-  margin-bottom: 2em;
-}
-.sectionSetup .setupSteps .stepInfo h4 {
-  color: #fff;
-  font-size: 1.2em;
-  line-height: 1.2;
-  font-weight: bold;
-  margin: 0;
+.sectionSetup .setupSteps .stepInfo h5:after {
+  content: "";
+  display: block;
+  height: 0.15em;
+  width: 50%;
+  background-color: #0d3e55;
+  margin: 0.7em 0 0;
 }
 .sectionSetup .setupSteps .stepInfo p {
-  color: #3183a9;
-  font-size: 1em;
-  line-height: 1.2;
-  margin: 0;
+  color: #6D9AAF;
+  opacity: 0.5;
+  font-size: 0.9em;
+  padding-right: 20%;
 }
 section.sectionReady {
   position: relative;
 }
 section.sectionReady.play .contentWrapper {
   opacity: 1;
+}
+section.sectionReady.play span.circle {
+  -webkit-animation: fadeout 1s 1.9s forwards;
+          animation: fadeout 1s 1.9s forwards;
 }
 section.sectionReady.play span.circle .donut {
   stroke-dashoffset: 0;
@@ -670,8 +684,8 @@ section.sectionReady .contentWrapper {
   text-align: center;
   overflow: hidden;
   opacity: 0;
-  -webkit-transition: opacity 1s 1s;
-  transition: opacity 1s 1s;
+  -webkit-transition: opacity 1s 1.3s;
+  transition: opacity 1s 1.3s;
 }
 section.sectionReady h3 {
   color: #3ddb84;
@@ -704,7 +718,7 @@ section.sectionReady li {
   padding: 0 4em;
 }
 section.sectionReady li i[class*="icon-"] {
-  color: #7AC6FB;
+  color: #7ac6fb;
   font-size: 2em;
   border: 2px solid;
   border-radius: 50%;
@@ -722,7 +736,7 @@ section.sectionReady li i[class*="icon-"] {
   margin: 0 auto 1em;
 }
 section.sectionReady p {
-  color: #3183A9;
+  color: #3183a9;
   line-height: 1.2;
   margin: 0;
 }
@@ -737,6 +751,22 @@ section.sectionReady .btn {
   .mainBlock .contentWrapper,
   .mainBlock i.circle {
     width: 95vh;
+  }
+}
+@-webkit-keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .previewSwitch {
