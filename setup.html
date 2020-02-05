@@ -1,134 +1,181 @@
 <html>
-  <head>
-    <title>GR - Onboarding</title>
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Heebo:400,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style/style.css">
-  </head>
-  <body>
-    <div class="setupPage">
-      <header>
+
+<head>
+  <title>GR - Onboarding</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="https://fonts.googleapis.com/css?family=Heebo:400,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/overwrite-bootstrap.css">
+</head>
+
+<body>
+  <div class="setupPage">
+    <header>
+      <div class="grad">
         <a href="#" class="logo">
-          <img src="images/logo_gr.png" alt="Gratisfaction">
+          <img src="images/logo_gr_white.png" alt="Gratisfaction">
         </a>
-        <a href="mailto:info@appsmav.com" class="btn btnGrey">Write to Us</a>
-      </header>
-      <div class="setupWrapper">
-        <div class="setupBox step-1">
-          <div class="setupHeader">
-            <div class="cntArea">
-              <h2>Welcome!</h2>
-              <nav class="setupTabs">
-                <a href="#" class="active">Basic Campaign setup</a>
-                <a href="#">Loyalty Rewards setup</a>
-                <a href="#">UI Customization</a>
-              </nav>
-              <div class="setupHead"></div> 
-            </div>
-          </div>
-          <div class="setupContent pullUp">
-            <div class="cntArea">
-              <div class="contentBox">
-                <img src="images/setup-step-1.jpg" alt="">
-              </div>
-              <div class="navBox">
-                <a href="#" class="btn btnColor2">Next</a>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="head">
+        <div>
+          <h2>Welcome, Start with a quick setup.</h2>
+          <ul class="paginate">
+            <li class="completed">1</li>
+            <li class="current">2</li>
+            <li>3</li>
+          </ul>
         </div>
-        <div class="setupBox step-2">
-          <div class="setupHeader">
-            <div class="cntArea">
-              <h2>Almost there</h2>
-              <nav class="setupTabs">
-                <a href="#">Basic Campaign setup</a>
-                <a href="#" class="active">Loyalty Rewards setup</a>
-                <a href="#">UI Customization</a>
-              </nav>
-              <div class="setupHead">
-                 <p>Set up rewards that members can claim by redeeming their points.</p>
-                 <a href="#" class="btn btnWhite">Add Reward</a>
-              </div> 
-            </div>
-          </div>
-          <div class="setupContent">
-            <div class="cntArea">
-              <div class="contentBox">
-                <img src="images/setup-step-2.jpg" alt="">
-              </div>
-              <div class="navBox">
-                <a href="#" class="btn btnColor2">Next</a>
-              </div>
-            </div>
-          </div>
+      </div>
+      <div class="skipSteps">
+        <p>
+          <strong>SKIP ALL STEPS? </strong>
+          Proceed with recommended settings
+        </p>
+        <a href="#" class="btn btn-outline-success">Proceed</a>
+      </div>
+    </header>
+    <div class="setupContainer" id="setupAccordion">
+      <div class="card active">
+        <div class="card-header" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
+          1. Setup
         </div>
-        <div class="setupBox step-3">
-          <div class="setupHeader">
-            <div class="cntArea">
-              <h2>Just the last step</h2>
-              <nav class="setupTabs">
-                <a href="#">Basic Campaign setup</a>
-                <a href="#">Loyalty Rewards setup</a>
-                <a href="#" class="active">UI Customization</a>
-              </nav>
-              <div class="setupHead">
-                 <p>You can setup this later if you want</p>
-                 <a href="#" class="btn btnWhite">I'll setup later</a>
-              </div> 
-            </div>
-          </div>
-          <div class="setupContent">
-            <div class="contentBox">
-              <img src="images/setup-step-3.jpg" alt="">
-            </div>
-            <div class="cntArea">
-              <div class="navBox">
-                <a href="#" class="btn btnColor2">Save Changes</a>
+
+        <div id="setup" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
+          <div class="card-body">
+            <div class="setupSteps">
+              <div class="stepHead">
+                <h3>Points Program</h3>
+                <p>Start rewarding your customers for purchases</p>
+                <label class="switch" for="pointsProgram">
+                  <input type="checkbox" id="pointsProgram" />
+                  <i></i>
+                </label>
+              </div>
+              <div class="stepBody">
+                <h6>Loyalty Points</h6>
+                <div class="btn-group btnLoyaltyPoints" role="group">
+                  <button type="button" class="btn btn-dark">Fixed</button>
+                  <button type="button" class="btn btn-outline-dark">Percentage</button>
+                </div><br><br>
+                <div class="form-row align-items-center">
+                  <div class="form-group col-md-5">
+                    <div class="input-group-prepend">€</div>
+                    <label for="inputEmail4">Purchase for</label>
+                    <input type="number" class="form-control" id="inputEmail4" value="1">
+                  </div>
+                  <div class="col-md-2 text-center">
+                    to get
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="inputEmail4">Reward Point</label>
+                    <input type="number" class="form-control" id="inputEmail4" value="1">
+                  </div>
+
+                </div>
+              </div>
+              <div class="stepFoot d-flex justify-content-end">
+                <a href="#" class="resetSetting">
+                  <i class="material-icons">
+                    refresh
+                  </i> 
+                  <u>Reset to recommended settings</u>
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="setupBox step-live">
-          <div class="setupHeader">
-            <div class="cntArea">
-              <div class="liveDash">
-                <h2>
-                  Congratulations! <br> Your campaign is <span>LIVE </span>
-                  <small>(Preview this plugin on your website)</small>
-                </h2>
-                <p>Remember you can always edit,pause, remove campaigns</p>
-                <div class="liveSwitch"></div>
+            <div class="setupSteps">
+              <div class="stepHead">
+                <h3>Sign Up Bonus</h3>
+                <p>Reward customers for creating an account on your store</p>
+                <label class="switch" for="pointsProgram">
+                  <input type="checkbox" id="pointsProgram" />
+                  <i></i>
+                </label>
               </div>
-              <ul>
-                <li><i class="bullet"></i><span>Guest checklist shoud be optional - So customers shoud have the option to create an account</span></li>
-                <li><i class="bullet"></i><span>You can enroll past customers</span></li>
-                <li><i class="bullet"></i><span>You are giving 100 welcome points, puchase points = 1 point for every currency spent</span></li>
-              </ul>
-              <nav class="setupTabs">
-                <a href="#">Basic Campaign setup</a>
-                <a href="#">Loyalty Rewards setup</a>
-                <a href="#">UI Customization</a>
-              </nav>
-              <div class="setupHead">
-                 <p>You can setup this later if you want</p>
-                 <a href="#" class="btn btnWhite">I'll setup later</a>
-              </div> 
-            </div>
-          </div>
-          <div class="setupContent pullUp">
-            <div class="cntArea">
-              <div class="contentBox">
-                <img src="images/setup-step-3.jpg" alt="">
+              <div class="stepBody">
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Welcome Bonus Point</label>
+                    <input type="number" class="form-control" id="inputEmail4" value="100">
+                  </div>
+                </div><br>
+                <h6>Welcome Note</h6>
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-5">
+                    <div class="btn-group btnLoyaltyPoints" role="group">
+                      <button type="button" class="btn btn-dark">Show</button>
+                      <button type="button" class="btn btn-outline-dark">Hidden</button>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-link">Sample</a>
+                </div>
+                <div class="form-row align-items-center">
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Welcome Note</label>
+                    <textarea class="form-control" cols="30" rows="5" value="100"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="stepFoot d-flex justify-content-end">
+                <a href="#" class="resetSetting">
+                  <i class="material-icons">
+                    refresh
+                  </i> 
+                  <u>Reset to recommended settings</u>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="card">
+        <div class="card-header disabled " data-toggle="collapse" data-target="#rewards" aria-expanded="true"
+          aria-controls="rewards">
+          2. Rewards
+        </div>
+
+        <div id="rewards" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+            you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header disabled" data-toggle="collapse" data-target="#themes" aria-expanded="true"
+          aria-controls="themes">
+          3. Themes
+        </div>
+
+        <div id="themes" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon
+            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt
+            you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
     </div>
-      <script src="scripts/main.js"></script>
-  </body>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="scripts/main.js"></script>
+</body>
+
 </html>

@@ -18,7 +18,7 @@ body {
 	box-sizing: border-box;
 }
 
-.btn {
+.button {
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 0.8em 3em;
@@ -30,7 +30,7 @@ body {
 	outline: none;
 	transition: background-color 0.4s, color 0.4s;
 
-	&.btnColor1 {
+	&.buttonColor1 {
 		background-color: @color1;
 		border-color: @color1;
 		color: @color2;
@@ -41,7 +41,7 @@ body {
 		}
 	}
 
-	&.btnColor2 {
+	&.buttonColor2 {
 		background-color: @color2;
 		border-color: @color2;
 		color: @color1;
@@ -52,7 +52,7 @@ body {
 		}
 	}
 
-	&.btnWhite {
+	&.buttonWhite {
 		background-color: #fff;
 		border-color: #fff;
 		color: @color2;
@@ -63,7 +63,7 @@ body {
 		}
 	}
 
-	&.btnGrey {
+	&.buttonGrey {
 		color: #6e6e6e;
 		border-color: #6e6e6e;
 		border-width: 0.15em;
@@ -76,13 +76,13 @@ body {
 			background-color: #6e6e6e;
 		}
 	}
-	&.btnOrange {
+	&.buttonOrange {
 		cursor: pointer;
 		color: #fff;
 		font-size: 1.4em;
-		border-color: #FF6332;
-		background-color: #FF6332;
-		box-shadow: 0 6px 0 0 #D0481D;
+		border-color: #ff6332;
+		background-color: #ff6332;
+		box-shadow: 0 6px 0 0 #d0481d;
 		border-width: 0.15em;
 		padding: 0.4em 1.4em;
 		position: relative;
@@ -95,16 +95,16 @@ body {
 		}
 
 		&:hover {
-			box-shadow: 0 4px 0 0 #D0481D;
+			box-shadow: 0 4px 0 0 #d0481d;
 			top: 2px;
 		}
 
 		&:active {
-			box-shadow: 0 0 0 0 #D0481D;
+			box-shadow: 0 0 0 0 #d0481d;
 			top: 6px;
 		}
 	}
-	&.btnBlack {
+	&.buttonBlack {
 		cursor: pointer;
 		color: #fff;
 		background-color: #000;
@@ -121,55 +121,3 @@ body {
 	}
 }
 
-header {
-	display: flex;
-	position: fixed;
-	width: 100%;
-	z-index: 10;
-	padding: 2em 3em;
-	left: 0;
-	top: 0;
-	align-items: center;
-	justify-content: space-between;
-	transition: opacity 0.5s;
-
-	.logo {
-		width: 150px;
-
-		img {
-			width: 100%;
-			vertical-align: middle;
-		}
-	}
-
-	.btn {
-		font-size: 0.9em;
-	}
-	.guidePageWrapper[data-active="3"] & {
-		opacity: 0;
-	}
-	.setupPage & {
-		background-color: #28a08c;
-
-		.btn {
-			color: #fff;
-			border-color: currentColor;
-
-			&:hover {
-				color: #6e6e6e;
-				border-color: #fff;
-				background-color: #fff;
-			}
-		}
-	}
-}
-
-@keyframes heartBeat {
-	0%, 28%, 70% {
-	  transform: scale(1);
-	}
-  
-	14%, 42% {
-	  transform: scale(1.2);
-	}
-  }

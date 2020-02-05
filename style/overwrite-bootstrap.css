@@ -1,0 +1,34 @@
+.btn:focus {
+    box-shadow: none !important;
+}
+.btn {
+    border-radius: 0.5rem;
+}
+.form-group {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    position: absolute;
+    font-size: 0.7rem;
+    background: #fff;
+    padding: 0rem 0.5rem;
+    margin: 0 0.5rem;
+    transform: translateY(-50%);
+}
+.form-group .input-group-prepend {
+    color: #42A8E7;
+    font-size: 1rem;
+    position: absolute;
+    margin: 0.4rem;
+    width: 1.2rem;
+    align-items: center;
+    justify-content: center;
+}
+.form-group .input-group-prepend ~ input {
+    padding: .375rem 2rem;
+}
+.form-group input {
+    padding: .375rem 1.25rem;
+}

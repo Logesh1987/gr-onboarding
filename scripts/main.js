@@ -1,4 +1,4 @@
-var init = function () {
+var guideInit = function () {
     var step = 1;
     var increaseStep = function () {
         if (step < 3) {
@@ -82,8 +82,8 @@ var init = function () {
         })
     })
     var stepsNav = document.querySelector('.stepsNav');
-    stepsNav.addEventListener('click', function(e) {
-        if(e.target.tagName == "A") {
+    stepsNav.addEventListener('click', function (e) {
+        if (e.target.tagName == "A") {
             e.preventDefault();
             step = parseInt(e.target.getAttribute('data-step'))
             sectionSetup.setAttribute('data-step', e.target.getAttribute('data-step'))
@@ -92,4 +92,20 @@ var init = function () {
 
 }
 
-window.addEventListener('load', init)
+var setupInit = function () {
+    $('#setupAccordion').on('hidden.bs.collapse', function (e) {
+        $(e.target).parent('.card').removeClass('active')
+    })
+    $('#setupAccordion').on('show.bs.collapse', function (e) {
+        $(e.target).parent('.card').addClass('active')
+    })
+}
+
+window.addEventListener('load', function () {
+    if (document.querySelector('.guidePageWrapper')) {
+        guideInit()
+    }
+    else if (document.querySelector('.setupPage')) {
+        setupInit()
+    }
+})
