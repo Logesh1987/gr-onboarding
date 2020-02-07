@@ -99,6 +99,16 @@ var setupInit = function () {
     $('#setupAccordion').on('show.bs.collapse', function (e) {
         $(e.target).parent('.card').addClass('active')
     })
+    var mySwiper = new Swiper('.setupSwiper', {
+        autoHeight: true,
+        pagination: {
+            el: '.setupSwiper-pagination',
+        },
+        navigation: {
+            nextEl: '.setupSwiper-button-next',
+            prevEl: '.setupSwiper-button-prev',
+        }
+    })
 }
 
 window.addEventListener('load', function () {
