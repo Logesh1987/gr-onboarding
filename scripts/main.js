@@ -109,6 +109,12 @@ var setupInit = function () {
             prevEl: '.setupSwiper-button-prev',
         }
     })
+    $('label.switch input').change(function () {
+        if (this.checked)
+            $(this).parents('.setupSteps').removeClass('disabled')
+        else
+            $(this).parents('.setupSteps').addClass('disabled')
+    })
 }
 
 window.addEventListener('load', function () {

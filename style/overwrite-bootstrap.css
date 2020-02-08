@@ -52,3 +52,14 @@
 .to-00 {
     transform-origin: 0 0;
 }
+.badge-pill.material-icons {
+    width: 1.3em;
+    display: inline-flex;
+    font-size: 13px;
+    padding: 0;
+    height: 1.3em;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    line-height: 1;
+}

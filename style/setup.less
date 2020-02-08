@@ -117,10 +117,6 @@
 	border: 1px solid #cecece;
 	border-radius: 5px;
 	margin: 50px auto;
-	.setupSwiper {
-		max-width: 500px;
-		margin: auto;
-	}
 	.setupSwiper-navigator {
 		padding: 25px 0;
 		border-top: 1px solid #ccc;
@@ -131,10 +127,35 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-
 		}
 		.setupSwiper-pagination {
 			position: static;
+			.swiper-pagination-bullet {
+				width: 10px;
+				height: 10px;
+				margin: 0 5px;
+				&.swiper-pagination-bullet-active {
+					background-color: #000;
+				}
+				&.swiper-pagination-bullet-completed {
+					background: #51ba31;
+					position: relative;
+					opacity: 1;
+					&:before {
+						content: '';
+						width: 3px;
+						height: 6px;
+						border-right: 1px solid #fff;
+						border-bottom: 1px solid #fff;
+						display: block;
+						margin: auto;
+						top: 50%;
+						position: absolute;
+						left: 50%;
+						transform: translate(-50%, -50%) rotate(45deg);
+					}
+				}
+			}
 		}
 	}
 	.card {
@@ -187,6 +208,12 @@
 	.setupSteps {
 		max-width: 500px;
 		margin: auto;
+		&.disabled {
+			.stepBody, .stepFoot {
+				pointer-events: none;
+				opacity: 0.5;
+			}
+		}
 	}
 	.stepHead {
 		position: relative;
@@ -213,6 +240,7 @@
 		border: 1px solid #c6c6c6;
 		border-radius: 5px;
 		padding: 50px;
+		position: relative;
 		h6 {
 			font-weight: bold;
 			margin-bottom: 10px;
@@ -236,6 +264,24 @@
 		button {
 			font-size: 0.9rem;
 			padding: 0.2rem 1rem;
+		}
+	}
+	.recommendFloater {
+		font-size: 12px;
+		color: #1B708E;
+		background-color: #E5EFF5;
+		padding: 20px;
+		border-radius: 10px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 200px;
+		transform: translate(80%, 10%);
+		i.info {
+			position: absolute;
+			color: #1064FF;
+			left: 0;
+			transform: translateX(-50%);
 		}
 	}
 }

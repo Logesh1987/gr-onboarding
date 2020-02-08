@@ -948,10 +948,6 @@ section.sectionReady .button {
   border-radius: 5px;
   margin: 50px auto;
 }
-.setupContainer .setupSwiper {
-  max-width: 500px;
-  margin: auto;
-}
 .setupContainer .setupSwiper-navigator {
   padding: 25px 0;
   border-top: 1px solid #ccc;
@@ -972,6 +968,33 @@ section.sectionReady .button {
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination {
   position: static;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #000;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-completed {
+  background: #51ba31;
+  position: relative;
+  opacity: 1;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-completed:before {
+  content: '';
+  width: 3px;
+  height: 6px;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  display: block;
+  margin: auto;
+  top: 50%;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
 }
 .setupContainer .card {
   padding: 0 50px;
@@ -1025,6 +1048,11 @@ section.sectionReady .button {
   max-width: 500px;
   margin: auto;
 }
+.setupContainer .setupSteps.disabled .stepBody,
+.setupContainer .setupSteps.disabled .stepFoot {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .setupContainer .stepHead {
   position: relative;
   margin-bottom: 20px;
@@ -1051,6 +1079,7 @@ section.sectionReady .button {
   border: 1px solid #c6c6c6;
   border-radius: 5px;
   padding: 50px;
+  position: relative;
 }
 .setupContainer .stepBody h6 {
   font-weight: bold;
@@ -1077,6 +1106,26 @@ section.sectionReady .button {
 .setupContainer .btnLoyaltyPoints button {
   font-size: 0.9rem;
   padding: 0.2rem 1rem;
+}
+.setupContainer .recommendFloater {
+  font-size: 12px;
+  color: #1B708E;
+  background-color: #E5EFF5;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  -webkit-transform: translate(80%, 10%);
+          transform: translate(80%, 10%);
+}
+.setupContainer .recommendFloater i.info {
+  position: absolute;
+  color: #1064FF;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .switch {
   font-size: 14px;
