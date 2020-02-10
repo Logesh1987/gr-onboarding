@@ -39,12 +39,12 @@
       </div>
     </header>
     <div class="setupContainer" id="setupAccordion">
-      <div class="card active">
+      <div class="card">
         <div class="card-header" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
-          1. Setup
+          <h3>1. Setup</h3>
         </div>
 
-        <div id="setup" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="setup" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
             <div class="swiper-container setupSwiper">
               <div class="swiper-wrapper">
@@ -303,29 +303,82 @@
           </div>
         </div>
       </div>
-      <div class="card">
+      <div class="card rewardsBlock active">
         <div class="card-header " data-toggle="collapse" data-target="#rewards" aria-expanded="true"
           aria-controls="rewards">
-          2. Rewards
+          <h3>2. Rewards</h3>
+          <div class="additionalElements">
+            <a href="#" class="btn btn-success addReward">Add Reward</a>
+          </div>
         </div>
 
-        <div id="rewards" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="rewards" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-            moon
-            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-            nesciunt
-            you probably haven't heard of them accusamus labore sustainable VHS.
+            <div class="rewardList">
+              <div class="rewardItem">
+                <div class="rewardDragger">
+                  <i class="material-icons">reorder</i>
+                </div>
+                <div class="rewardThumb">
+                  <figure style="background-image: url(https://picsum.photos/300/200)"></figure>
+                </div>
+                <div class="rewardInfo">
+                  <h5><strong>$5 off coupon</strong></h5>
+                  <p>Redeem $5 off coupon for 500 points</p>
+                  <hr>
+                  <div class="details">
+                    <span>Qty</span>
+                    <strong>Unlimited</strong>
+                    <span>Required Points</span>
+                    <strong>500 Pts</strong>
+                  </div>
+                </div>
+                <div class="rewardControls">
+                  <a href="#" class="text-success"><i class="material-icons">check</i></a>
+                  <a href="#"><i class="icon-undefined"></i></a>
+                  <label class="switch" for="r1">
+                    <input type="checkbox" checked id="r1" />
+                    <i></i>
+                  </label>
+                  <a href="#"><i class="material-icons">delete_outline</i></a>
+                </div>
+              </div>
+              <div class="rewardItem">
+                <div class="rewardDragger">
+                  <i class="material-icons">reorder</i>
+                </div>
+                <div class="rewardThumb">
+                  <figure style="background-image: url(https://picsum.photos/305/200)"></figure>
+                </div>
+                <div class="rewardInfo">
+                  <h5><strong>$25 off coupon</strong></h5>
+                  <p>Redeem $25 off coupon for 1500 points</p>
+                  <hr>
+                  <div class="details">
+                    <span>Qty</span>
+                    <strong>Unlimited</strong>
+                    <span>Required Points</span>
+                    <strong>500 Pts</strong>
+                  </div>
+                </div>
+                <div class="rewardControls">
+                  <a href="#" class="text-success"><i class="material-icons">check</i></a>
+                  <a href="#"><i class="icon-undefined"></i></a>
+                  <label class="switch" for="r1">
+                    <input type="checkbox" checked id="r1" />
+                    <i></i>
+                  </label>
+                  <a href="#"><i class="material-icons">delete_outline</i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div class="card">
         <div class="card-header disabled" data-toggle="collapse" data-target="#themes" aria-expanded="true"
           aria-controls="themes">
-          3. Themes
+          <h3>3. Themes</h3>
         </div>
 
         <div id="themes" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">

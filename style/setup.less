@@ -167,10 +167,12 @@
 		&.active {
 			border-color: #000;
 			.card-header {
-				font-size: 25px;
 				border-bottom-color: transparent !important;
+				h3 {
+					font-size: 25px;					
+				}
 				&:after {
-					opacity: 0;
+					transform: translateY(-90%) rotate(45deg);
 				}
 			}
 		}
@@ -178,11 +180,17 @@
 	.card-header {
 		cursor: pointer;
 		background: transparent;
-		font-size: 20px;
-		padding: 30px 0;
-		color: rgba(0, 0, 0, 1);
+		padding: 30px 60px 30px 0;
 		position: relative;
-		transition: font-size 0.4s, border-color 0.5s;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		transition: border-color 0.5s;
+		h3 {
+			color: rgba(0, 0, 0, 1);
+			font-size: 20px;
+			transition: font-size 0.4s;
+		}
 		&:after {
 			content: '';
 			width: 20px;
@@ -190,6 +198,7 @@
 			border-right: 1px solid;
 			border-bottom: 1px solid;
 			transform: translateY(-50%) rotate(-45deg);
+			transition: transform 0.4s;
 			position: absolute;
 			margin: 0 0.5em;
 			right: 0;
@@ -327,5 +336,92 @@
 			transform: translateX(1.6em);
 			background-color: green;
 		}
+	}
+}
+.rewardsBlock {
+	.card-header {
+		.addReward {
+			display: none;
+			.active& {
+				display: block;
+			}
+		}
+	}
+	.rewardList {
+		margin-bottom: 30px;
+	}
+}
+.rewardItem {
+	padding: 30px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	> div:not(:first-child) {
+		margin-left: 30px;
+	}
+	.rewardDragger {
+		opacity: 0.5;
+	}
+	&:hover .rewardDragger {
+		opacity: 1;
+	}
+	.details {
+		line-height: 0.9;
+		font-size: 12px;
+		color: #818181;
+		span {
+			padding-right: 10px;
+			border-right: 1px solid rgba(0, 0, 0, 0.5);
+		}
+		strong {
+			color: #000;
+			padding-left: 10px;
+			padding-right: 30px;
+		}
+	}
+	.rewardThumb figure {
+		margin: 0;
+		width: 160px;
+		background-size: cover;
+		background-position: center;
+		&:before {
+			content: '';
+			display: block;
+			padding-bottom: 60%;
+		}
+	}
+	.rewardControls {
+		margin-left: auto !important;
+		display: flex;
+		align-items: center;
+		> *:not(:first-child) {
+			margin-left: 15px;
+		}
+		a {
+			color: rgba(0, 0, 0, 0.5);
+			display: inline-block;
+			font-size: 35px;
+			i {
+				font-size: inherit;
+				&.icon-undefined {
+					font-size: 0.8em;
+				}
+			}
+		}
+	}
+}
+.icon-undefined {
+	width: 1em;
+    height: 0.8em;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    padding: 0.2em 0.3em 0.2em 0;
+    display: inline-block;
+	&:before {
+		content: '';
+		display: block;
+		border-top: 2px solid;
+		border-bottom: 2px solid;
+		padding-bottom: 0.15em;
 	}
 }
