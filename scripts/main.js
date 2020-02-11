@@ -21,7 +21,7 @@ var guideInit = function () {
         } else increaseStep()
     }
     var stepPrev = function (e) {
-        e.preventDefault()
+        e.preventDefault()``
         if (step == 1) {
             fullpage_api.moveSectionUp();
         } else decreaseStep()
@@ -100,6 +100,8 @@ var setupInit = function () {
         $(e.target).parent('.card').addClass('active')
     })
     var mySwiper = new Swiper('.setupSwiper', {
+        observer: true,
+        observeParents: true,
         autoHeight: true,
         pagination: {
             el: '.setupSwiper-pagination',
@@ -115,6 +117,7 @@ var setupInit = function () {
         else
             $(this).parents('.setupSteps').addClass('disabled')
     })
+    $('.colorpicker-component').colorpicker();
 }
 
 window.addEventListener('load', function () {

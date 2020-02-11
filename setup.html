@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/overwrite-bootstrap.css">
+  <link rel="stylesheet" href="scripts/libs/colorpicker/bootstrap-colorpicker.css">
 </head>
 
 <body>
@@ -303,7 +304,7 @@
           </div>
         </div>
       </div>
-      <div class="card rewardsBlock active">
+      <div class="card rewardsBlock">
         <div class="card-header " data-toggle="collapse" data-target="#rewards" aria-expanded="true"
           aria-controls="rewards">
           <h3>2. Rewards</h3>
@@ -312,7 +313,7 @@
           </div>
         </div>
 
-        <div id="rewards" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="rewards" class="collapse " aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
             <div class="rewardList">
               <div class="rewardItem">
@@ -375,22 +376,85 @@
           </div>
         </div>
       </div>
-      <div class="card">
-        <div class="card-header disabled" data-toggle="collapse" data-target="#themes" aria-expanded="true"
+      <div class="card themesBlock active">
+        <div class="card-header" data-toggle="collapse" data-target="#themes" aria-expanded="true"
           aria-controls="themes">
           <h3>3. Themes</h3>
         </div>
-
-        <div id="themes" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="themes" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-            moon
-            officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-            wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-            Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
-            excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth
-            nesciunt
-            you probably haven't heard of them accusamus labore sustainable VHS.
+            <nav class="themeSetupTab">
+              <div class="nav nav-tabs" id="theme-setup" role="tablist">
+                <a class="nav-item nav-link active" data-toggle="tab" href="#popup-tab" role="tab" aria-controls="popup-tab" aria-selected="true">Popup Setup</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#widget-tab" role="tab" aria-controls="widget-tab" aria-selected="false">Widget Setup</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="theme-setupContent">
+              <div class="tab-pane fade show active popupSetup" id="popup-tab" role="tabpanel" aria-labelledby="popup-tab">
+                <div class="row justify-content-between">
+                  <div class="col-md-5">sad</div>
+                  <div class="col-md-5">
+                    <nav>
+                      <div class="nav nav-pills mb-4" id="popup-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-mobile-tab" data-toggle="tab" href="#nav-mobile" role="tab" aria-controls="nav-mobile" aria-selected="true">Home</a>
+                        <a class="nav-item nav-link" id="nav-desktop-tab" data-toggle="tab" href="#nav-desktop" role="tab" aria-controls="nav-desktop" aria-selected="false">Profile</a>
+                      </div>
+                    </nav>
+                    <div class="tab-content" id="popup-tabContent">
+                      <div class="tab-pane fade show active" id="nav-mobile" role="tabpanel" aria-labelledby="nav-mobile-tab">
+                        <h6><strong>Popup styles</strong></h6>
+                        <div class="form-group">
+                          <label for="family">Font Family</label>
+                          <select class="form-control" id="family">
+                            <option>MOnserrat</option>
+                            <option>Arial</option>
+                            <option>Helvetica</option>
+                            <option>Serif</option>
+                            <option>Impact</option>
+                          </select>
+                        </div>
+                        <div id="color-picker-component" class="form-group colorpicker-component">
+                            <label for="family">Text Colors</label>
+                            <input type="text" value="#38a677" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                        <div id="color-picker-component" class="form-group colorpicker-component">
+                            <label for="family">BG Colors</label>
+                            <input type="text" value="#ff0000" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                        <button type="submit"class="btn btn-success">Save and Next</button>
+                      </div>
+                      <div class="tab-pane fade" id="nav-desktop" role="tabpanel" aria-labelledby="nav-desktop-tab">
+                        <h6><strong>Desktop Popup styles</strong></h6>
+                        <div class="form-group">
+                          <label for="family">Font Family</label>
+                          <select class="form-control" id="family">
+                            <option>MOnserrat</option>
+                            <option>Arial</option>
+                            <option>Helvetica</option>
+                            <option>Serif</option>
+                            <option>Impact</option>
+                          </select>
+                        </div>
+                        <div id="color-picker-component" class="form-group colorpicker-component">
+                            <label for="family">Text Colors</label>
+                            <input type="text" value="#38a677" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                        <div id="color-picker-component" class="form-group colorpicker-component">
+                            <label for="family">BG Colors</label>
+                            <input type="text" value="#ff0000" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                        <button type="submit"class="btn btn-success">Save and Next</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="widget-tab" role="tabpanel" aria-labelledby="widget-tab">Widget tab</div>
+            </div>
           </div>
         </div>
       </div>
@@ -418,6 +482,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+  <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
