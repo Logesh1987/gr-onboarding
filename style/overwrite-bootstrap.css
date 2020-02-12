@@ -4,12 +4,12 @@
 .btn {
     border-radius: 0.5rem;
 }
-.form-group {
+.setupSwiper .form-group {
     position: relative;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
 }
-.form-group label {
+.setupSwiper .form-group label {
     position: absolute;
     font-size: 0.7rem;
     background: #fff;
@@ -17,7 +17,7 @@
     margin: 0 0.5rem;
     transform: translateY(-50%);
 }
-.form-group .input-group-prepend {
+.setupSwiper .form-group .input-group-prepend {
     color: #42A8E7;
     font-size: 0.8rem;
     position: absolute;
@@ -26,10 +26,10 @@
     align-items: center;
     justify-content: center;
 }
-.form-group .input-group-prepend ~ input {
+.setupSwiper .form-group .input-group-prepend ~ input {
     padding: .375rem 0.5rem 0.375rem 1.6rem;
 }
-.form-group input {
+.setupSwiper .form-group input {
     padding: .375rem 1.25rem;
 }
 .alert {

@@ -142,17 +142,17 @@
 .colorpicker-selectors i + i {
   margin-left: 3px;
 }
-.colorpicker-element {
+.cPicker {
   position: relative;
 }
-.colorpicker-element .input-group-addon {
+.cPicker .input-group-addon {
   position: absolute;
   right: 0;
   top: 0;
   margin: 9px 12px;
 }
-.colorpicker-element .input-group-addon i,
-.colorpicker-element .add-on i {
+.cPicker .input-group-addon i,
+.cPicker .add-on i {
   display: inline-block;
   cursor: pointer;
   height: 20px;

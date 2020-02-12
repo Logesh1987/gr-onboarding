@@ -402,58 +402,197 @@
                     </nav>
                     <div class="tab-content" id="popup-tabContent">
                       <div class="tab-pane fade show active" id="nav-mobile" role="tabpanel" aria-labelledby="nav-mobile-tab">
-                        <h6><strong>Popup styles</strong></h6>
+                        <h6 class="mb-4"><strong>Popup styles</strong></h6>
                         <div class="form-group">
-                          <label for="family">Font Family</label>
+                          <label>Font Family</label>
                           <select class="form-control" id="family">
-                            <option>MOnserrat</option>
+                            <option>Monserrat</option>
                             <option>Arial</option>
                             <option>Helvetica</option>
                             <option>Serif</option>
                             <option>Impact</option>
                           </select>
                         </div>
-                        <div id="color-picker-component" class="form-group colorpicker-component">
-                            <label for="family">Text Colors</label>
-                            <input type="text" value="#38a677" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#38a677" class="form-control"/>
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
                         </div>
-                        <div id="color-picker-component" class="form-group colorpicker-component">
-                            <label for="family">BG Colors</label>
-                            <input type="text" value="#ff0000" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#38a677" class="form-control"/>
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
                         </div>
-                        <button type="submit"class="btn btn-success">Save and Next</button>
+                        <button type="submit"class="btn btn-success mt-3">Save and Next</button>
                       </div>
                       <div class="tab-pane fade" id="nav-desktop" role="tabpanel" aria-labelledby="nav-desktop-tab">
-                        <h6><strong>Desktop Popup styles</strong></h6>
+                        <h6><strong>Desktop  Popup styles</strong></h6>
                         <div class="form-group">
-                          <label for="family">Font Family</label>
+                          <label>Font Family</label>
                           <select class="form-control" id="family">
-                            <option>MOnserrat</option>
+                            <option>Monserrat</option>
                             <option>Arial</option>
                             <option>Helvetica</option>
                             <option>Serif</option>
                             <option>Impact</option>
                           </select>
                         </div>
-                        <div id="color-picker-component" class="form-group colorpicker-component">
-                            <label for="family">Text Colors</label>
-                            <input type="text" value="#38a677" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#38a677" class="form-control"/>
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
                         </div>
-                        <div id="color-picker-component" class="form-group colorpicker-component">
-                            <label for="family">BG Colors</label>
-                            <input type="text" value="#ff0000" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#38a677" class="form-control"/>
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
                         </div>
-                        <button type="submit"class="btn btn-success">Save and Next</button>
+                        <button type="submit"class="btn btn-success mt-3">Save and Next</button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="tab-pane fade" id="widget-tab" role="tabpanel" aria-labelledby="widget-tab">Widget tab</div>
+              <div class="tab-pane fade widgetSetup" id="widget-tab" role="tabpanel" aria-labelledby="widget-tab">
+                <div class="row justify-content-between">
+                  <div class="col-md-5">sad</div>
+                  <div class="col-md-5">
+                    <ul class="nav nav-tabs widget-tabs-nav" id="widgetPlacement" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="widget-placement-mobile-tab" data-toggle="tab" href="#widget-placement-mobile" role="tab" aria-controls="widget-placement-mobile" aria-selected="true">Mobile</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="widget-placement-desktop-tab" data-toggle="tab" href="#widget-placement-desktop" role="tab" aria-controls="widget-placement-desktop" aria-selected="false">Desktop</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content widget-tabs-panes" id="widgetPlacementContent">
+                      <div class="tab-pane fade show active" id="widget-placement-mobile" role="tabpanel" aria-labelledby="widget-placement-mobile-tab">
+                        <div class="form-group">
+                          <label>Widget Placement</label>
+                          <select class="form-control">
+                            <option>Mid Right</option>
+                            <option>Mid Left</option>
+                            <option>Top Right</option>
+                            <option>Top Left</option>
+                            <option>Bottom Right</option>
+                            <option>Bottom Left</option>
+                          </select>
+                        </div>
+                        <div class="form-group mt-4">
+                          <label>Widget Look</label>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wm-look-1" name="wm-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wm-look-1">Compact</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wm-look-2" name="wm-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wm-look-2">Full</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wm-look-3" name="wm-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wm-look-3">Hide Widget</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="widget-placement-desktop" role="tabpanel" aria-labelledby="widget-placement-desktop-tab">
+                        <div class="form-group">
+                          <label>Widget Placement Desktop</label>
+                          <select class="form-control">
+                            <option>Mid Right</option>
+                            <option>Mid Left</option>
+                            <option>Top Right</option>
+                            <option>Top Left</option>
+                            <option>Bottom Right</option>
+                            <option>Bottom Left</option>
+                          </select>
+                        </div>
+                        <div class="form-group mt-4">
+                          <label>Widget Look Desktop</label>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wd-look-1" name="wd-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wd-look-1">Compact</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wd-look-2" name="wd-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wd-look-2">Full</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="wd-look-3" name="wd-look" class="custom-control-input">
+                            <label class="custom-control-label" for="wd-look-3">Hide Widget</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="nav nav-tabs widget-tabs-nav" id="widgetAdvanced" role="tablist">
+                      <li class="nav-item">
+                        <a class="nav-link active" id="widget-text-tab" data-toggle="tab" href="#widget-text" role="tab" aria-controls="widget-text" aria-selected="true">Text</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="widget-icons-tab" data-toggle="tab" href="#widget-icons" role="tab" aria-controls="widget-icons" aria-selected="false">Icon & BG</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" id="widget-shape-tab" data-toggle="tab" href="#widget-shape" role="tab" aria-controls="widget-shape" aria-selected="false">Shape</a>
+                      </li>
+                    </ul>
+                    <div class="tab-content widget-tabs-panes" id="widgetAdvancedContent">
+                      <div class="tab-pane fade show active" id="widget-text" role="tabpanel" aria-labelledby="widget-text-tab">
+                        <div class="form-group">
+                          <label>Widget Title</label>
+                          <input type="text" value="Rewards" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label>Widget Subtext</label>
+                          <textarea name=""  class="form-control" cols="30" rows="3">Mid Right</textarea>
+                        </div>
+                        <hr class="mb-5 mt-5">
+                        <h6 class="mb-4"><strong>Text Styles</strong></h6>
+                        <div class="form-group">
+                          <label>Font Family</label>
+                          <select class="form-control" id="family">
+                            <option>Monserrat</option>
+                            <option>Arial</option>
+                            <option>Helvetica</option>
+                            <option>Serif</option>
+                            <option>Impact</option>
+                          </select>
+                        </div>                        
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#38a677" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="widget-icons" role="tabpanel" aria-labelledby="widget-icons-tab">
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">Icon BG Color</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#ffffff" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
+                        </div>
+                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">BG Color</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#389F48" class="form-control"/>
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="widget-shape" role="tabpanel" aria-labelledby="widget-shape-tab">...</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
