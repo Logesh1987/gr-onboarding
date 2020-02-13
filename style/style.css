@@ -1342,6 +1342,10 @@ section.sectionReady .button {
   color: #549d90;
   font-size: 14px;
 }
+.themesBlock .widgetSetup .rangeslider--horizontal {
+  margin-top: 20px;
+  height: 2px;
+}
 .themesBlock .widget-tabs-nav {
   border-bottom-color: #c6c6c6;
 }
@@ -1362,6 +1366,31 @@ section.sectionReady .button {
   border: 1px solid #c6c6c6;
   border-top-width: 0;
   padding: 40px;
+}
+.themesBlock .btnAdvancedSettings {
+  display: block;
+  background: #549d90;
+  border-color: #549d90;
+  text-align: left;
+  padding: 0.7rem 1.35rem;
+  margin: 2.5rem 0;
+  position: relative;
+}
+.themesBlock .btnAdvancedSettings:after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.6em;
+  line-height: 1;
+  margin: 0.7rem 0.8em;
+}
+.themesBlock .btnAdvancedSettings.collapsed:after {
+  content: '-';
+}
+.themesBlock .btnAdvancedSettings:active {
+  border-color: #549d90 !important;
+  background: #549d90 !important;
 }
 .themeSetupTab {
   background-color: #f0f0f0;

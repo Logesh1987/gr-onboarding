@@ -8,6 +8,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="scripts/libs/rangeslider/rangeslider.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/overwrite-bootstrap.css">
   <link rel="stylesheet" href="scripts/libs/colorpicker/bootstrap-colorpicker.css">
@@ -81,7 +82,8 @@
                         <div class="recommendFloater">
                           <i class="material-icons info">info</i>
                           <i class="material-icons badge badge-pill badge-warning">star</i>
-                          Recommended setting it up as 1:1, And, you can control the redemption value through "2.Rewards Section"
+                          Recommended setting it up as 1:1, And, you can control the redemption value through "2.Rewards
+                          Section"
                         </div>
                       </div>
                     </div>
@@ -292,6 +294,59 @@
                     </div>
                   </div>
                 </div>
+                <div class="swiper-slide">
+                  <div class="setupSteps">
+                    <div class="stepHead">
+                      <h3>Enter Your Birthday</h3>
+                      <p>This event will appear on your site's loyalty program, <br>prompting visitors and members to enter a date</p>
+                      <label class="switch" for="fbShareSetup">
+                        <input type="checkbox" checked id="fbShareSetup" />
+                        <i></i>
+                      </label>
+                    </div>
+                    <div class="stepBody">
+                      <div class="form-group mt-0 mb-2 col-md-5">
+                        <label for="inputEmail4">Reward Point</label>
+                        <input type="number" class="form-control" id="inputEmail4" value="100">
+                      </div>
+                    </div>
+                    <div class="stepFoot d-flex justify-content-end">
+                      <a href="#" class="resetSetting">
+                        <i class="material-icons">
+                          refresh
+                        </i>
+                        <u>Reset to recommended settings</u>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <d >
+                <div class="swiper-slide">
+                  <div class="setupSteps">
+                    <div class="stepHead">
+                      <h3>Subscribe to Newsletter Setup</h3>
+                      <p>Incentivize users for signing up to your newsletters.</p>
+                      <label class="switch" for="fbShareSetup">
+                        <input type="checkbox" checked id="fbShareSetup" />
+                        <i></i>
+                      </label>
+                    </div>
+                    <div class="stepBody">
+                      <div class="form-group mt-0 mb-0 col-md-5">
+                        <label for="inputEmail4">Reward Points</label>
+                        <input type="number" class="form-control" id="inputEmail4" value="50">
+                      </div>
+                    </div>
+                    <div class="stepFoot d-flex justify-content-end">
+                      <a href="#" class="resetSetting">
+                        <i class="material-icons">
+                          refresh
+                        </i>
+                        <u>Reset to recommended settings</u>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="setupSwiper-navigator">
@@ -385,23 +440,29 @@
           <div class="card-body">
             <nav class="themeSetupTab">
               <div class="nav nav-tabs" id="theme-setup" role="tablist">
-                <a class="nav-item nav-link active" data-toggle="tab" href="#popup-tab" role="tab" aria-controls="popup-tab" aria-selected="true">Popup Setup</a>
-                <a class="nav-item nav-link" data-toggle="tab" href="#widget-tab" role="tab" aria-controls="widget-tab" aria-selected="false">Widget Setup</a>
+                <a class="nav-item nav-link active" data-toggle="tab" href="#popup-tab" role="tab"
+                  aria-controls="popup-tab" aria-selected="true">Popup Setup</a>
+                <a class="nav-item nav-link" data-toggle="tab" href="#widget-tab" role="tab" aria-controls="widget-tab"
+                  aria-selected="false">Widget Setup</a>
               </div>
             </nav>
             <div class="tab-content" id="theme-setupContent">
-              <div class="tab-pane fade show active popupSetup" id="popup-tab" role="tabpanel" aria-labelledby="popup-tab">
+              <div class="tab-pane fade show active popupSetup" id="popup-tab" role="tabpanel"
+                aria-labelledby="popup-tab">
                 <div class="row justify-content-between">
                   <div class="col-md-5">sad</div>
                   <div class="col-md-5">
                     <nav>
                       <div class="nav nav-pills mb-4" id="popup-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-mobile-tab" data-toggle="tab" href="#nav-mobile" role="tab" aria-controls="nav-mobile" aria-selected="true">Home</a>
-                        <a class="nav-item nav-link" id="nav-desktop-tab" data-toggle="tab" href="#nav-desktop" role="tab" aria-controls="nav-desktop" aria-selected="false">Profile</a>
+                        <a class="nav-item nav-link active" id="nav-mobile-tab" data-toggle="tab" href="#nav-mobile"
+                          role="tab" aria-controls="nav-mobile" aria-selected="true">Home</a>
+                        <a class="nav-item nav-link" id="nav-desktop-tab" data-toggle="tab" href="#nav-desktop"
+                          role="tab" aria-controls="nav-desktop" aria-selected="false">Profile</a>
                       </div>
                     </nav>
                     <div class="tab-content" id="popup-tabContent">
-                      <div class="tab-pane fade show active" id="nav-mobile" role="tabpanel" aria-labelledby="nav-mobile-tab">
+                      <div class="tab-pane fade show active" id="nav-mobile" role="tabpanel"
+                        aria-labelledby="nav-mobile-tab">
                         <h6 class="mb-4"><strong>Popup styles</strong></h6>
                         <div class="form-group">
                           <label>Font Family</label>
@@ -413,24 +474,26 @@
                             <option>Impact</option>
                           </select>
                         </div>
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                            <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
-                            <div class="cPicker col-md-7 p-0">
-                              <input type="text" value="#38a677" class="form-control"/>
-                              <span class="input-group-addon"><i></i></span>
-                            </div>
+                        <div id="color-picker-component"
+                          class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#38a677" class="form-control" />
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
                         </div>
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                            <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
-                            <div class="cPicker col-md-7 p-0">
-                              <input type="text" value="#38a677" class="form-control"/>
-                              <span class="input-group-addon"><i></i></span>
-                            </div>
+                        <div id="color-picker-component"
+                          class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#38a677" class="form-control" />
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
                         </div>
-                        <button type="submit"class="btn btn-success mt-3">Save and Next</button>
+                        <button type="submit" class="btn btn-success mt-3">Save and Next</button>
                       </div>
                       <div class="tab-pane fade" id="nav-desktop" role="tabpanel" aria-labelledby="nav-desktop-tab">
-                        <h6><strong>Desktop  Popup styles</strong></h6>
+                        <h6><strong>Desktop Popup styles</strong></h6>
                         <div class="form-group">
                           <label>Font Family</label>
                           <select class="form-control" id="family">
@@ -441,21 +504,23 @@
                             <option>Impact</option>
                           </select>
                         </div>
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                            <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
-                            <div class="cPicker col-md-7 p-0">
-                              <input type="text" value="#38a677" class="form-control"/>
-                              <span class="input-group-addon"><i></i></span>
-                            </div>
+                        <div id="color-picker-component"
+                          class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#38a677" class="form-control" />
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
                         </div>
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                            <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
-                            <div class="cPicker col-md-7 p-0">
-                              <input type="text" value="#38a677" class="form-control"/>
-                              <span class="input-group-addon"><i></i></span>
-                            </div>
+                        <div id="color-picker-component"
+                          class="form-group d-flex flex-row align-items-center colorpicker-component">
+                          <label for="family" class="col-md-5 p-0 m-0">BG Colors</label>
+                          <div class="cPicker col-md-7 p-0">
+                            <input type="text" value="#38a677" class="form-control" />
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
                         </div>
-                        <button type="submit"class="btn btn-success mt-3">Save and Next</button>
+                        <button type="submit" class="btn btn-success mt-3">Save and Next</button>
                       </div>
                     </div>
                   </div>
@@ -467,14 +532,19 @@
                   <div class="col-md-5">
                     <ul class="nav nav-tabs widget-tabs-nav" id="widgetPlacement" role="tablist">
                       <li class="nav-item">
-                        <a class="nav-link active" id="widget-placement-mobile-tab" data-toggle="tab" href="#widget-placement-mobile" role="tab" aria-controls="widget-placement-mobile" aria-selected="true">Mobile</a>
+                        <a class="nav-link active" id="widget-placement-mobile-tab" data-toggle="tab"
+                          href="#widget-placement-mobile" role="tab" aria-controls="widget-placement-mobile"
+                          aria-selected="true">Mobile</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="widget-placement-desktop-tab" data-toggle="tab" href="#widget-placement-desktop" role="tab" aria-controls="widget-placement-desktop" aria-selected="false">Desktop</a>
+                        <a class="nav-link" id="widget-placement-desktop-tab" data-toggle="tab"
+                          href="#widget-placement-desktop" role="tab" aria-controls="widget-placement-desktop"
+                          aria-selected="false">Desktop</a>
                       </li>
                     </ul>
                     <div class="tab-content widget-tabs-panes" id="widgetPlacementContent">
-                      <div class="tab-pane fade show active" id="widget-placement-mobile" role="tabpanel" aria-labelledby="widget-placement-mobile-tab">
+                      <div class="tab-pane fade show active" id="widget-placement-mobile" role="tabpanel"
+                        aria-labelledby="widget-placement-mobile-tab">
                         <div class="form-group">
                           <label>Widget Placement</label>
                           <select class="form-control">
@@ -502,7 +572,8 @@
                           </div>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="widget-placement-desktop" role="tabpanel" aria-labelledby="widget-placement-desktop-tab">
+                      <div class="tab-pane fade" id="widget-placement-desktop" role="tabpanel"
+                        aria-labelledby="widget-placement-desktop-tab">
                         <div class="form-group">
                           <label>Widget Placement Desktop</label>
                           <select class="form-control">
@@ -531,64 +602,83 @@
                         </div>
                       </div>
                     </div>
-                    <ul class="nav nav-tabs widget-tabs-nav" id="widgetAdvanced" role="tablist">
-                      <li class="nav-item">
-                        <a class="nav-link active" id="widget-text-tab" data-toggle="tab" href="#widget-text" role="tab" aria-controls="widget-text" aria-selected="true">Text</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="widget-icons-tab" data-toggle="tab" href="#widget-icons" role="tab" aria-controls="widget-icons" aria-selected="false">Icon & BG</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" id="widget-shape-tab" data-toggle="tab" href="#widget-shape" role="tab" aria-controls="widget-shape" aria-selected="false">Shape</a>
-                      </li>
-                    </ul>
-                    <div class="tab-content widget-tabs-panes" id="widgetAdvancedContent">
-                      <div class="tab-pane fade show active" id="widget-text" role="tabpanel" aria-labelledby="widget-text-tab">
-                        <div class="form-group">
-                          <label>Widget Title</label>
-                          <input type="text" value="Rewards" class="form-control">
+                    <a class="btn btn-primary btnAdvancedSettings collapsed" data-toggle="collapse" href="#advanceSettings" role="button" aria-expanded="false" aria-controls="widgetAdvanced">Advanced Settings</a>
+                    <div class="collapse multi-collapse" id="advanceSettings">
+                      <ul class="nav nav-tabs widget-tabs-nav" id="widgetAdvanced" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="widget-text-tab" data-toggle="tab" href="#widget-text" role="tab"
+                            aria-controls="widget-text" aria-selected="true">Text</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="widget-icons-tab" data-toggle="tab" href="#widget-icons" role="tab"
+                            aria-controls="widget-icons" aria-selected="false">Icon & BG</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="widget-shape-tab" data-toggle="tab" href="#widget-shape" role="tab"
+                            aria-controls="widget-shape" aria-selected="false">Shape</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content widget-tabs-panes" id="widgetAdvancedContent">
+                        <div class="tab-pane fade show active" id="widget-text" role="tabpanel"
+                          aria-labelledby="widget-text-tab">
+                          <div class="form-group">
+                            <label>Widget Title</label>
+                            <input type="text" value="Rewards" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label>Widget Subtext</label>
+                            <textarea name="" class="form-control" cols="30" rows="3">Mid Right</textarea>
+                          </div>
+                          <hr class="mb-5 mt-5">
+                          <h6 class="mb-4"><strong>Text Styles</strong></h6>
+                          <div class="form-group">
+                            <label>Font Family</label>
+                            <select class="form-control" id="family">
+                              <option>Monserrat</option>
+                              <option>Arial</option>
+                              <option>Helvetica</option>
+                              <option>Serif</option>
+                              <option>Impact</option>
+                            </select>
+                          </div>
+                          <div id="color-picker-component"
+                            class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#38a677" class="form-control" />
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group">
-                          <label>Widget Subtext</label>
-                          <textarea name=""  class="form-control" cols="30" rows="3">Mid Right</textarea>
+                        <div class="tab-pane fade" id="widget-icons" role="tabpanel" aria-labelledby="widget-icons-tab">
+                          <div id="color-picker-component"
+                            class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">Icon BG Color</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#ffffff" class="form-control" />
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
+                          </div>
+                          <div id="color-picker-component"
+                            class="form-group d-flex flex-row align-items-center colorpicker-component">
+                            <label for="family" class="col-md-5 p-0 m-0">BG Color</label>
+                            <div class="cPicker col-md-7 p-0">
+                              <input type="text" value="#389F48" class="form-control" />
+                              <span class="input-group-addon"><i></i></span>
+                            </div>
+                          </div>
                         </div>
-                        <hr class="mb-5 mt-5">
-                        <h6 class="mb-4"><strong>Text Styles</strong></h6>
-                        <div class="form-group">
-                          <label>Font Family</label>
-                          <select class="form-control" id="family">
-                            <option>Monserrat</option>
-                            <option>Arial</option>
-                            <option>Helvetica</option>
-                            <option>Serif</option>
-                            <option>Impact</option>
-                          </select>
-                        </div>                        
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                          <label for="family" class="col-md-5 p-0 m-0">Text Colors</label>
-                          <div class="cPicker col-md-7 p-0">
-                            <input type="text" value="#38a677" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
+                        <div class="tab-pane fade" id="widget-shape" role="tabpanel" aria-labelledby="widget-shape-tab">
+                          <div class="form-group">
+                            <label class="mb-4">Widget corner roundness</label>
+                            <input type="range" data-rangeslider>
+                          </div>
+                          <div class="form-group">
+                            <label class="mb-4 mt-5">Widget size</label>
+                            <input type="range" data-rangeslider>
                           </div>
                         </div>
                       </div>
-                      <div class="tab-pane fade" id="widget-icons" role="tabpanel" aria-labelledby="widget-icons-tab">
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                          <label for="family" class="col-md-5 p-0 m-0">Icon BG Color</label>
-                          <div class="cPicker col-md-7 p-0">
-                            <input type="text" value="#ffffff" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
-                          </div>
-                        </div>
-                        <div id="color-picker-component" class="form-group d-flex flex-row align-items-center colorpicker-component">
-                          <label for="family" class="col-md-5 p-0 m-0">BG Color</label>
-                          <div class="cPicker col-md-7 p-0">
-                            <input type="text" value="#389F48" class="form-control"/>
-                            <span class="input-group-addon"><i></i></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="tab-pane fade" id="widget-shape" role="tabpanel" aria-labelledby="widget-shape-tab">...</div>
                     </div>
                   </div>
                 </div>
@@ -612,8 +702,8 @@
     </footer>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>
+  <script src="scripts/libs/rangeslider/rangeslider.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>

@@ -93,6 +93,7 @@ var guideInit = function () {
 }
 
 var setupInit = function () {
+    $('[data-rangeslider]').rangeslider();
     $('#setupAccordion').on('hidden.bs.collapse', function (e) {
         $(e.target).parent('.card').removeClass('active')
     })
