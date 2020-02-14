@@ -37,16 +37,16 @@
           <strong>SKIP ALL STEPS? </strong>
           Proceed with recommended settings
         </p>
-        <a href="#" class="btn btn-outline-success">Proceed</a>
+        <a href="#" data-toggle="modal" data-target="#skipModal" class="btn btn-outline-success">Proceed</a>
       </div>
     </header>
     <div class="setupContainer" id="setupAccordion">
       <div class="card">
-        <div class="card-header" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
+        <div class="card-header active" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
           <h3>1. Setup</h3>
         </div>
 
-        <div id="setup" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="setup" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
             <div class="swiper-container setupSwiper">
               <div class="swiper-wrapper">
@@ -297,17 +297,43 @@
                 <div class="swiper-slide">
                   <div class="setupSteps">
                     <div class="stepHead">
-                      <h3>Enter Your Birthday</h3>
+                      <h3>Birthday Rewards</h3>
                       <p>This event will appear on your site's loyalty program, <br>prompting visitors and members to enter a date</p>
                       <label class="switch" for="fbShareSetup">
                         <input type="checkbox" checked id="fbShareSetup" />
                         <i></i>
                       </label>
                     </div>
-                    <div class="stepBody">
-                      <div class="form-group mt-0 mb-2 col-md-5">
-                        <label for="inputEmail4">Reward Point</label>
-                        <input type="number" class="form-control" id="inputEmail4" value="100">
+                    <div class="stepBody pb-0">
+                      <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
+                        <div class="form-group mt-0 mb-0 col-md-5">
+                          <label for="inputEmail4">Reward Point</label>
+                          <input type="number" class="form-control" id="inputEmail4" value="100">
+                        </div>
+                        <div class="col-md-5 p-0 asideInfo">to users when they enter their birthday</div>
+                      </div><br>
+                      <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
+                        <div class="form-group mt-0 mb-0 col-md-5">
+                          <label for="inputEmail4">Reward Point</label>
+                          <input type="number" class="form-control" id="inputEmail4" value="100">
+                        </div>
+                        <div class="col-md-5 p-0 asideInfo">on the birthday</div>
+                      </div>
+                      <div class="greetingTemplate">
+                        <ul>
+                          <li>
+                            <img src="images/template-birthday.jpg" alt="">
+                          </li>
+                          <li>
+                            <img src="images/template-anniversary.jpg" alt="">
+                          </li>
+                          <li>
+                            <img src="images/template-birthday-mom.jpg" alt="">
+                          </li>
+                        </ul>
+                        <p>
+                          These templates available only when basic setups are completed
+                        </p>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -320,7 +346,6 @@
                     </div>
                   </div>
                 </div>
-                <d >
                 <div class="swiper-slide">
                   <div class="setupSteps">
                     <div class="stepHead">
@@ -431,12 +456,12 @@
           </div>
         </div>
       </div>
-      <div class="card themesBlock active">
+      <div class="card themesBlock">
         <div class="card-header" data-toggle="collapse" data-target="#themes" aria-expanded="true"
           aria-controls="themes">
           <h3>3. Themes</h3>
         </div>
-        <div id="themes" class="collapse show" aria-labelledby="headingOne" data-parent="#setupAccordion">
+        <div id="themes" class="collapse" aria-labelledby="headingOne" data-parent="#setupAccordion">
           <div class="card-body">
             <nav class="themeSetupTab">
               <div class="nav nav-tabs" id="theme-setup" role="tablist">
@@ -700,6 +725,16 @@
         </div>
       </div>
     </footer>
+  </div>
+  <div class="setupModal modal fade" id="skipModal" tabindex="-1" role="dialog" aria-labelledby="skipModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content align-items-center">
+        <a href="" data-dismiss="modal" aria-label="Close">&times;</a>
+        <h5>You have made some change <br>What should wee do?</h5>
+        <button type="submit" class="btn btn-success pr-5 pl-5 mt-4 mb-4">Save and Proceed</button>
+        <a href="#" class="text-success"><u><small>Reset all and LIVE</small></u></a>
+      </div>
+    </div>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   crossorigin="anonymous"></script>
