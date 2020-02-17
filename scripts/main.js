@@ -122,11 +122,24 @@ var setupInit = function () {
     $('.colorpicker-component').colorpicker();
 }
 
+var congratsInit = () => {
+    $('#programSwitch').change(e => {
+        if(e.target.checked) {
+            $('.congratsPage').removeClass('paused')
+        } else {
+            $('.congratsPage').addClass('paused')
+        }
+    })
+}
+
 window.addEventListener('load', function () {
     if (document.querySelector('.guidePageWrapper')) {
         guideInit()
     }
     else if (document.querySelector('.setupPage')) {
         setupInit()
+    }
+    else if (document.querySelector('.congratsPage')) {
+        congratsInit()
     }
 })
