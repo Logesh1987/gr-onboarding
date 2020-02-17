@@ -1804,7 +1804,15 @@ section.sectionReady .button {
   width: 100%;
   left: 0;
   bottom: 0;
-  text-align: right;
+}
+.congratsPage .rateExperience .rateContainer {
+  border-radius: 10px 10px 0 0;
+  width: 40%;
+  min-width: 350px;
+  background-color: #FFCA7F;
+  margin-left: auto;
+  text-align: left;
+  padding: 15px 20px;
 }
 .congratsPage.paused .summaryPoints li p {
   text-decoration: line-through;
