@@ -1809,7 +1809,7 @@ section.sectionReady .button {
   border-radius: 10px 10px 0 0;
   width: 40%;
   min-width: 350px;
-  background-color: #FFCA7F;
+  background-color: #ffca7f;
   margin-left: auto;
   text-align: left;
   padding: 15px 20px;
@@ -1832,4 +1832,47 @@ section.sectionReady .button {
 }
 .congratsPage.paused .statusRep .head .paused {
   display: block;
+}
+.rating > input {
+  position: absolute;
+  top: -9999px;
+}
+.rating > label {
+  float: right;
+  width: 1em;
+  font-family: "Material Icons";
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 30px;
+  color: #BC8024;
+  margin: 0;
+  line-height: 1;
+}
+.rating > label:before {
+  content: "star_border";
+}
+.rating > label:hover,
+.rating > label:hover ~ label {
+  color: #fff;
+}
+.rating input:checked ~ label {
+  color: #fff;
+}
+.rating input:checked ~ label:before {
+  content: 'star';
+}
+.rating input:checked + label:hover,
+.rating input:checked + label:hover ~ label,
+.rating input:checked ~ label:hover,
+.rating input:checked ~ label:hover ~ label,
+.rating label:hover ~ input:checked ~ label {
+  color: #fff;
+}
+.rating input:checked + label:hover:before,
+.rating input:checked + label:hover ~ label:before,
+.rating input:checked ~ label:hover:before,
+.rating input:checked ~ label:hover ~ label:before,
+.rating label:hover ~ input:checked ~ label:before {
+  content: 'star';
 }

@@ -256,7 +256,7 @@
 			border-radius: 10px 10px 0 0;
 			width: 40%;
 			min-width: 350px;
-			background-color: #FFCA7F;
+			background-color: #ffca7f;
 			margin-left: auto;
 			text-align: left;
 			padding: 15px 20px;
@@ -287,6 +287,47 @@
 					display: block;
 				}
 			}
+		}
+	}
+}
+.rating {
+	> input {
+		position: absolute;
+		top: -9999px;
+	}
+	> label {
+		float: right;
+		width: 1em;
+		font-family: "Material Icons";
+		overflow: hidden;
+		white-space: nowrap;
+		cursor: pointer;
+		font-size: 30px;
+		color: #BC8024;
+		margin: 0;
+		line-height: 1;
+		&:before {
+			content: "star_border";
+		}
+		&:hover,
+		&:hover ~ label {
+			color: #fff;
+		}
+	}
+	input:checked ~ label {
+		color: #fff;
+		&:before {
+			content: 'star';
+		}
+	}
+	input:checked + label:hover,
+	input:checked + label:hover ~ label,
+	input:checked ~ label:hover,
+	input:checked ~ label:hover ~ label,
+	label:hover ~ input:checked ~ label {
+		color: #fff;
+		&:before {
+			content: 'star';
 		}
 	}
 }
