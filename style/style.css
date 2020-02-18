@@ -1513,9 +1513,25 @@ section.sectionReady .button {
   border-bottom: 2px solid #d5d5d5;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 4;
 }
 .congratsPage section {
   padding: 0 30px;
+  position: relative;
+  overflow-x: hidden;
+}
+.congratsPage section:after {
+  background: -webkit-gradient(linear, left top, left bottom, from(#EAF6F3), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, #EAF6F3 0%, rgba(255, 255, 255, 0) 100%);
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  right: 0;
+  top: 0;
+  -webkit-transform: skew(-40deg) translateX(40%);
+          transform: skew(-40deg) translateX(40%);
 }
 .congratsPage section .contentArea {
   padding-bottom: 100px;
