@@ -103,6 +103,7 @@ var setupInit = function () {
     var mySwiper = new Swiper('.setupSwiper', {
         observer: true,
         observeParents: true,
+        allowTouchMove: false,
         // initialSlide: 5,
         autoHeight: true,
         pagination: {
