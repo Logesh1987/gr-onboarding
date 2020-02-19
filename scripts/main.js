@@ -114,6 +114,9 @@ var setupInit = function () {
             prevEl: '.setupSwiper-button-prev',
         }
     })
+    mySwiper.on('slideNextTransitionEnd', function() {
+        $('.setupSwiper-pagination .swiper-pagination-bullet-active').prev('.swiper-pagination-bullet').addClass('swiper-pagination-bullet-completed')
+    })
     $('label.switch input').change(function () {
         if (this.checked)
             $(this).parents('.setupSteps').removeClass('disabled')

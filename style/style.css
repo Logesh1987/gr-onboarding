@@ -69,13 +69,13 @@ body {
 .button.buttonOrange {
   cursor: pointer;
   color: #fff;
-  font-size: 1.4em;
+  font-size: 1.2em;
   border-color: #ff6332;
   background-color: #ff6332;
-  -webkit-box-shadow: 0 6px 0 0 #d0481d;
-          box-shadow: 0 6px 0 0 #d0481d;
+  -webkit-box-shadow: 0 4px 0 0 #d0481d;
+          box-shadow: 0 4px 0 0 #d0481d;
   border-width: 0.15em;
-  padding: 0.4em 1.4em;
+  padding: 0.75em 1.4em 0.75em 2em;
   position: relative;
   font-weight: normal;
   text-transform: none;
@@ -86,8 +86,8 @@ body {
   padding-left: 0.5em;
 }
 .button.buttonOrange:hover {
-  -webkit-box-shadow: 0 4px 0 0 #d0481d;
-          box-shadow: 0 4px 0 0 #d0481d;
+  -webkit-box-shadow: 0 2px 0 0 #d0481d;
+          box-shadow: 0 2px 0 0 #d0481d;
   top: 2px;
 }
 .button.buttonOrange:active {
@@ -761,7 +761,9 @@ section.sectionReady p {
   margin: 0;
 }
 section.sectionReady .button {
-  font-size: 1.3em;
+  font-size: 1em;
+  padding: 0.6em 2em 0.6em 3em;
+  text-transform: uppercase;
   display: block;
 }
 @media only screen and (max-width: 1500px) {
@@ -1152,6 +1154,7 @@ section.sectionReady .button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
 }
 .setupContainer .resetSetting i {
   margin-right: 0.4rem;
