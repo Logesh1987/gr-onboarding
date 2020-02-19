@@ -109,6 +109,26 @@ body {
   background-color: #fff;
   border-color: #fff;
 }
+.button.buttonBordered {
+  border: 1px solid #DBDBDB;
+  border-radius: 5px;
+  padding: 0.8em 1em;
+  font-weight: normal;
+  line-height: 1;
+  color: #092f42;
+}
+.button.buttonBordered i {
+  padding-left: 0.1em;
+  font-size: 1.4em;
+  color: #ff6332;
+  vertical-align: middle;
+  line-height: 0;
+  display: inline-block;
+  margin-top: -0.1em;
+}
+.button.buttonBordered:hover {
+  background-color: #dbdbdb;
+}
 @-webkit-keyframes heartBeat {
   0%,
   28%,
@@ -157,6 +177,9 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
+body.fp-viewing-2 .guidePageWrapper header {
+  opacity: 0;
+}
 .guidePageWrapper header .logo {
   width: 150px;
 }
@@ -166,6 +189,11 @@ body {
 }
 .guidePageWrapper header .button {
   font-size: 0.9em;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+body.fp-viewing-0 .guidePageWrapper header .button {
+  opacity: 0;
 }
 .guidePageWrapper[data-active="3"] .guidePageWrapper header {
   opacity: 0;
@@ -619,7 +647,7 @@ body {
 }
 .sectionSetup .setupSteps .stepInfo p {
   color: #6D9AAF;
-  opacity: 0.5;
+  opacity: 1;
   font-size: 0.9em;
   padding-right: 20%;
 }
@@ -651,7 +679,7 @@ section.sectionReady span.circle svg {
   width: 100%;
 }
 section.sectionReady span.circle .donut {
-  stroke-dashoffset: -1455;
+  stroke-dashoffset: 1575;
   -webkit-transition: stroke-dashoffset 1s 0.5s;
   transition: stroke-dashoffset 1s 0.5s;
 }

@@ -21,7 +21,7 @@ var guideInit = function () {
         } else increaseStep()
     }
     var stepPrev = function (e) {
-        e.preventDefault()``
+        e.preventDefault()
         if (step == 1) {
             fullpage_api.moveSectionUp();
         } else decreaseStep()

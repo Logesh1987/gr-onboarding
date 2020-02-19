@@ -23,6 +23,10 @@
 		align-items: center;
 		justify-content: space-between;
 		transition: opacity 0.5s;
+
+		body.fp-viewing-2 & {
+			opacity: 0;
+		}
 	
 		.logo {
 			width: 150px;
@@ -35,6 +39,10 @@
 	
 		.button {
 			font-size: 0.9em;
+			transition: opacity 0.5s;
+			body.fp-viewing-0 & {
+				opacity: 0;
+			}
 		}
 		.guidePageWrapper[data-active="3"] & {
 			opacity: 0;
@@ -429,7 +437,7 @@
 
 			p {
 				color: #6D9AAF;
-				opacity: 0.5;
+				opacity: 1;
 				font-size: 0.9em;
 				padding-right: 20%;
 			}
@@ -462,7 +470,7 @@ section.sectionReady {
 			width: 100%;
 		}
 		.donut {
-			stroke-dashoffset: -1455;
+			stroke-dashoffset: 1575;
 			transition: stroke-dashoffset 1s 0.5s;
 		}
 	}
