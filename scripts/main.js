@@ -134,6 +134,15 @@ var congratsInit = () => {
             $('.congratsPage').addClass('paused')
         }
     })
+
+    $('.rating input').change(e => {
+        if(e.target.value < 5) {
+            $(`.popupRate input[value="${e.target.value}"]`).prop('checked', true)
+            setTimeout(e => {
+                $('#feedbackModal').modal('show')
+            }, 1000)
+        }
+    })
 }
 
 window.addEventListener('load', function () {

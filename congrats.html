@@ -137,6 +137,78 @@
             </div>
         </div>
     </div>
+    <div class="feedbackModal modal fade" id="feedbackModal" tabindex="-1" role="dialog"
+        aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <a href="" data-dismiss="modal" aria-label="Close">&times;</a>
+                <h5 class="mt-4"><strong>Help us improve</strong></h5>
+                <div class="d-flex align-items-center justify-content-center p-3">
+                    <div class="rating popupRate">
+                        <input type="radio" id="popStar5" name="poprate" value="5" />
+                        <label for="popStar5" title="text">5 stars</label>
+                        <input type="radio" id="popStar4" name="poprate" value="4" />
+                        <label for="popStar4" title="text">4 stars</label>
+                        <input type="radio" id="popStar3" name="poprate" value="3" />
+                        <label for="popStar3" title="text">3 stars</label>
+                        <input type="radio" id="popStar2" name="poprate" value="2" />
+                        <label for="popStar2" title="text">2 stars</label>
+                        <input type="radio" id="popStar1" name="poprate" value="1" />
+                        <label for="popStar1" title="text">1 star</label>
+                    </div>
+                </div>
+                <p class="text-info text-center">
+                    <small>Let us know what went wrong</small>
+                </p>
+                <div class="predefinedFeedbacks d-flex flex-wrap justify-content-center">
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Don't like the look
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Can't find the things
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Too hard to use
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Missing feature
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Too slow to load
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Difficult to learn
+                        </label>
+                    </div>
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn">
+                            <input type="checkbox" checked autocomplete="off"> Others
+                        </label>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-10 mt-3 mb-3">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">Something else you want to say?</textarea>
+                    </div>
+                    <div class="col-10 mb-3 justify-content-end d-flex">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"

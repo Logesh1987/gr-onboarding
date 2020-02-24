@@ -129,6 +129,29 @@ body {
 .button.buttonBordered:hover {
   background-color: #dbdbdb;
 }
+.modal .modal-content {
+  padding: 30px 80px;
+}
+.modal.feedbackModal a[aria-label="Close"] {
+  position: absolute;
+  right: -1em;
+  top: 0.2em;
+  font-size: 2.4em;
+  color: grey;
+  line-height: 0.5;
+}
+.modal.feedbackModal a[aria-label="Close"]:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+.modal.feedbackModal .modal-dialog {
+  max-width: 740px;
+}
+.modal.feedbackModal .btn-success {
+  background-color: #2eca71;
+  border-color: #2eca71;
+  padding: 5px 40px;
+}
 @-webkit-keyframes heartBeat {
   0%,
   28%,
@@ -1553,8 +1576,8 @@ section.sectionReady .button {
   overflow-x: hidden;
 }
 .congratsPage section:after {
-  background: -webkit-gradient(linear, left top, left bottom, from(#EAF6F3), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to bottom, #EAF6F3 0%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaf6f3), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to bottom, #eaf6f3 0%, rgba(255, 255, 255, 0) 100%);
   content: '';
   position: absolute;
   width: 40%;
@@ -1907,7 +1930,7 @@ section.sectionReady .button {
   white-space: nowrap;
   cursor: pointer;
   font-size: 30px;
-  color: #BC8024;
+  color: #bc8024;
   margin: 0;
   line-height: 1;
 }
@@ -1937,4 +1960,39 @@ section.sectionReady .button {
 .rating input:checked ~ label:hover ~ label:before,
 .rating label:hover ~ input:checked ~ label:before {
   content: 'star';
+}
+.rating.popupRate {
+  pointer-events: none;
+}
+.rating.popupRate > label {
+  color: #979797;
+}
+.rating.popupRate > label:hover,
+.rating.popupRate > label:hover ~ label {
+  color: #979797;
+}
+.rating.popupRate input:checked + label:hover,
+.rating.popupRate input:checked + label:hover ~ label,
+.rating.popupRate input:checked ~ label:hover,
+.rating.popupRate input:checked ~ label:hover ~ label,
+.rating.popupRate label:hover ~ input:checked ~ label,
+.rating.popupRate input:checked ~ label {
+  color: #2eca71;
+}
+.predefinedFeedbacks .btn-group-toggle {
+  width: 25%;
+  text-align: center;
+  margin: 10px 0;
+}
+.predefinedFeedbacks .btn {
+  border: 1px solid #666;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 50px;
+  padding: 3px 10px;
+}
+.predefinedFeedbacks .btn.active {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
 }

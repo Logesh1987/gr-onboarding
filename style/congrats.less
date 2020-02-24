@@ -15,7 +15,7 @@
 		position: relative;
 		overflow-x: hidden;
 		&:after {
-			background: linear-gradient(to bottom, #EAF6F3 0%,rgba(255,255,255,0) 100%);
+			background: linear-gradient(to bottom, #eaf6f3 0%, rgba(255, 255, 255, 0) 100%);
 			content: '';
 			position: absolute;
 			width: 40%;
@@ -261,7 +261,7 @@
 			background-color: transparent;
 			transition: background-color 0.3s;
 			&:hover {
-				background-color: rgba(255,255,255,0.5);
+				background-color: rgba(255, 255, 255, 0.5);
 			}
 		}
 		li {
@@ -331,7 +331,7 @@
 		white-space: nowrap;
 		cursor: pointer;
 		font-size: 30px;
-		color: #BC8024;
+		color: #bc8024;
 		margin: 0;
 		line-height: 1;
 		&:before {
@@ -356,6 +356,43 @@
 		color: #fff;
 		&:before {
 			content: 'star';
+		}
+	}
+	&.popupRate {
+		pointer-events: none;
+		> label {
+			color: #979797;
+			&:hover,
+			&:hover ~ label {
+				color: #979797;
+			}
+		}
+		input:checked + label:hover,
+		input:checked + label:hover ~ label,
+		input:checked ~ label:hover,
+		input:checked ~ label:hover ~ label,
+		label:hover ~ input:checked ~ label,
+		input:checked ~ label {
+			color: #2eca71;
+		}
+	}
+}
+.predefinedFeedbacks {
+	.btn-group-toggle {
+		width: 25%;
+		text-align: center;
+		margin: 10px 0;
+	}
+	.btn {
+		border: 1px solid #666;
+		cursor: pointer;
+		font-size: 12px;
+		border-radius: 50px;
+		padding: 3px 10px;
+		&.active {
+			background-color: #000;
+			color: #fff;
+			border-color: #000;
 		}
 	}
 }

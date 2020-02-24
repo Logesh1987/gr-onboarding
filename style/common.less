@@ -141,3 +141,32 @@ body {
 	}
 }
 
+.modal {
+	.modal-content {
+		padding: 30px 80px;
+	}
+	&.feedbackModal {
+		
+		a[aria-label="Close"] {
+			position: absolute;
+			right: -1em;
+			top: 0.2em;
+			font-size: 2.4em;
+			color: grey;
+			line-height: 0.5;
+			&:hover {
+				text-decoration: none;
+				opacity: 0.8;
+			}
+		}
+		.modal-dialog {
+			max-width: 740px;
+		}
+		.btn-success {
+			background-color: #2eca71;
+			border-color: #2eca71;
+			padding: 5px 40px
+		}
+	}
+}
+
