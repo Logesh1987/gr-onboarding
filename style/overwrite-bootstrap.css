@@ -1,8 +1,41 @@
+
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+
+:root {
+    --orange: #E0711F;
+    --d-orange: #D55F07;
+    --l-orange: #F87B1F;
+    --green: #2ECA71;
+    --d-green: #3BAB6B;
+    --l-green: #4BEF91;
+    --yellow: #F6D62A;
+    --d-yellow: #D3BA36;
+    --l-yellow: #FFF34A;
+}
 .btn:focus {
     box-shadow: none !important;
 }
 .btn {
     border-radius: 0.5rem;
+}
+.btn-warning {
+    background-color: var(--orange);
+    border-color: var(--orange);
+}
+.btn-warning:hover {
+    background-color: var(--l-orange);
+}
+.btn-success {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+.btn-success:hover {
+    border-color: var(--green);
+    background-color: var(--l-green);
+}
+.custom-control-input:checked~.custom-control-label::before {
+    border-color: var(--green);
+    background-color: var(--green);
 }
 .setupSwiper .form-group {
     position: relative;

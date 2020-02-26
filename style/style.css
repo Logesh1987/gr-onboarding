@@ -922,10 +922,11 @@ section.sectionReady .button {
       -ms-flex-align: center;
           align-items: center;
 }
-.setupPage header .head h2 {
+.setupPage header .head h1 {
   color: #838383;
   font-size: 1.8em;
   font-weight: 500;
+  margin: 0;
 }
 .setupPage header .head .paginate {
   list-style: none;
@@ -1062,7 +1063,7 @@ section.sectionReady .button {
 .setupContainer .card.active .card-header {
   border-bottom-color: transparent !important;
 }
-.setupContainer .card.active .card-header h3 {
+.setupContainer .card.active .card-header h2 {
   font-size: 25px;
 }
 .setupContainer .card.active .card-header:after {
@@ -1086,7 +1087,7 @@ section.sectionReady .button {
   -webkit-transition: border-color 0.5s;
   transition: border-color 0.5s;
 }
-.setupContainer .card-header h3 {
+.setupContainer .card-header h2 {
   color: #000000;
   font-size: 20px;
   -webkit-transition: font-size 0.4s;
@@ -1485,6 +1486,7 @@ section.sectionReady .button {
 }
 .themesBlock .btnAdvancedSettings {
   display: block;
+  color: #fff;
   background: #549d90;
   border-color: #549d90;
   text-align: left;
