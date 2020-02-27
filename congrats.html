@@ -52,12 +52,12 @@
                                         spent</p>
                                 </li>
                             </ul>
+                            <a href="#" class="btn gotoDashboard">Go to Dashboard <i
+                                    class="material-icons">chevron_right</i></a>
                         </div>
                         <div class="otherContents">
                             <ul>
-                                <li><a href="#"><span>view all features<sup class="text-danger">*</sup></span></a></li>
-                                <li><a href="#">Best practices</a></li>
-                                <li><a href="#">Tips to promote your program</a></li>
+                                <li><a href="#">Tips to promote your program <sup class="text-danger">*</sup></a></li>
                             </ul>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                                     <p>Your loyalty program is <strong>Paused</strong>.</p>
                                 </div>
                             </div>
-                            <div class="statusInfo">
+                            <div class="statusInfo" style="display: none;">
                                 <i class="material-icons">info</i>
                                 <div>
                                     <i class="icon-settings"></i>
@@ -85,7 +85,603 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="setupList">
+
+                        <div class="setupContainer" id="setupAccordion">
+                            <div class="card">
+                                <div class="card-header collapsed" data-toggle="collapse" data-target="#setup"
+                                    aria-expanded="true" aria-controls="setup">
+                                    <h2>1. Setup</h2>
+                                </div>
+
+                                <div id="setup" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#setupAccordion">
+                                    <div class="card-body pr-0 pl-0">
+                                        <div class="setupItemContainer">
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Points Program</h3>
+                                                    <p>Purchase rewards for customers</p>
+                                                    <label class="switch" for="pointsProgram">
+                                                        <input type="checkbox" checked id="pointsProgram" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>Fixed Points</li>
+                                                        <li>Get 1 point for 1 euro purchase</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Signup Bonus</h3>
+                                                    <p>Signup bonus for new users</p>
+                                                    <label class="switch" for="signupbonus">
+                                                        <input type="checkbox" checked id="signupbonus" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>100 Welcome points for new signed up users</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Pay by Points</h3>
+                                                    <p>Setup pay by points</p>
+                                                    <label class="switch" for="paybypoints">
+                                                        <input type="checkbox" checked id="paybypoints" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>1 Reward Point is equal to 1€</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Referral Setup</h3>
+                                                    <p>Referral rewards for referrer</p>
+                                                    <label class="switch" for="refferalsetup">
+                                                        <input type="checkbox" checked id="refferalsetup" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>1 referral to have 200 reward point</li>
+                                                        <li>Fixed coupon with 20% off, no minimum value</li>
+                                                        <li>2 Referral limit per user</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Share on Facebook</h3>
+                                                    <p>When members share your message</p>
+                                                    <label class="switch" for="fbshare">
+                                                        <input type="checkbox" checked id="fbshare" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>100 Reward points</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Share on Twitter</h3>
+                                                    <p>When members share your message</p>
+                                                    <label class="switch" for="twshare">
+                                                        <input type="checkbox" checked id="twshare" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>100 Reward points</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Birthday Rewards</h3>
+                                                    <p>Lorem ipsum dollar iset acuulettt Lorem ipsum dollar iset
+                                                        acuulettt Lorem ipsum dollar</p>
+                                                    <label class="switch" for="bday">
+                                                        <input type="checkbox" checked id="bday" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>100 Reward point on birthday</li>
+                                                        <li>50 Reward point for entering birthday</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <h6 class="mt-3 mb-3 pausedRewardHead">Paused Rewards (During Setup)</h6><br><div class="setupItemContainer">
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>WOO Review Rewards</h3>
+                                                    <p>Reward reviews of products, service..</p>
+                                                    <label class="switch" for="woorewards">
+                                                        <input type="checkbox" id="woorewards" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>10 Reward point for approved review</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                            <div class="setupItemList">
+                                                <div class="stepHead">
+                                                    <h3>Subscribe to Newsletter if we have</h3>
+                                                    <p>Incentivize users for signing up to</p>
+                                                    <label class="switch" for="newsletter">
+                                                        <input type="checkbox" id="newsletter" />
+                                                        <i></i>
+                                                    </label>
+                                                </div>
+                                                <div class="setupListBody">
+                                                    <ul class="mt-4 mb-4">
+                                                        <li>10 Reward point for subscription</li>
+                                                    </ul>
+                                                    <button class="btn btn-outline-dark pr-4 pl-4 mt-4">Edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card rewardsBlock">
+                                <div class="card-header collapsed" data-toggle="collapse" data-target="#rewards"
+                                    aria-expanded="true" aria-controls="rewards">
+                                    <h2>2. Rewards</h2>
+                                    <div class="additionalElements">
+                                        <a href="#" class="btn btn-success addReward">Add Reward</a>
+                                    </div>
+                                </div>
+
+                                <div id="rewards" class="collapse " aria-labelledby="headingOne"
+                                    data-parent="#setupAccordion">
+                                    <div class="card-body">
+                                        <div class="rewardList">
+                                            <div class="rewardItem">
+                                                <div class="rewardDragger">
+                                                    <i class="material-icons">reorder</i>
+                                                </div>
+                                                <div class="rewardThumb">
+                                                    <figure
+                                                        style="background-image: url(https://picsum.photos/300/200)">
+                                                    </figure>
+                                                </div>
+                                                <div class="rewardInfo">
+                                                    <h5><strong>$5 off coupon</strong></h5>
+                                                    <p>Redeem $5 off coupon for 500 points</p>
+                                                    <hr>
+                                                    <div class="details">
+                                                        <span>Qty</span>
+                                                        <strong>Unlimited</strong>
+                                                        <span>Required Points</span>
+                                                        <strong>500 Pts</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="rewardControls">
+                                                    <a href="#"><i class="icon-undefined"></i></a>
+                                                    <label class="switch" for="r1">
+                                                        <input type="checkbox" checked id="r1" />
+                                                        <i></i>
+                                                    </label>
+                                                    <a href="#"><i class="material-icons">delete_outline</i></a>
+                                                </div>
+                                            </div>
+                                            <div class="rewardItem">
+                                                <div class="rewardDragger">
+                                                    <i class="material-icons">reorder</i>
+                                                </div>
+                                                <div class="rewardThumb">
+                                                    <figure
+                                                        style="background-image: url(https://picsum.photos/305/200)">
+                                                    </figure>
+                                                </div>
+                                                <div class="rewardInfo">
+                                                    <h5><strong>$25 off coupon</strong></h5>
+                                                    <p>Redeem $25 off coupon for 1500 points</p>
+                                                    <hr>
+                                                    <div class="details">
+                                                        <span>Qty</span>
+                                                        <strong>Unlimited</strong>
+                                                        <span>Required Points</span>
+                                                        <strong>500 Pts</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="rewardControls">
+                                                    <a href="#"><i class="icon-undefined"></i></a>
+                                                    <label class="switch" for="r1">
+                                                        <input type="checkbox" checked id="r1" />
+                                                        <i></i>
+                                                    </label>
+                                                    <a href="#"><i class="material-icons">delete_outline</i></a>
+                                                </div>
+                                            </div>
+                                        </div><br>
+                                        <h6 class="mt-3 mb-3 pausedRewardHead">Paused Rewards (During Setup)</h6><br>
+                                        <div class="rewardList">
+                                            <div class="rewardItem">
+                                                <div class="rewardDragger">
+                                                    <i class="material-icons">reorder</i>
+                                                </div>
+                                                <div class="rewardThumb">
+                                                    <figure
+                                                        style="background-image: url(https://picsum.photos/305/200)">
+                                                    </figure>
+                                                </div>
+                                                <div class="rewardInfo">
+                                                    <h5><strong>$25 off coupon</strong></h5>
+                                                    <p>Redeem $25 off coupon for 1500 points</p>
+                                                    <hr>
+                                                    <div class="details">
+                                                        <span>Qty</span>
+                                                        <strong>Unlimited</strong>
+                                                        <span>Required Points</span>
+                                                        <strong>500 Pts</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="rewardControls">
+                                                    <a href="#"><i class="icon-undefined"></i></a>
+                                                    <label class="switch" for="r4">
+                                                        <input type="checkbox" id="r4" />
+                                                        <i></i>
+                                                    </label>
+                                                    <a href="#"><i class="material-icons">delete_outline</i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card themesBlock">
+                                <div class="card-header collapsed" data-toggle="collapse" data-target="#themes"
+                                    aria-expanded="true" aria-controls="themes">
+                                    <h2>3. Themes</h2>
+                                </div>
+                                <div id="themes" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#setupAccordion">
+                                    <div class="card-body">
+                                        <nav class="themeSetupTab">
+                                            <div class="nav nav-tabs" id="theme-setup" role="tablist">
+                                                <a class="nav-item nav-link active" data-toggle="tab" href="#popup-tab"
+                                                    role="tab" aria-controls="popup-tab" aria-selected="true">Popup
+                                                    Setup</a>
+                                                <a class="nav-item nav-link" data-toggle="tab" href="#widget-tab"
+                                                    role="tab" aria-controls="widget-tab" aria-selected="false">Widget
+                                                    Setup</a>
+                                            </div>
+                                        </nav>
+                                        <div class="tab-content" id="theme-setupContent">
+                                            <div class="tab-pane fade show active popupSetup" id="popup-tab"
+                                                role="tabpanel" aria-labelledby="popup-tab">
+                                                <div class="row justify-content-between">
+                                                    <div class="col-md-5">sad</div>
+                                                    <div class="col-md-5">
+                                                        <nav>
+                                                            <div class="nav nav-pills mb-4" id="popup-tab"
+                                                                role="tablist">
+                                                                <a class="nav-item nav-link active" id="nav-mobile-tab"
+                                                                    data-toggle="tab" href="#nav-mobile" role="tab"
+                                                                    aria-controls="nav-mobile"
+                                                                    aria-selected="true">Home</a>
+                                                                <a class="nav-item nav-link" id="nav-desktop-tab"
+                                                                    data-toggle="tab" href="#nav-desktop" role="tab"
+                                                                    aria-controls="nav-desktop"
+                                                                    aria-selected="false">Profile</a>
+                                                            </div>
+                                                        </nav>
+                                                        <div class="tab-content" id="popup-tabContent">
+                                                            <div class="tab-pane fade show active" id="nav-mobile"
+                                                                role="tabpanel" aria-labelledby="nav-mobile-tab">
+                                                                <h6 class="mb-4"><strong>Popup styles</strong></h6>
+                                                                <div class="form-group">
+                                                                    <label>Font Family</label>
+                                                                    <select class="form-control" id="family">
+                                                                        <option>Monserrat</option>
+                                                                        <option>Arial</option>
+                                                                        <option>Helvetica</option>
+                                                                        <option>Serif</option>
+                                                                        <option>Impact</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div id="color-picker-component"
+                                                                    class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                    <label for="family" class="col-md-5 p-0 m-0">Text
+                                                                        Colors</label>
+                                                                    <div class="cPicker col-md-7 p-0">
+                                                                        <input type="text" value="#38a677"
+                                                                            class="form-control" />
+                                                                        <span class="input-group-addon"><i></i></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="color-picker-component"
+                                                                    class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                    <label for="family" class="col-md-5 p-0 m-0">BG
+                                                                        Colors</label>
+                                                                    <div class="cPicker col-md-7 p-0">
+                                                                        <input type="text" value="#38a677"
+                                                                            class="form-control" />
+                                                                        <span class="input-group-addon"><i></i></span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-success mt-3">Save
+                                                                    and Next</button>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="nav-desktop" role="tabpanel"
+                                                                aria-labelledby="nav-desktop-tab">
+                                                                <h6><strong>Desktop Popup styles</strong></h6>
+                                                                <div class="form-group">
+                                                                    <label>Font Family</label>
+                                                                    <select class="form-control" id="family">
+                                                                        <option>Monserrat</option>
+                                                                        <option>Arial</option>
+                                                                        <option>Helvetica</option>
+                                                                        <option>Serif</option>
+                                                                        <option>Impact</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div id="color-picker-component"
+                                                                    class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                    <label for="family" class="col-md-5 p-0 m-0">Text
+                                                                        Colors</label>
+                                                                    <div class="cPicker col-md-7 p-0">
+                                                                        <input type="text" value="#38a677"
+                                                                            class="form-control" />
+                                                                        <span class="input-group-addon"><i></i></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div id="color-picker-component"
+                                                                    class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                    <label for="family" class="col-md-5 p-0 m-0">BG
+                                                                        Colors</label>
+                                                                    <div class="cPicker col-md-7 p-0">
+                                                                        <input type="text" value="#38a677"
+                                                                            class="form-control" />
+                                                                        <span class="input-group-addon"><i></i></span>
+                                                                    </div>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-success mt-3">Save
+                                                                    and Next</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade widgetSetup" id="widget-tab" role="tabpanel"
+                                                aria-labelledby="widget-tab">
+                                                <div class="row justify-content-between">
+                                                    <div class="col-md-5">sad</div>
+                                                    <div class="col-md-5">
+                                                        <ul class="nav nav-tabs widget-tabs-nav" id="widgetPlacement"
+                                                            role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active"
+                                                                    id="widget-placement-mobile-tab" data-toggle="tab"
+                                                                    href="#widget-placement-mobile" role="tab"
+                                                                    aria-controls="widget-placement-mobile"
+                                                                    aria-selected="true">Mobile</a>
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="widget-placement-desktop-tab"
+                                                                    data-toggle="tab" href="#widget-placement-desktop"
+                                                                    role="tab" aria-controls="widget-placement-desktop"
+                                                                    aria-selected="false">Desktop</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="tab-content widget-tabs-panes"
+                                                            id="widgetPlacementContent">
+                                                            <div class="tab-pane fade show active"
+                                                                id="widget-placement-mobile" role="tabpanel"
+                                                                aria-labelledby="widget-placement-mobile-tab">
+                                                                <div class="form-group">
+                                                                    <label>Widget Placement</label>
+                                                                    <select class="form-control">
+                                                                        <option>Mid Right</option>
+                                                                        <option>Mid Left</option>
+                                                                        <option>Top Right</option>
+                                                                        <option>Top Left</option>
+                                                                        <option>Bottom Right</option>
+                                                                        <option>Bottom Left</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group mt-4">
+                                                                    <label>Widget Look</label>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wm-look-1"
+                                                                            name="wm-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wm-look-1">Compact</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wm-look-2"
+                                                                            name="wm-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wm-look-2">Full</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wm-look-3"
+                                                                            name="wm-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wm-look-3">Hide Widget</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="widget-placement-desktop"
+                                                                role="tabpanel"
+                                                                aria-labelledby="widget-placement-desktop-tab">
+                                                                <div class="form-group">
+                                                                    <label>Widget Placement Desktop</label>
+                                                                    <select class="form-control">
+                                                                        <option>Mid Right</option>
+                                                                        <option>Mid Left</option>
+                                                                        <option>Top Right</option>
+                                                                        <option>Top Left</option>
+                                                                        <option>Bottom Right</option>
+                                                                        <option>Bottom Left</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group mt-4">
+                                                                    <label>Widget Look Desktop</label>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wd-look-1"
+                                                                            name="wd-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wd-look-1">Compact</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wd-look-2"
+                                                                            name="wd-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wd-look-2">Full</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio">
+                                                                        <input type="radio" id="wd-look-3"
+                                                                            name="wd-look" class="custom-control-input">
+                                                                        <label class="custom-control-label"
+                                                                            for="wd-look-3">Hide Widget</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a class="btn btn-default btnAdvancedSettings collapsed"
+                                                            data-toggle="collapse" href="#advanceSettings" role="button"
+                                                            aria-expanded="false"
+                                                            aria-controls="widgetAdvanced">Advanced Settings</a>
+                                                        <div class="collapse multi-collapse" id="advanceSettings">
+                                                            <ul class="nav nav-tabs widget-tabs-nav" id="widgetAdvanced"
+                                                                role="tablist">
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active" id="widget-text-tab"
+                                                                        data-toggle="tab" href="#widget-text" role="tab"
+                                                                        aria-controls="widget-text"
+                                                                        aria-selected="true">Text</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" id="widget-icons-tab"
+                                                                        data-toggle="tab" href="#widget-icons"
+                                                                        role="tab" aria-controls="widget-icons"
+                                                                        aria-selected="false">Icon & BG</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" id="widget-shape-tab"
+                                                                        data-toggle="tab" href="#widget-shape"
+                                                                        role="tab" aria-controls="widget-shape"
+                                                                        aria-selected="false">Shape</a>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="tab-content widget-tabs-panes"
+                                                                id="widgetAdvancedContent">
+                                                                <div class="tab-pane fade show active" id="widget-text"
+                                                                    role="tabpanel" aria-labelledby="widget-text-tab">
+                                                                    <div class="form-group">
+                                                                        <label>Widget Title</label>
+                                                                        <input type="text" value="Rewards"
+                                                                            class="form-control">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label>Widget Subtext</label>
+                                                                        <textarea name="" class="form-control" cols="30"
+                                                                            rows="3">Mid Right</textarea>
+                                                                    </div>
+                                                                    <hr class="mb-5 mt-5">
+                                                                    <h6 class="mb-4"><strong>Text Styles</strong></h6>
+                                                                    <div class="form-group">
+                                                                        <label>Font Family</label>
+                                                                        <select class="form-control" id="family">
+                                                                            <option>Monserrat</option>
+                                                                            <option>Arial</option>
+                                                                            <option>Helvetica</option>
+                                                                            <option>Serif</option>
+                                                                            <option>Impact</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div id="color-picker-component"
+                                                                        class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                        <label for="family"
+                                                                            class="col-md-5 p-0 m-0">Text Colors</label>
+                                                                        <div class="cPicker col-md-7 p-0">
+                                                                            <input type="text" value="#38a677"
+                                                                                class="form-control" />
+                                                                            <span
+                                                                                class="input-group-addon"><i></i></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="widget-icons"
+                                                                    role="tabpanel" aria-labelledby="widget-icons-tab">
+                                                                    <div id="color-picker-component"
+                                                                        class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                        <label for="family"
+                                                                            class="col-md-5 p-0 m-0">Icon BG
+                                                                            Color</label>
+                                                                        <div class="cPicker col-md-7 p-0">
+                                                                            <input type="text" value="#ffffff"
+                                                                                class="form-control" />
+                                                                            <span
+                                                                                class="input-group-addon"><i></i></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="color-picker-component"
+                                                                        class="form-group d-flex flex-row align-items-center colorpicker-component">
+                                                                        <label for="family" class="col-md-5 p-0 m-0">BG
+                                                                            Color</label>
+                                                                        <div class="cPicker col-md-7 p-0">
+                                                                            <input type="text" value="#389F48"
+                                                                                class="form-control" />
+                                                                            <span
+                                                                                class="input-group-addon"><i></i></span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="tab-pane fade" id="widget-shape"
+                                                                    role="tabpanel" aria-labelledby="widget-shape-tab">
+                                                                    <div class="form-group">
+                                                                        <label class="mb-4">Widget corner
+                                                                            roundness</label>
+                                                                        <input type="range" data-rangeslider>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label class="mb-4 mt-5">Widget size</label>
+                                                                        <input type="range" data-rangeslider>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="setupList">
                             <ul>
                                 <li>
                                     <a href="./setup.html" class="gotoLink"></a>
@@ -112,7 +708,7 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -199,7 +795,8 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-10 mt-3 mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4">Something else you want to say?</textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            rows="4">Something else you want to say?</textarea>
                     </div>
                     <div class="col-10 mb-3 justify-content-end d-flex">
                         <button type="submit" class="btn btn-success">Submit</button>

@@ -19,7 +19,7 @@
 			content: '';
 			position: absolute;
 			width: 40%;
-			height: 20%;
+			height: 10vw;
 			right: 0;
 			top: 0;
 			transform: skew(-40deg) translateX(40%);
@@ -29,12 +29,30 @@
 		}
 	}
 	.controlBox {
-		box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
+		box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.06);
 		background-color: #fff;
 		border: 1px solid #e4e4e4;
 		border-radius: 5px;
-		padding: 30px;
+		padding: 30px 30px 2.8em;
 		margin-top: 50px;
+		position: relative;
+		.gotoDashboard {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			background: #E4FFF0;
+			border-top: 1px solid #04A74C;
+			border-radius: 0;
+			color: #04A74C;
+			padding: 0.6em 1em;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			&:hover {
+				background: #c9fbe0;
+			}
+		}
 		.btn-outline-dark {
 			margin-top: 1em;
 			border-radius: 5px;
@@ -52,7 +70,7 @@
 		}
 	}
 	.otherContents {
-		box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.1);
+		box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.06);
 		background-color: #fff;
 		border: 1px solid #e4e4e4;
 		border-radius: 5px;
@@ -153,6 +171,7 @@
 			h2 {
 				font-size: 42px;
 				font-weight: bold;
+				line-height: 1.3;
 			}
 			p {
 				font-size: 22px;
@@ -218,6 +237,73 @@
 			}
 			span {
 				font-size: 12px;
+			}
+		}
+	}
+	.setupContainer {
+		border-color: #000;
+		background-color: #fff;
+		margin-top: 0;
+		position: relative;
+		z-index: 2;
+		.card-header {
+			&:after {
+				width: 15px;
+				height: 15px;
+				transform: translateY(-50%) rotate(45deg);
+			}
+			&.collapsed:after {
+				transform: translateY(-50%) rotate(-45deg);
+			}
+
+		}
+	}
+	h6.pausedRewardHead {
+		color: #549D90;
+	}
+	.setupItemContainer {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	.setupItemList {
+		width: 48%;
+		border: 1px solid #C6C6C6;
+		border-radius: 3px;
+		padding: 30px;
+		margin-top: 20px;
+		.stepHead {
+			padding-right: 3.5em;
+			h3 {
+				font-weight: normal;
+				margin: 0;
+			}
+			h3, p {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+		}
+		.setupListBody {
+			> ul {
+				list-style: none;
+				padding: 0 4em 0 0;
+			}
+			li {
+				font-size: 14px;
+				padding-left: 1.8em;
+				position: relative;
+				&:before {
+					content: 'check';
+					font-family: "Material Icons";
+					position: absolute;
+					left: 0;
+					top: 0;
+					color: #28A08C;
+					font-size: 1.2em;
+					line-height: 1;
+				}
 			}
 		}
 	}
