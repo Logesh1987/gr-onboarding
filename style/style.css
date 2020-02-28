@@ -1003,6 +1003,7 @@ section.sectionReady .button {
 }
 .setupContainer .setupSwiper-navigator {
   padding: 25px 0;
+  margin: 0 25px;
   border-top: 1px solid #ccc;
   text-align: center;
 }
@@ -1069,6 +1070,9 @@ section.sectionReady .button {
 .setupContainer .card.active .card-header:after {
   -webkit-transform: translateY(-90%) rotate(45deg);
           transform: translateY(-90%) rotate(45deg);
+}
+.setupContainer .card-body {
+  padding: 1.25rem 0;
 }
 .setupContainer .card-header {
   cursor: pointer;
@@ -1190,23 +1194,25 @@ section.sectionReady .button {
 }
 .setupContainer .recommendFloater {
   font-size: 12px;
+  margin: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.setupContainer .recommendFloater i.info {
+  color: #1064ff;
+}
+.setupContainer .recommendFloater .floaterTxt {
   color: #1b708e;
   background-color: #e5eff5;
   padding: 20px;
   border-radius: 10px;
   position: absolute;
-  right: 0;
-  top: 0;
-  width: 200px;
-  -webkit-transform: translate(80%, 10%);
-          transform: translate(80%, 10%);
-}
-.setupContainer .recommendFloater i.info {
-  position: absolute;
-  color: #1064ff;
   left: 0;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 0;
+  width: 190px;
+  -webkit-transform: translate(15%, 0);
+          transform: translate(15%, 0);
 }
 .setupContainer .greetingTemplate {
   background: #fef9f3;
