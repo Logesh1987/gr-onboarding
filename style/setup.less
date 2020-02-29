@@ -297,10 +297,42 @@
 			font-size: 2.2em;
 		}
 	}
-	.btnLoyaltyPoints {
-		button {
+	.btnGrpCheck {
+		input {
+			position: absolute;
+			opacity: 0;
+		}
+		input:checked ~ label span.btn-outline-dark {
+			&:first-child {
+				background-color: #343a40;
+				color: #fff;
+			}
+			&:last-child {
+				background-color: #fff;
+				color: #343a40;
+			}
+
+		}
+		span.btn-outline-dark {
+			float: left;
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			&:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+				background-color: #343a40;
+				color: #fff;
+			}
+		}
+	}
+	.btnGrpToggle {
+		.btn-outline-dark {
+			cursor: pointer;
 			font-size: 0.9rem;
 			padding: 0.2rem 1rem;
+			box-shadow: none !important;
 		}
 	}
 	.recommendFloater {

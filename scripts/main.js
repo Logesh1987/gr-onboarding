@@ -98,6 +98,8 @@ var setupInit = function () {
         $(e.target).parent('.card').removeClass('active')
     })
     $('#setupAccordion').on('show.bs.collapse', function (e) {
+        $('#setupPaginate li').removeClass('current')
+        $(`#setupPaginate li[data-paginate="${e.target.id}"]`).addClass('current')
         $(e.target).parent('.card').addClass('active')
     })
     var mySwiper = new Swiper('.setupSwiper', {
@@ -124,6 +126,29 @@ var setupInit = function () {
             $(this).parents('.setupSteps').addClass('disabled')
     })
     $('.colorpicker-component').colorpicker();
+
+    $('input[name="loyaltyPoints"]').change(function(e) {
+        $('.loyaltyPtForm').hide()
+        $(`#input_${e.target.id}`).show()
+    })
+
+    $('input[name="cType"]').change(function(e) {
+        if(e.target.id === "freeship") 
+            $('.maxCouponValue').hide()
+        else
+            $('.maxCouponValue').show()
+    })
+
+    $('#limitReferral').change(function(e) {
+        this.checked ? $('#limitReferralForm').show() : $('#limitReferralForm').hide() 
+    })
+
+    // bOUNCER VALIDATIONS
+    mySwiper.on('slideChange', function() {
+        console.log(validatePointsProgram.validateAll('form.form-points-program'))
+
+    })
+    var validatePointsProgram = new Bouncer('form.form-points-program');
 }
 
 var congratsInit = () => {

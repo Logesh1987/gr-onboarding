@@ -1203,9 +1203,37 @@ section.sectionReady .button {
   margin-right: 0.4rem;
   font-size: 2.2em;
 }
-.setupContainer .btnLoyaltyPoints button {
+.setupContainer .btnGrpCheck input {
+  position: absolute;
+  opacity: 0;
+}
+.setupContainer .btnGrpCheck input:checked ~ label span.btn-outline-dark:first-child {
+  background-color: #343a40;
+  color: #fff;
+}
+.setupContainer .btnGrpCheck input:checked ~ label span.btn-outline-dark:last-child {
+  background-color: #fff;
+  color: #343a40;
+}
+.setupContainer .btnGrpCheck span.btn-outline-dark {
+  float: left;
+}
+.setupContainer .btnGrpCheck span.btn-outline-dark:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.setupContainer .btnGrpCheck span.btn-outline-dark:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #343a40;
+  color: #fff;
+}
+.setupContainer .btnGrpToggle .btn-outline-dark {
+  cursor: pointer;
   font-size: 0.9rem;
   padding: 0.2rem 1rem;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 .setupContainer .recommendFloater {
   font-size: 12px;
