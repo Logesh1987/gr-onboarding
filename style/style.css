@@ -1127,10 +1127,25 @@ section.sectionReady .button {
   max-width: 500px;
   margin: auto;
 }
-.setupContainer .setupSteps.disabled .stepBody,
+.setupContainer .setupSteps.disabled .upmarketing {
+  display: block;
+}
+.setupContainer .setupSteps.disabled .stepWrapper,
 .setupContainer .setupSteps.disabled .stepFoot {
   pointer-events: none;
   opacity: 0.5;
+}
+.setupContainer .upmarketing {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  top: 0;
+  font-size: 14px;
+  color: #856404;
+  display: none;
 }
 .setupContainer .stepHead {
   position: relative;
