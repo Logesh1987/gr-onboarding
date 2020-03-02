@@ -102,6 +102,14 @@ var setupInit = function () {
         $(`#setupPaginate li[data-paginate="${e.target.id}"]`).addClass('current')
         $(e.target).parent('.card').addClass('active')
     })
+    $.validator.addMethod(
+        "regex",
+        function (value, element, regexp) {
+            var re = new RegExp(regexp);
+            return this.optional(element) || re.test(value);
+        },
+        "Please check your input."
+    );
     var mySwiper = new Swiper('.setupSwiper', {
         observer: true,
         observeParents: true,
@@ -111,12 +119,12 @@ var setupInit = function () {
         pagination: {
             el: '.setupSwiper-pagination',
         },
-        navigation: {
-            nextEl: '.setupSwiper-button-next',
-            prevEl: '.setupSwiper-button-prev',
-        }
+        // navigation: {
+        //     nextEl: '.setupSwiper-button-next',
+        //     prevEl: '.setupSwiper-button-prev',
+        // }
     })
-    mySwiper.on('slideNextTransitionEnd', function() {
+    mySwiper.on('slideNextTransitionEnd', function () {
         $('.setupSwiper-pagination .swiper-pagination-bullet-active').prev('.swiper-pagination-bullet').addClass('swiper-pagination-bullet-completed')
     })
     $('label.switch input').change(function () {
@@ -127,32 +135,62 @@ var setupInit = function () {
     })
     $('.colorpicker-component').colorpicker();
 
-    $('input[name="loyaltyPoints"]').change(function(e) {
+    $('input[name="loyaltyPoints"]').change(function (e) {
         $('.loyaltyPtForm').hide()
         $(`#input_${e.target.id}`).show()
     })
 
-    $('input[name="cType"]').change(function(e) {
-        if(e.target.id === "freeship") 
+    $('input[name="cType"]').change(function (e) {
+        if (e.target.id === "freeship")
             $('.maxCouponValue').hide()
         else
             $('.maxCouponValue').show()
     })
 
-    $('#limitReferral').change(function(e) {
-        this.checked ? $('#limitReferralForm').show() : $('#limitReferralForm').hide() 
+    $('#limitReferral').change(function (e) {
+        this.checked ? $('#limitReferralForm').show() : $('#limitReferralForm').hide()
     })
 
     // bOUNCER VALIDATIONS
-    mySwiper.on('slideChange', function() {
-
+    $('.setupSwiper-button-next').click(e => {
+        console.log($('.swiper-slide-active form ').valid())
+        // $('.swiper-slide-active form ').valid() &&
+        //     mySwiper.slideNext()
     })
-    
+    $('.setupSwiper-button-prev').click(e => {
+        mySwiper.slidePrev()
+    })
+    mySwiper.on('slideChange', function () {
+        console.log(mySwiper.previousIndex)
+        console.log(mySwiper.slides)
+    })
+
+    $('#form-points-program').validate({
+        errorElement: "em",
+        rules: {
+            purchaseFor: {
+                required: "#fixed:checked",
+                min: "^[1-9][0-9]?$|^100$"
+            },
+            rewardPoint: {
+                required: "#fixed:checked",
+                min: 1
+            },
+            purchasePercent: {
+                required: "#percentage:checked",
+                min: 10
+            }
+        },
+        submitHandler: function (form) {
+            // do other things for a valid form
+            alert()
+        }
+    })
 }
 
 var congratsInit = () => {
     $('#programSwitch').change(e => {
-        if(e.target.checked) {
+        if (e.target.checked) {
             $('.congratsPage').removeClass('paused')
         } else {
             $('.congratsPage').addClass('paused')
@@ -160,7 +198,7 @@ var congratsInit = () => {
     })
 
     $('.rating input').change(e => {
-        if(e.target.value < 5) {
+        if (e.target.value < 5) {
             $(`.popupRate input[value="${e.target.value}"]`).prop('checked', true)
             setTimeout(e => {
                 $('#feedbackModal').modal('show')

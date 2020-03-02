@@ -71,7 +71,7 @@
                       </div>
                       <div class="stepWrapper">
                           <h6>Loyalty Points</h6>
-                          <form class="form-points-program">
+                          <form id="form-points-program">
                             <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
                               <label class="btn btn-outline-dark active">
                                 <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" checked> Fixed
@@ -84,7 +84,7 @@
                               <div class="form-group col-md-5">
                                 <div class="input-group-prepend">€</div>
                                 <label for="purchaseFor">Purchase for</label>
-                                <input type="number" class="form-control" id="purchaseFor" value="1" required>
+                                <input type="number" class="form-control" id="purchaseFor" required>
                               </div>
                               <div class="col-md-2 text-center">
                                 to get
@@ -96,8 +96,8 @@
                             </div>
                             <div id="input_percentage" class="loyaltyPtForm form-row" style="display: none;">
                               <div class="form-group col-md-5">
-                                <label for="inputEmail4">% of purchase amount.</label>
-                                <input type="number" class="form-control" id="inputEmail4" value="1">
+                                <label for="purchasePercent">% of purchase amount.</label>
+                                <input type="text" class="form-control" id="purchasePercent" value="1" required>
                               </div>
                             </div>
                           </form>
@@ -868,6 +868,8 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
+  <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
