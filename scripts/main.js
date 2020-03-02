@@ -145,10 +145,9 @@ var setupInit = function () {
 
     // bOUNCER VALIDATIONS
     mySwiper.on('slideChange', function() {
-        console.log(validatePointsProgram.validateAll('form.form-points-program'))
 
     })
-    var validatePointsProgram = new Bouncer('form.form-points-program');
+    
 }
 
 var congratsInit = () => {
