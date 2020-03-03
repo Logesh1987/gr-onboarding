@@ -56,7 +56,7 @@
                       <h3>Points Program</h3>
                       <p>Start rewarding your customers for purchases</p>
                       <label class="switch" for="pointsProgram">
-                        <input type="checkbox" checked id="pointsProgram" />
+                        <input type="checkbox" name="mainSwitch" checked id="pointsProgram" />
                         <i></i>
                       </label>
                     </div>
@@ -70,37 +70,40 @@
                         </div>
                       </div>
                       <div class="stepWrapper">
-                          <h6>Loyalty Points</h6>
-                          <form id="form-points-program">
-                            <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                              <label class="btn btn-outline-dark active">
-                                <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" checked> Fixed
-                              </label>
-                              <label class="btn btn-outline-dark">
-                                <input type="radio" name="loyaltyPoints" id="percentage" autocomplete="off"> Percentage
-                              </label>
-                            </div><br><br>
-                            <div id="input_fixed" class="loyaltyPtForm form-row align-items-center">
-                              <div class="form-group col-md-5">
-                                <div class="input-group-prepend">€</div>
-                                <label for="purchaseFor">Purchase for</label>
-                                <input type="number" class="form-control" id="purchaseFor" required>
-                              </div>
-                              <div class="col-md-2 text-center">
-                                to get
-                              </div>
-                              <div class="form-group col-md-5">
-                                <label for="rewardPoint">Reward Point</label>
-                                <input type="number" class="form-control" id="rewardPoint" value="1" required>
-                              </div>
+                        <h6>Loyalty Points</h6>
+                        <form id="form-points-program">
+                          <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
+                            <label class="btn btn-outline-dark active">
+                              <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" checked> Fixed
+                            </label>
+                            <label class="btn btn-outline-dark">
+                              <input type="radio" name="loyaltyPoints" id="percentage" autocomplete="off"> Percentage
+                            </label>
+                          </div><br><br>
+                          <div id="input_fixed" class="loyaltyPtForm form-row align-items-start">
+                            <div class="form-group col-md-5">
+                              <div class="input-group-prepend">€</div>
+                              <label for="purchaseFor">Purchase for</label>
+                              <input type="number" class="form-control" id="purchaseFor" name="purchaseFor" value="1">
                             </div>
-                            <div id="input_percentage" class="loyaltyPtForm form-row" style="display: none;">
-                              <div class="form-group col-md-5">
-                                <label for="purchasePercent">% of purchase amount.</label>
-                                <input type="text" class="form-control" id="purchasePercent" value="1" required>
-                              </div>
+                            <div class="col-md-2 text-center mt-4 pt-1">
+                              to get
                             </div>
-                          </form>
+                            <div class="form-group col-md-5">
+                              <label for="rewardPoint">Reward Point</label>
+                              <input type="number" class="form-control" id="rewardPoint" name="rewardPoint" value="1">
+                            </div>
+                            <div class="col-6" id="purchaseFor-errorWrap"></div>
+                            <div class="col-6" id="rewardPoint-errorWrap"></div>
+                          </div>
+                          <div id="input_percentage" class="loyaltyPtForm form-row" style="display: none;">
+                            <div class="form-group col-md-5">
+                              <label for="purchasePercent">% of purchase amount.</label>
+                              <input type="number" class="form-control" id="purchasePercent" name="purchasePercent"
+                                value="1">
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -119,7 +122,7 @@
                       <h3>Sign Up Bonus</h3>
                       <p>Reward customers for creating an account on your store</p>
                       <label class="switch" for="signupBonus">
-                        <input type="checkbox" checked id="signupBonus" />
+                        <input type="checkbox" name="mainSwitch" checked id="signupBonus" />
                         <i></i>
                       </label>
                     </div>
@@ -128,32 +131,35 @@
                         This feature could boost your sales by <br>200% from our customers reviews
                       </div>
                       <div class="stepWrapper">
-                        <div class="row">
-                          <div class="form-group col-md-6">
-                            <label for="inputEmail4">Welcome Bonus Point</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="100">
+                        <form id="form-signup-bonus">
+                          <div class="row">
+                            <div class="form-group col-md-6">
+                              <label for="welcomeBonus">Welcome Bonus Point</label>
+                              <input type="number" class="form-control" name="welcomeBonus" id="welcomeBonus"
+                                value="100">
+                            </div>
+                          </div><br>
+                          <h6>Welcome Note</h6>
+                          <div class="row d-flex align-items-center">
+                            <div class="col-md-5 pr-0">
+                              <div class="btn-group btnGrpToggle btnGrpCheck">
+                                <input type="checkbox" id="welcomeNoteMandate">
+                                <label for="welcomeNoteMandate">
+                                  <span class="btn btn-outline-dark">Show</span>
+                                  <span class="btn btn-outline-dark">Hidden</span>
+                                </label>
+                              </div>
+                            </div>
+                            <a href="#" class="btn btn-link">Sample</a>
                           </div>
-                        </div><br>
-                        <h6>Welcome Note</h6>
-                        <div class="row d-flex align-items-center">
-                          <div class="col-md-5">
-                            <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                              <label class="btn btn-outline-dark active">
-                                <input type="radio" name="welcomeNote" id="show" autocomplete="off" checked> Show
-                              </label>
-                              <label class="btn btn-outline-dark">
-                                <input type="radio" name="welcomeNote" id="hide" autocomplete="off"> Hidden
-                              </label>
+                          <div class="form-row align-items-center">
+                            <div class="form-group col-md-12">
+                              <label for="inputEmail4">Welcome Note</label>
+                              <textarea class="form-control" name="welcomeNote" id="welcomeNote" cols="30"
+                                rows="5"></textarea>
                             </div>
                           </div>
-                          <a href="#" class="btn btn-link">Sample</a>
-                        </div>
-                        <div class="form-row align-items-center">
-                          <div class="form-group col-md-12">
-                            <label for="inputEmail4">Welcome Note</label>
-                            <textarea class="form-control" cols="30" rows="5" value="100"></textarea>
-                          </div>
-                        </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -172,27 +178,30 @@
                       <h3>Pay by Points</h3>
                       <p>Setup if customers can pay using their points</p>
                       <label class="switch" for="payPoints">
-                        <input type="checkbox" checked id="payPoints" />
+                        <input type="checkbox" name="mainSwitch" checked id="payPoints" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
                         <h6>Set Reward Point Value</h6>
-                        <div class="form-row align-items-center">
-                          <div class="form-group col-md-2">
-                            <div class="input-group-prepend">€</div>
-                            <input type="number" readonly class="form-control" id="inputEmail4" value="1">
+                        <form id="form-payby-points">
+                          <div class="form-row align-items-center">
+                            <div class="form-group col-md-2">
+                              <div class="input-group-prepend">€</div>
+                              <input type="number" readonly class="form-control" id="inputEmail4" value="1">
+                            </div>
+                            <div class="col-md-3  text-center">is equal to</div>
+                            <div class="form-group col-md-4">
+                              <label for="pbpRewardpoints">Reward Point</label>
+                              <input type="number" class="form-control" id="pbpRewardpoints" name="pbpRewardpoints"
+                                value="100">
+                            </div>
+                            <div class="col-md-2 text-center">
+                              <a href="#" class="btn btn-link">Sample</a>
+                            </div>
                           </div>
-                          <div class="col-md-3  text-center">is equal to</div>
-                          <div class="form-group col-md-4">
-                            <label for="inputEmail4">Reward Point</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="100">
-                          </div>
-                          <div class="col-md-2 text-center">
-                            <a href="#" class="btn btn-link">Sample</a>
-                          </div>
-                        </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot">&nbsp;</div>
@@ -204,81 +213,85 @@
                       <h3>Referral Program</h3>
                       <p>Setup refer a friend program</p>
                       <label class="switch" for="referralProgram">
-                        <input type="checkbox" checked id="referralProgram" />
+                        <input type="checkbox" name="mainSwitch" checked id="referralProgram" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
                         <h6>Reward Points for sucessful referrals</h6>
-                        <div class="row">
-                          <div class="mt-2 mb-2 form-group col-md-5">
-                            <input type="number" class="form-control" id="inputEmail4" value="200">
-                          </div>
-                        </div>
-                        <hr class="mt-4 mb-4">
-                        <h6>Goals</h6>
-                        <div class="row">
-                          <div class="mt-2 mb-2 form-group col-md-5">
-                            <label for="">Total Numbers</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="1">
-                          </div>
-                          <div class="col-md-12">
-                            <a href="#" class="btn btn-link p-0"><small>Get no. of invited friends to purchase</small></a>
-                          </div>
-                        </div>
-                        <hr class="mt-4 mb-4">
-                        <h6>Limit Referral Rewards Per Users?</h6>
-                        <div class="row">
-                          <div class="col-md-12 mt-2 mb-3">
-                            <div class="btn-group btnGrpToggle btnGrpCheck">
-                              <input type="checkbox" checked name="limitReferral" id="limitReferral">
-                              <label for="limitReferral">
-                                <span class="btn btn-outline-dark">Yes</span>
-                                <span class="btn btn-outline-dark">No</span>
-                              </label>
+                        <form id="form-referral-program">
+                          <div class="row">
+                            <div class="mt-2 mb-2 form-group col-md-5">
+                              <input type="number" class="form-control" id="rpRewardpoints" name="rpRewardpoints"
+                                value="200">
                             </div>
                           </div>
-                          <div id="limitReferralForm" class="mt-3 mb-2 form-group col-md-5">
-                            <label for="">Max. Rewards</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="1">
-                          </div>
-                        </div>
-                        <hr class="mt-4 mb-4">
-                        <h6>Coupon Type</h6>
-                        <div class="row">
-                          <div class="col-md-12 mt-2 mb-3">
-                            <div class="alert alert-warning d-flex align-items-center" role="alert">
-                              <span class="badge badge-pill badge-primary">i</span>
-                              We will create coupon automatically on your webstore
+                          <hr class="mt-4 mb-4">
+                          <h6>Goals</h6>
+                          <div class="row">
+                            <div class="mt-2 mb-2 form-group col-md-5">
+                              <label for="">Total Numbers</label>
+                              <input type="number" class="form-control" id="rpTotalGoals" name="rpTotalGoals" value="1">
                             </div>
-                            <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                              <label class="btn btn-outline-dark active">
-                                <input type="radio" name="cType" id="fixed" autocomplete="off" checked> Fixed off
-                              </label>
-                              <label class="btn btn-outline-dark">
-                                <input type="radio" name="cType" id="percentage" autocomplete="off"> Percentage off
-                              </label>
-                              <label class="btn btn-outline-dark">
-                                <input type="radio" name="cType" id="freeship" autocomplete="off"> Free shipping
-                              </label>
+                            <div class="col-md-12">
+                              <a href="#" class="btn btn-link p-0"><small>Get no. of invited friends to
+                                  purchase</small></a>
                             </div>
                           </div>
-                          <div class="row col-md-12 maxCouponValue">
-                            <div class="form-group col-md-6">
-                              <div class="input-group-prepend">€</div>
-                              <label for="">Max. Coupon Value</label>
-                              <input type="number" class="form-control" id="inputEmail4" value="20">
+                          <hr class="mt-4 mb-4">
+                          <h6>Limit Referral Rewards Per Users?</h6>
+                          <div class="row">
+                            <div class="col-md-12 mt-2 mb-3">
+                              <div class="btn-group btnGrpToggle btnGrpCheck">
+                                <input type="checkbox" checked name="limitReferral" id="limitReferral">
+                                <label for="limitReferral">
+                                  <span class="btn btn-outline-dark">Yes</span>
+                                  <span class="btn btn-outline-dark">No</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div id="limitReferralForm" class="mt-3 mb-2 form-group col-md-5">
+                              <label for="">Max. Rewards</label>
+                              <input type="number" class="form-control" id="rpMaxrewards" name="rpMaxrewards" value="1">
                             </div>
                           </div>
-                          <div class="row col-md-12">
-                            <div class="mb-0 form-group col-md-6">
-                              <div class="input-group-prepend">€</div>
-                              <label for="">Minimum Spend Value</label>
-                              <input type="number" class="form-control" id="inputEmail4" value="0">
+                          <hr class="mt-4 mb-4">
+                          <h6>Coupon Type</h6>
+                          <div class="row">
+                            <div class="col-md-12 mt-2 mb-3">
+                              <div class="alert alert-warning d-flex align-items-center" role="alert">
+                                <span class="badge badge-pill badge-primary">i</span>
+                                We will create coupon automatically on your webstore
+                              </div>
+                              <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
+                                <label class="btn btn-outline-dark active">
+                                  <input type="radio" name="cType" id="fixed" autocomplete="off" checked> Fixed off
+                                </label>
+                                <label class="btn btn-outline-dark">
+                                  <input type="radio" name="cType" id="percentage" autocomplete="off"> Percentage off
+                                </label>
+                                <label class="btn btn-outline-dark">
+                                  <input type="radio" name="cType" id="freeship" autocomplete="off"> Free shipping
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row col-md-12 maxCouponValue">
+                              <div class="form-group col-md-6">
+                                <div class="input-group-prepend">€</div>
+                                <label for="">Max. Coupon Value</label>
+                                <input type="number" class="form-control" id="rpMcv" name="rpMcv" value="20">
+                              </div>
+                            </div>
+                            <div class="row col-md-12">
+                              <div class="mb-0 form-group col-md-6">
+                                <div class="input-group-prepend">€</div>
+                                <label for="">Minimum Spend Value</label>
+                                <input type="number" class="form-control" id="rpMsv" name="rpMsv" value="0">
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -297,31 +310,33 @@
                       <h3>Facebook Share Setup</h3>
                       <p>When members share your message on Facebook</p>
                       <label class="switch" for="fbShareSetup">
-                        <input type="checkbox" checked id="fbShareSetup" />
+                        <input type="checkbox" name="mainSwitch" checked id="fbShareSetup" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
-                        <div class="form-group mt-0 mb-5 col-md-5">
-                          <label for="inputEmail4">Reward Point</label>
-                          <input type="number" class="form-control" id="inputEmail4" value="100">
-                        </div>
-                        <div class="form-group mb-5 col-md-12">
-                          <label for="inputEmail4">Facebook Share Text</label>
-                          <textarea class="form-control" cols="30" rows="3">Hey check out my new product.</textarea>
-                          <a href="#" class="btn btn-link mt-2 p-0"><small>Sample</small></a>
-                        </div>
-                        <div class="form-group col-md-12 mb-2">
-                          <label for="inputEmail4">Connect URL from facebook</label>
-                          <input type="text" class="form-control" id="inputEmail4" value="www.google.com/product.com">
-                        </div>
-                        <div class="col-md-12 ">
-                          <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Is your website has HTTPS?</label>
+                        <form id="form-fb-share">
+                          <div class="form-group mt-0 mb-5 col-md-5">
+                            <label for="inputEmail4">Reward Point</label>
+                            <input type="number" class="form-control" id="fbRewardPoint" name="fbRewardPoint" value="100">
                           </div>
-                        </div>
+                          <div class="form-group mb-5 col-md-12">
+                            <label for="inputEmail4">Facebook Share Text</label>
+                            <textarea class="form-control" cols="30" rows="3" id="fbSharetxt" name="fbSharetxt">Hey check out my new product.</textarea>
+                            <a href="#" class="btn btn-link mt-2 p-0"><small>Sample</small></a>
+                          </div>
+                          <div class="form-group col-md-12 mb-2">
+                            <label for="inputEmail4">Connect URL from facebook</label>
+                            <input type="text" class="form-control" id="fbConnectUrl" name="fbConnectUrl" value="http://www.google.com/product.com">
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="fbcustomCheck1">
+                              <label class="custom-control-label" for="fbcustomCheck1">Is your website has HTTPS?</label>
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -340,31 +355,33 @@
                       <h3>Twitter Share Setup</h3>
                       <p>When members share your message on Twitter</p>
                       <label class="switch" for="twShareSetup">
-                        <input type="checkbox" checked id="twShareSetup" />
+                        <input type="checkbox" name="mainSwitch" checked id="twShareSetup" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
-                        <div class="form-group mt-0 mb-5 col-md-5">
-                          <label for="inputEmail4">Reward Points</label>
-                          <input type="number" class="form-control" id="inputEmail4" value="100">
-                        </div>
-                        <div class="form-group mb-5 col-md-12">
-                          <label for="inputEmail4">Twitter Share Text</label>
-                          <textarea class="form-control" cols="30" rows="3">Hey check out my new product.</textarea>
-                          <a href="#" class="btn btn-link mt-2 p-0"><small>Sample</small></a>
-                        </div>
-                        <div class="form-group col-md-12 mb-2">
-                          <label for="inputEmail4">Connect URL from Twitter</label>
-                          <input type="text" class="form-control" id="inputEmail4" value="www.google.com/product.com">
-                        </div>
-                        <div class="col-md-12 ">
-                          <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Is your website has HTTPS?</label>
+                        <form id="form-tw-share">
+                          <div class="form-group mt-0 mb-5 col-md-5">
+                            <label for="inputEmail4">Reward Points</label>
+                            <input type="number" class="form-control" id="twRewardPoint" name="twRewardPoint" value="100">
                           </div>
-                        </div>
+                          <div class="form-group mb-5 col-md-12">
+                            <label for="inputEmail4">Twitter Share Text</label>
+                            <textarea class="form-control" cols="30" rows="3" id="twSharetxt" name="twSharetxt">Hey check out my new product.</textarea>
+                            <a href="#" class="btn btn-link mt-2 p-0"><small>Sample</small></a>
+                          </div>
+                          <div class="form-group col-md-12 mb-2">
+                            <label for="inputEmail4">Connect URL from Twitter</label>
+                            <input type="text" class="form-control" id="twConnectUrl" name="twConnectUrl" value="http://www.google.com/product.com">
+                          </div>
+                          <div class="col-md-12 ">
+                            <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="customCheck1">
+                              <label class="custom-control-label" for="customCheck1">Is your website has HTTPS?</label>
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -381,28 +398,31 @@
                   <div class="setupSteps">
                     <div class="stepHead">
                       <h3>Birthday Rewards</h3>
-                      <p>This event will appear on your site's loyalty program, <br>prompting visitors and members to enter a date</p>
+                      <p>This event will appear on your site's loyalty program, <br>prompting visitors and members to
+                        enter a date</p>
                       <label class="switch" for="fbShareSetup">
-                        <input type="checkbox" checked id="fbShareSetup" />
+                        <input type="checkbox" name="mainSwitch" checked id="fbShareSetup" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody pb-0">
                       <div class="stepWrapper">
-                        <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
-                          <div class="form-group mt-0 mb-0 col-md-5">
-                            <label for="inputEmail4">Reward Point</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="100">
+                        <form id="form-birthday-rewards">
+                          <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
+                            <div class="form-group mt-0 mb-0 col-md-5">
+                              <label for="bRewards">Reward Point</label>
+                              <input type="number" class="form-control" id="bRewards" name="bRewards" value="100">
+                            </div>
+                            <div class="col-md-5 p-0 asideInfo">to users when they enter their birthday</div>
+                          </div><br>
+                          <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
+                            <div class="form-group mt-0 mb-0 col-md-5">
+                              <label for="obRewards">Reward Point</label>
+                              <input type="number" class="form-control" id="obRewards" name="obRewards" value="100">
+                            </div>
+                            <div class="col-md-5 p-0 asideInfo">on the birthday</div>
                           </div>
-                          <div class="col-md-5 p-0 asideInfo">to users when they enter their birthday</div>
-                        </div><br>
-                        <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
-                          <div class="form-group mt-0 mb-0 col-md-5">
-                            <label for="inputEmail4">Reward Point</label>
-                            <input type="number" class="form-control" id="inputEmail4" value="100">
-                          </div>
-                          <div class="col-md-5 p-0 asideInfo">on the birthday</div>
-                        </div>
+                        </form>
                         <div class="greetingTemplate">
                           <ul>
                             <li>
@@ -434,25 +454,27 @@
                 <div class="swiper-slide">
                   <div class="setupSteps">
                     <div class="stepHead">
-                      <h3>WOOReview  Rewards</h3>
+                      <h3>WOOReview Rewards</h3>
                       <p>Reward reviews of products, services by incentivizing</p>
                       <label class="switch" for="twShareSetup">
-                        <input type="checkbox" checked id="twShareSetup" />
+                        <input type="checkbox" name="mainSwitch" checked id="twShareSetup" />
                         <i></i>
                       </label>
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
-                        <div class="form-group col-md-12 mb-2">
-                          <label for="inputEmail4">Reward points per review</label>
-                          <input type="text" class="form-control" id="inputEmail4" value="www.google.com/product.com">
-                        </div>
-                        <div class="col-md-12 ">
-                          <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="woo">
-                            <label class="custom-control-label" for="woo">Reward only for approved reviews</label>
+                        <form id="form-woo-rewards">
+                          <div class="form-group col-md-12 mb-2">
+                            <label for="wooRewards">Reward points per review</label>
+                            <input type="text" class="form-control" id="wooRewards" name="wooRewards" value="http://www.google.com/product.com">
                           </div>
-                        </div>
+                          <div class="col-md-12 ">
+                            <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
+                              <input type="checkbox" class="custom-control-input" id="woo">
+                              <label class="custom-control-label" for="woo">Reward only for approved reviews</label>
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -477,10 +499,12 @@
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
-                        <div class="form-group mt-0 mb-0 col-md-5">
-                          <label for="inputEmail4">Reward Points</label>
-                          <input type="number" class="form-control" id="inputEmail4" value="50">
-                        </div>
+                        <form id="form-subscribe">
+                          <div class="form-group mt-0 mb-0 col-md-5">
+                            <label for="subscribeRewards">Reward Points</label>
+                            <input type="number" class="form-control" id="subscribeRewards" name="subscribeRewards" value="50">
+                          </div>
+                        </form>
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
@@ -748,12 +772,14 @@
                         </div>
                       </div>
                     </div>
-                    <a class="btn btn-default btnAdvancedSettings collapsed" data-toggle="collapse" href="#advanceSettings" role="button" aria-expanded="false" aria-controls="widgetAdvanced">Advanced Settings</a>
+                    <a class="btn btn-default btnAdvancedSettings collapsed" data-toggle="collapse"
+                      href="#advanceSettings" role="button" aria-expanded="false"
+                      aria-controls="widgetAdvanced">Advanced Settings</a>
                     <div class="collapse multi-collapse" id="advanceSettings">
                       <ul class="nav nav-tabs widget-tabs-nav" id="widgetAdvanced" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" id="widget-text-tab" data-toggle="tab" href="#widget-text" role="tab"
-                            aria-controls="widget-text" aria-selected="true">Text</a>
+                          <a class="nav-link active" id="widget-text-tab" data-toggle="tab" href="#widget-text"
+                            role="tab" aria-controls="widget-text" aria-selected="true">Text</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="widget-icons-tab" data-toggle="tab" href="#widget-icons" role="tab"
@@ -847,7 +873,8 @@
       </div>
     </footer>
   </div>
-  <div class="setupModal modal fade" id="skipModal" tabindex="-1" role="dialog" aria-labelledby="skipModalLabel" aria-hidden="true">
+  <div class="setupModal modal fade" id="skipModal" tabindex="-1" role="dialog" aria-labelledby="skipModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content align-items-center">
         <a href="" data-dismiss="modal" aria-label="Close">&times;</a>
@@ -857,8 +884,8 @@
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
   <script src="scripts/libs/rangeslider/rangeslider.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -869,7 +896,6 @@
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
   <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 

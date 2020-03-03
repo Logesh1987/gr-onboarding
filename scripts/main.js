@@ -102,14 +102,6 @@ var setupInit = function () {
         $(`#setupPaginate li[data-paginate="${e.target.id}"]`).addClass('current')
         $(e.target).parent('.card').addClass('active')
     })
-    $.validator.addMethod(
-        "regex",
-        function (value, element, regexp) {
-            var re = new RegExp(regexp);
-            return this.optional(element) || re.test(value);
-        },
-        "Please check your input."
-    );
     var mySwiper = new Swiper('.setupSwiper', {
         observer: true,
         observeParents: true,
@@ -153,24 +145,25 @@ var setupInit = function () {
 
     // bOUNCER VALIDATIONS
     $('.setupSwiper-button-next').click(e => {
-        console.log($('.swiper-slide-active form ').valid())
-        // $('.swiper-slide-active form ').valid() &&
-        //     mySwiper.slideNext()
+        if ($('.swiper-slide-active input[name="mainSwitch"]').is(':checked')) {
+            $('.swiper-slide-active form ').valid() &&
+                mySwiper.slideNext()
+        } else {
+            mySwiper.slideNext()
+
+        }
     })
     $('.setupSwiper-button-prev').click(e => {
         mySwiper.slidePrev()
     })
-    mySwiper.on('slideChange', function () {
-        console.log(mySwiper.previousIndex)
-        console.log(mySwiper.slides)
-    })
 
+    // FORM VALIDATION RULES
     $('#form-points-program').validate({
         errorElement: "em",
         rules: {
             purchaseFor: {
                 required: "#fixed:checked",
-                min: "^[1-9][0-9]?$|^100$"
+                min: 1
             },
             rewardPoint: {
                 required: "#fixed:checked",
@@ -178,12 +171,120 @@ var setupInit = function () {
             },
             purchasePercent: {
                 required: "#percentage:checked",
-                min: 10
+                min: 1
             }
-        },
-        submitHandler: function (form) {
-            // do other things for a valid form
-            alert()
+        }
+    })
+    $('#form-signup-bonus').validate({
+        errorElement: "em",
+        rules: {
+            welcomeBonus: {
+                required: true,
+                min: 1
+            },
+            welcomeNote: {
+                required: "#welcomeNoteMandate:checked",
+                minlength: 25
+            }
+        }
+    })
+    $('#form-payby-points').validate({
+        errorElement: "em",
+        rules: {
+            pbpRewardpoints: {
+                required: true,
+                min: 1
+            }
+        }
+    })
+    $('#form-referral-program').validate({
+        errorElement: "em",
+        rules: {
+            rpRewardpoints: {
+                required: true,
+                min: 1
+            },
+            rpTotalGoals: {
+                required: true,
+                min: 1
+            },
+            rpMaxrewards: {
+                required: "#limitReferral:checked",
+                min: 1
+            },
+            rpMcv: {
+                required: function(e) {
+                    return (!$('#freeship').is(':checked'))
+                },
+                min: 0
+            },
+            rpMsv: {
+                required: true,
+                min: 0
+            }
+        }
+    })
+    $('#form-fb-share').validate({
+        errorElement: "em",
+        rules: {
+            fbRewardPoint: {
+                required: true,
+                min: 1
+            },
+            fbSharetxt: {
+                required: true,
+                minlength: 10
+            },
+            fbConnectUrl: {
+                required: true,
+                url: true
+            },
+        }
+    })
+    $('#form-tw-share').validate({
+        errorElement: "em",
+        rules: {
+            twRewardPoint: {
+                required: true,
+                min: 1
+            },
+            twSharetxt: {
+                required: true,
+                minlength: 10
+            },
+            twConnectUrl: {
+                required: true,
+                url: true
+            },
+        }
+    })
+    $('#form-birthday-rewards').validate({
+        errorElement: "em",
+        rules: {
+            bRewards: {
+                min: 1
+            },
+            obRewards: {
+                min: 1
+            }
+        }
+    })
+    $('#form-woo-rewards').validate({
+        errorElement: "em",
+        rules: {
+            wooRewards: {
+                required: true,
+                url: true
+            }
+        }
+    })
+    $('#form-subscribe').validate({
+        errorElement: "em",
+        rules: {
+            subscribeRewards: {
+                required: true,
+                min: 1
+            }
         }
     })
 }
