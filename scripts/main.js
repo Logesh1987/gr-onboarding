@@ -1,6 +1,6 @@
 var grApp = angular.module('grOnboarding', []);
-grApp.controller('onBoardController', function($scope) {
-  $scope.clientCount = 11256;
+grApp.controller('onBoardController', function ($scope) {
+    $scope.clientCount = 11256;
 });
 
 
@@ -116,14 +116,7 @@ var setupInit = function () {
         autoHeight: true,
         pagination: {
             el: '.setupSwiper-pagination',
-        },
-        // navigation: {
-        //     nextEl: '.setupSwiper-button-next',
-        //     prevEl: '.setupSwiper-button-prev',
-        // }
-    })
-    mySwiper.on('slideNextTransitionEnd', function () {
-        $('.setupSwiper-pagination .swiper-pagination-bullet-active').prev('.swiper-pagination-bullet').addClass('swiper-pagination-bullet-completed')
+        }
     })
     $('label.switch input').change(function () {
         if (this.checked)
@@ -150,17 +143,46 @@ var setupInit = function () {
     })
 
     // bOUNCER VALIDATIONS
+    mySwiper.on('slideChangeTransitionEnd', e => {
+        if (mySwiper.isEnd) {
+            $('.setupSwiper-button-next').addClass('disabled');
+            $('.saveBar').show()
+        }
+        else{
+            $('.setupSwiper-button-next').removeClass('disabled')
+            $('.saveBar').hide()
+        }
+
+        if (mySwiper.isBeginning)
+            $('.setupSwiper-button-prev').addClass('disabled')
+        else
+            $('.setupSwiper-button-prev').removeClass('disabled')
+    })
     $('.setupSwiper-button-next').click(e => {
         if ($('.swiper-slide-active input[name="mainSwitch"]').is(':checked')) {
-            $('.swiper-slide-active form ').valid() &&
-                mySwiper.slideNext()
+            if ($('.swiper-slide-active form ').valid()) {
+                $('.setupSwiper-pagination .swiper-pagination-bullet-active').addClass('swiper-pagination-bullet-completed')
+                mySwiper.slideNext();
+            }
         } else {
+            $('.setupSwiper-pagination .swiper-pagination-bullet-active').addClass('swiper-pagination-bullet-pending')
             mySwiper.slideNext()
-
         }
     })
     $('.setupSwiper-button-prev').click(e => {
         mySwiper.slidePrev()
+    })
+
+    $('#saveProcess').click(e => {
+        var ongoingSetup = $('.card.active').attr('id')
+        
+        if(ongoingSetup === 'setupBlock') {
+            //SAVE SETUP FORMS
+            // THEN
+            $('#rewards').collapse('show');
+        } else if (ongoingSetup === "rewardsBlock") {
+            $('#themes').collapse('show');
+        }
     })
 
     // FORM VALIDATION RULES
@@ -195,7 +217,6 @@ var setupInit = function () {
         }
     })
     $('#form-payby-points').validate({
-        errorElement: "em",
         rules: {
             pbpRewardpoints: {
                 required: true,
@@ -219,14 +240,14 @@ var setupInit = function () {
                 min: 1
             },
             rpMcv: {
-                required: function(e) {
+                required: function (e) {
                     return (!$('#freeship').is(':checked'))
                 },
-                min: 0
+                min: 1
             },
             rpMsv: {
                 required: true,
-                min: 0
+                min: 1
             }
         }
     })
@@ -265,7 +286,6 @@ var setupInit = function () {
         }
     })
     $('#form-birthday-rewards').validate({
-        errorElement: "em",
         rules: {
             bRewards: {
                 min: 1

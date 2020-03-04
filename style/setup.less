@@ -96,6 +96,10 @@
 	footer.saveBar {
 		background-color: rgba(0, 0, 0, 0.555);
 		padding: 20px;
+		position: fixed;
+		width: 100%;
+		left: 0;
+		bottom: 0;
 		button {
 			border-radius: 10px;
 			display: flex;
@@ -117,6 +121,7 @@
 	border: 1px solid #cecece;
 	border-radius: 5px;
 	margin: 50px auto;
+	label.error,
 	em.error {
 		font-size: 11px;
 		color: red;
@@ -143,25 +148,30 @@
 				width: 10px;
 				height: 10px;
 				margin: 0 5px;
+				position: relative;
+				overflow: hidden;
+				&:before {
+					font-family: "Material Icons";
+					color: #fff;
+					font-size: 7px;
+				}
 				&.swiper-pagination-bullet-active {
 					background-color: #000;
 				}
-				&.swiper-pagination-bullet-completed {
-					background: #51ba31;
-					position: relative;
+				&.swiper-pagination-bullet-pending {
+					background-color: #D3BA36;
 					opacity: 1;
 					&:before {
-						content: '';
-						width: 3px;
-						height: 6px;
-						border-right: 1px solid #fff;
-						border-bottom: 1px solid #fff;
+						content: 'reply';
+						transform: scaleX(-1);
 						display: block;
-						margin: auto;
-						top: 50%;
-						position: absolute;
-						left: 50%;
-						transform: translate(-50%, -50%) rotate(45deg);
+					}
+				}
+				&.swiper-pagination-bullet-completed {
+					background: #51ba31;
+					opacity: 1;
+					&:before {
+						content: 'check';
 					}
 				}
 			}

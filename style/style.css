@@ -976,6 +976,10 @@ section.sectionReady .button {
 .setupPage footer.saveBar {
   background-color: rgba(0, 0, 0, 0.555);
   padding: 20px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 .setupPage footer.saveBar button {
   border-radius: 10px;
@@ -1001,6 +1005,7 @@ section.sectionReady .button {
   border-radius: 5px;
   margin: 50px auto;
 }
+.setupContainer label.error,
 .setupContainer em.error {
   font-size: 11px;
   color: red;
@@ -1035,28 +1040,33 @@ section.sectionReady .button {
   width: 10px;
   height: 10px;
   margin: 0 5px;
+  position: relative;
+  overflow: hidden;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet:before {
+  font-family: "Material Icons";
+  color: #fff;
+  font-size: 7px;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #000;
 }
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-pending {
+  background-color: #D3BA36;
+  opacity: 1;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-pending:before {
+  content: 'reply';
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  display: block;
+}
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-completed {
   background: #51ba31;
-  position: relative;
   opacity: 1;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-completed:before {
-  content: '';
-  width: 3px;
-  height: 6px;
-  border-right: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  display: block;
-  margin: auto;
-  top: 50%;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          transform: translate(-50%, -50%) rotate(45deg);
+  content: 'check';
 }
 .setupContainer .card {
   padding: 0 50px;

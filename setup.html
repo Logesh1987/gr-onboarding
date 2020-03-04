@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/overwrite-bootstrap.css">
   <link rel="stylesheet" href="scripts/libs/colorpicker/bootstrap-colorpicker.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
       </div>
     </header>
     <div class="setupContainer" id="setupAccordion">
-      <div class="card active">
+      <div id="setupBlock" class="card setupBlock active">
         <div class="card-header" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
           <h2>1. Setup</h2>
         </div>
@@ -187,20 +188,21 @@
                       <div class="stepWrapper">
                         <h6>Set Reward Point Value</h6>
                         <form id="form-payby-points">
-                          <div class="form-row align-items-center">
+                          <div class="form-row align-items-start">
                             <div class="form-group col-md-2">
                               <div class="input-group-prepend">€</div>
                               <input type="number" readonly class="form-control" id="inputEmail4" value="1">
                             </div>
-                            <div class="col-md-3  text-center">is equal to</div>
+                            <div class="col-md-3  text-center mt-4 pt-1">is equal to</div>
                             <div class="form-group col-md-4">
                               <label for="pbpRewardpoints">Reward Point</label>
                               <input type="number" class="form-control" id="pbpRewardpoints" name="pbpRewardpoints"
                                 value="100">
                             </div>
-                            <div class="col-md-2 text-center">
+                            <div class="col-md-2 text-center mt-4">
                               <a href="#" class="btn btn-link">Sample</a>
-                            </div>
+                            </div>                            
+                            <label for="pbpRewardpoints" generated="true" class="error col-md-10"></label>
                           </div>
                         </form>
                       </div>
@@ -288,7 +290,7 @@
                               <div class="mb-0 form-group col-md-6">
                                 <div class="input-group-prepend">€</div>
                                 <label for="">Minimum Spend Value</label>
-                                <input type="number" class="form-control" id="rpMsv" name="rpMsv" value="0">
+                                <input type="number" class="form-control" id="rpMsv" name="rpMsv" value="1">
                               </div>
                             </div>
                           </div>
@@ -415,6 +417,7 @@
                               <input type="number" class="form-control" id="bRewards" name="bRewards" value="100">
                             </div>
                             <div class="col-md-5 p-0 asideInfo">to users when they enter their birthday</div>
+                            <label for="bRewards" generated="true" class="error col-md-10"></label>
                           </div><br>
                           <div class="row mr-0 ml-0 mt-2 mb-0 align-items-center">
                             <div class="form-group mt-0 mb-0 col-md-5">
@@ -422,6 +425,7 @@
                               <input type="number" class="form-control" id="obRewards" name="obRewards" value="100">
                             </div>
                             <div class="col-md-5 p-0 asideInfo">on the birthday</div>
+                            <label for="obRewards" generated="true" class="error col-md-10"></label>
                           </div>
                         </form>
                         <div class="greetingTemplate">
@@ -522,7 +526,7 @@
             </div>
             <div class="setupSwiper-navigator">
               <div>
-                <button class="setupSwiper-button-prev btn btn-outline-secondary pr-5 pl-5">Back</button>
+                <button class="setupSwiper-button-prev btn btn-outline-secondary pr-5 pl-5 disabled">Back</button>
                 <div class="setupSwiper-pagination swiper-pagination"></div>
                 <button class="setupSwiper-button-next btn btn-warning text-light pr-5 pl-5">Next</button>
               </div>
@@ -530,8 +534,8 @@
           </div>
         </div>
       </div>
-      <div class="card rewardsBlock">
-        <div class="card-header collapsed " data-toggle="collapse" data-target="#rewards" aria-expanded="true"
+      <div id="rewardsBlock" class="card rewardsBlock">
+        <div class="card-header collapsed disabled " data-toggle="collapse" data-target="#rewards" aria-expanded="true"
           aria-controls="rewards">
           <h2>2. Rewards</h2>
           <div class="additionalElements">
@@ -602,8 +606,8 @@
           </div>
         </div>
       </div>
-      <div class="card themesBlock">
-        <div class="card-header collapsed" data-toggle="collapse" data-target="#themes" aria-expanded="true"
+      <div id="themesBlock" class="card themesBlock">
+        <div class="card-header collapsed disabled" data-toggle="collapse" data-target="#themes" aria-expanded="true"
           aria-controls="themes">
           <h2>3. Themes</h2>
         </div>
@@ -632,7 +636,7 @@
                       </div>
                     </nav>
                     <div class="tab-content" id="popup-tabContent">
-                      <div class="tab-pane fade show active" id="nav-mobile" role="tabpanel"
+                      <div class="tab-pane active" id="nav-mobile" role="tabpanel"
                         aria-labelledby="nav-mobile-tab">
                         <h6 class="mb-4"><strong>Popup styles</strong></h6>
                         <div class="form-group">
@@ -661,9 +665,9 @@
                             <span class="input-group-addon"><i></i></span>
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-success mt-3">Save and Next</button>
+                        <button type="submit" class="btn btn-success mt-3" onclick="$('#nav-desktop-tab').tab('show')">Save and Next</button>
                       </div>
-                      <div class="tab-pane fade" id="nav-desktop" role="tabpanel" aria-labelledby="nav-desktop-tab">
+                      <div class="tab-pane" id="nav-desktop" role="tabpanel" aria-labelledby="nav-desktop-tab">
                         <h6><strong>Desktop Popup styles</strong></h6>
                         <div class="form-group">
                           <label>Font Family</label>
@@ -691,7 +695,7 @@
                             <span class="input-group-addon"><i></i></span>
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-success mt-3">Save and Next</button>
+                        <button type="submit" class="btn btn-success mt-3" onclick="$('.nav-link[aria-controls=widget-tab]').tab('show')">Save and Next</button>
                       </div>
                     </div>
                   </div>
@@ -861,10 +865,16 @@
         </div>
       </div>
     </div>
-    <footer class="saveBar">
+    <footer class="saveBar" style="display: none;">
       <div class="container">
         <div class="row justify-content-end">
-          <button class="btn btn-light">
+          <button class="btn btn-light" id="saveProcess">
+            Save and Next
+            <i class="material-icons">
+              keyboard_arrow_right
+            </i>
+          </button>
+          <button class="btn btn-light" id="publishProcess" style="display: none;">
             Save and Next
             <i class="material-icons">
               keyboard_arrow_right
