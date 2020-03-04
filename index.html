@@ -1,14 +1,20 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>GR - Onboarding</title>
   <meta content="width=device-width, initial-scale=1" name="viewport" />
   <link href="https://fonts.googleapis.com/css?family=Heebo:400,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 </head>
 
 <body>
+  
+  <div class="grOnboarding" ng-app="grOnboarding" ng-controller="onBoardController">
   <div class="guidePageWrapper">
     <i class="circle"></i>
     <header>
@@ -23,7 +29,7 @@
         <div class="contentWrapper">
           <span class="customerCount">
             <i class="icon-heart"></i>
-            <strong>11,256</strong>
+            <strong>{{ clientCount }}</strong>
             <small>Happy Customers</small>
           </span>
           <figure>
@@ -119,6 +125,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.js"></script>
   <script src="scripts/main.js"></script>
+  </div>
 </body>
 
 </html>

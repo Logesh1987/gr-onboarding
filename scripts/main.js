@@ -1,3 +1,9 @@
+var grApp = angular.module('grOnboarding', []);
+grApp.controller('onBoardController', function($scope) {
+  $scope.clientCount = 11256;
+});
+
+
 var guideInit = function () {
     var step = 1;
     var increaseStep = function () {
@@ -318,4 +324,4 @@ window.addEventListener('load', function () {
     else if (document.querySelector('.congratsPage')) {
         congratsInit()
     }
-})
+});
