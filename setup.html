@@ -142,8 +142,8 @@
                               <input type="number" class="form-control" name="welcomeBonus" id="welcomeBonus"
                                 value="100">
                             </div>
-                          </div><br>
-                          <h6>Welcome Note</h6>
+                          </div>
+                          <!-- <br><h6>Welcome Note</h6>
                           <div class="row d-flex align-items-center">
                             <div class="col-md-5 pr-0">
                               <div class="btn-group btnGrpToggle btnGrpCheck">
@@ -162,7 +162,7 @@
                               <textarea class="form-control" name="welcomeNote" id="welcomeNote" cols="30"
                                 rows="5"></textarea>
                             </div>
-                          </div>
+                          </div> -->
                         </form>
                       </div>
                     </div>
@@ -224,16 +224,57 @@
                     </div>
                     <div class="stepBody">
                       <div class="stepWrapper">
-                        <h6>Reward Points for sucessful referrals</h6>
+                        <h6>Get</h6>
                         <form id="form-referral-program" class="mb-0">
                           <div class="row">
-                            <div class="mt-2 mb-2 form-group col-md-5">
-                              <input type="number" class="form-control" id="rpRewardpoints" name="rpRewardpoints"
-                                value="200">
+                            <div class="col-md-12 mt-2 mb-3">
+                              <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
+                                <label class="btn btn-outline-dark active">
+                                  <input type="radio" name="rType" id="fixed" autocomplete="off" checked> Fixed
+                                </label>
+                                <label class="btn btn-outline-dark">
+                                  <input type="radio" name="rType" id="percentage" autocomplete="off"> Percentage
+                                </label>
+                              </div>
                             </div>
+                            <div class="referralOffer" id="referral_fixed">
+                              <div class="d-flex">
+                                <div class="mt-2 mb-2 form-group col-md-5">
+                                  <label for="">Reward points</label>
+                                  <input type="number" class="form-control" id="rpRewardpoints" name="rpRewardpoints"
+                                    value="200">
+                                </div>
+                                <div class="col-md-5 p-0 d-flex align-items-center">
+                                  <small>
+                                    When referrer <br> reach referral goal
+                                  </small>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="referralOffer" id="referral_percentage" style="display: none;">
+                              <div class="d-flex row m-0">
+                                <div class="mt-2 mb-2 form-group col-md-5">
+                                  <label for="">Reward Percentage</label>
+                                  <input type="number" class="form-control" id="rpRewardpoints" name="rpRewardpoints"
+                                    value="10">
+                                </div>
+                                <div class="col-md-5 p-0 d-flex align-items-center">
+                                  <small>
+                                    calculated from that <br> referred order value
+                                  </small>
+                                </div>
+                                <div class="col-md-10 mt-2">
+                                  <div class="alert alert-warning d-flex align-items-center m-0" role="alert">
+                                    <span class="badge badge-pill badge-primary">i</span>
+                                    Your goal is set to 1, you will be rewarded based <br>on referral count when percentage is selected
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- sad -->
                           </div>
                           <hr class="mt-4 mb-4">
-                          <h6>Goals</h6>
+                          <!-- <h6>Goals</h6>
                           <div class="row">
                             <div class="mt-2 mb-2 form-group col-md-5">
                               <label for="">Total Numbers</label>
@@ -261,7 +302,7 @@
                               <input type="number" class="form-control" id="rpMaxrewards" name="rpMaxrewards" value="1">
                             </div>
                           </div>
-                          <hr class="mt-4 mb-4">
+                          <hr class="mt-4 mb-4"> -->
                           <h6>Coupon Type</h6>
                           <div class="row">
                             <div class="col-md-12 mt-2 mb-3">
@@ -335,12 +376,12 @@
                             <label for="inputEmail4">Connect URL from facebook</label>
                             <input type="text" class="form-control" id="fbConnectUrl" name="fbConnectUrl" value="http://www.google.com/product.com">
                           </div>
-                          <div class="col-md-12 ">
+                          <!-- <div class="col-md-12 ">
                             <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="fbcustomCheck1">
                               <label class="custom-control-label" for="fbcustomCheck1">Is your website has HTTPS?</label>
                             </div>
-                          </div>
+                          </div> -->
                         </form>
                       </div>
                     </div>
@@ -380,12 +421,12 @@
                             <label for="inputEmail4">Connect URL from Twitter</label>
                             <input type="text" class="form-control" id="twConnectUrl" name="twConnectUrl" value="http://www.google.com/product.com">
                           </div>
-                          <div class="col-md-12 ">
+                          <!-- <div class="col-md-12 ">
                             <div class="custom-control d-flex scale-8 to-00 custom-checkbox">
                               <input type="checkbox" class="custom-control-input" id="customCheck1">
                               <label class="custom-control-label" for="customCheck1">Is your website has HTTPS?</label>
                             </div>
-                          </div>
+                          </div> -->
                         </form>
                       </div>
                     </div>

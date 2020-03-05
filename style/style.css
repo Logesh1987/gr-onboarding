@@ -1300,28 +1300,6 @@ section.sectionReady .button {
           justify-content: space-between;
   position: relative;
 }
-.setupContainer .greetingTemplate ul:after,
-.setupContainer .greetingTemplate ul:before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  border-color: #c6c6c6;
-  border-style: solid;
-  position: absolute;
-  top: 50%;
-}
-.setupContainer .greetingTemplate ul:after {
-  right: 35px;
-  border-width: 1px 1px 0 0;
-  -webkit-transform: translateY(-50%) rotate(45deg);
-          transform: translateY(-50%) rotate(45deg);
-}
-.setupContainer .greetingTemplate ul:before {
-  left: 35px;
-  border-width: 1px 0 0 1px;
-  -webkit-transform: translateY(-50%) rotate(-45deg);
-          transform: translateY(-50%) rotate(-45deg);
-}
 .setupContainer .greetingTemplate ul li {
   width: 30%;
   border: 1px solid #c6c6c6;

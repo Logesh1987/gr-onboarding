@@ -138,6 +138,10 @@ var setupInit = function () {
         $('.loyaltyPtForm').hide()
         $(`#input_${e.target.id}`).show()
     })
+    $('input[name="rType"]').change(function (e) {
+        $('.referralOffer').hide()
+        $(`#referral_${e.target.id}`).show()
+    })
 
     $('input[name="cType"]').change(function (e) {
         if (e.target.id === "freeship")
