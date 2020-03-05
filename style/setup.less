@@ -156,7 +156,11 @@
 					font-size: 7px;
 				}
 				&.swiper-pagination-bullet-active {
-					background-color: #000;
+					background-color: #000 !important;
+					opacity: 1;
+					&:before {
+						content: none !important;
+					}
 				}
 				&.swiper-pagination-bullet-pending {
 					background-color: #D3BA36;

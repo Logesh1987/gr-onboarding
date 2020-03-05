@@ -1049,7 +1049,11 @@ section.sectionReady .button {
   font-size: 7px;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #000;
+  background-color: #000 !important;
+  opacity: 1;
+}
+.setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active:before {
+  content: none !important;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-pending {
   background-color: #D3BA36;
