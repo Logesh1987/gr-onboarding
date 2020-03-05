@@ -3,7 +3,7 @@ grApp.controller('onBoardController', function ($scope) {
     $scope.clientCount = 11256;
     $scope.activeSetupStep = 1;
 
-    
+
     $scope.clientCount = 11256;
     $scope.clientCount = 11256;
 
@@ -189,6 +189,8 @@ var setupInit = function () {
             $('#rewards').collapse('show');
         } else if (ongoingSetup === "rewardsBlock") {
             $('#themes').collapse('show');
+        } else if (ongoingSetup === "themesBlock") {
+            window.reload = "https://logeshkrds.github.io/gr-onboarding/congrats.html";
         }
     })
 
