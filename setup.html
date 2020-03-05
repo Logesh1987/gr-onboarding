@@ -29,9 +29,9 @@
         <div>
           <h1>Welcome, Start with a quick setup.</h1>
           <ul class="paginate" id="setupPaginate">
-            <li data-paginate="setup" class="completed">1</li>
-            <li data-paginate="rewards" class="current">2</li>
-            <li data-paginate="themes">3</li>
+            <li data-paginate="setup" ng-class="{'active': activeSetupStep > 1, 'current': activeSetupStep == 1}">1</li>
+            <li data-paginate="rewards"  ng-class="{'active': activeSetupStep > 2, 'current': activeSetupStep == 2}">2</li>
+            <li data-paginate="themes" ng-class="{'active': activeSetupStep > 3, 'current': activeSetupStep == 3}">3</li>
           </ul>
         </div>
       </div>
@@ -78,7 +78,7 @@
                         <form id="form-points-program">
                           <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
                             <label class="btn btn-outline-dark active">
-                              <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" checked> Fixed
+                              <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" ng-model="" checked> Fixed
                             </label>
                             <label class="btn btn-outline-dark">
                               <input type="radio" name="loyaltyPoints" id="percentage" autocomplete="off"> Percentage
@@ -111,7 +111,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-points-program').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -167,7 +167,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-signup-bonus').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -300,7 +300,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-referral-program').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -345,7 +345,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-points-program').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -390,7 +390,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-tw-share').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -449,7 +449,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-birthday-rewards').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -485,7 +485,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-woo-rewards').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -515,7 +515,7 @@
                       </div>
                     </div>
                     <div class="stepFoot d-flex justify-content-end">
-                      <a href="#" class="resetSetting">
+                      <a href="#" class="resetSetting" onclick="document.getElementById('form-subscribe').reset();">
                         <i class="material-icons">
                           refresh
                         </i>
@@ -923,6 +923,10 @@
   }
   .setupContainer .recommendFloater:hover .floaterTxt {
     display: block;
+    animation: floaterSlide .5s;
+  }
+  @keyframes floaterSlide {
+    from {opacity: 0; transform: translate(30%, 0);}
   }
 </style>
 
