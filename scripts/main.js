@@ -155,7 +155,7 @@ var setupInit = function () {
             $('.setupSwiper-button-next').addClass('disabled');
             $('.saveBar').show()
         }
-        else{
+        else {
             $('.setupSwiper-button-next').removeClass('disabled')
             $('.saveBar').hide()
         }
@@ -182,8 +182,8 @@ var setupInit = function () {
 
     $('#saveProcess').click(e => {
         var ongoingSetup = $('.card.active').attr('id')
-        
-        if(ongoingSetup === 'setupBlock') {
+
+        if (ongoingSetup === 'setupBlock') {
             //SAVE SETUP FORMS
             // THEN
             $('#rewards').collapse('show');
@@ -333,12 +333,23 @@ var congratsInit = () => {
         }
     })
 
-    $('.rating input').change(e => {
+    $('.feedbackRating input').change(e => {
         if (e.target.value < 5) {
             $(`.popupRate input[value="${e.target.value}"]`).prop('checked', true)
             setTimeout(e => {
                 $('#feedbackModal').modal('show')
             }, 1000)
+        } else {
+            $('.rateContainer p').text($('.rateContainer p').data('reply'))
+        }
+    })
+
+    $('.popupRate input').change(e => {
+        $(`.feedbackRating input[value="${e.target.value}"]`).prop('checked', true)
+        if (e.target.value < 5) {
+            $('.lowRatingFeedback').show();
+        } else {
+            $('.lowRatingFeedback').hide();
         }
     })
 }

@@ -723,8 +723,8 @@
         <div class="rateExperience">
             <div class="contentArea">
                 <div class="rateContainer d-flex align-items-center justify-content-between">
-                    <p class="m-0">How was your onboarding experience?</p>
-                    <div class="rating">
+                    <p class="m-0" data-reply="Thank you for your feedback!">How was your onboarding experience?</p>
+                    <div class="rating feedbackRating">
                         <input type="radio" id="star5" name="rate" value="5" />
                         <label for="star5" title="text">5 stars</label>
                         <input type="radio" id="star4" name="rate" value="4" />
@@ -760,56 +760,59 @@
                         <label for="popStar1" title="text">1 star</label>
                     </div>
                 </div>
-                <p class="text-info text-center">
-                    <small>Let us know what went wrong</small>
-                </p>
-                <div class="predefinedFeedbacks d-flex flex-wrap justify-content-center">
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Don't like the look
-                        </label>
+                <div class="lowRatingFeedback">
+                    <p class="text-info text-center">
+                        <small>Let us know what went wrong</small>
+                    </p>
+                    <div class="predefinedFeedbacks d-flex flex-wrap justify-content-center">
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Don't like the look
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Can't find the things
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Too hard to use
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Missing feature
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Too slow to load
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Difficult to learn
+                            </label>
+                        </div>
+                        <div class="btn-group-toggle" data-toggle="buttons">
+                            <label class="btn">
+                                <input type="checkbox" checked autocomplete="off"> Others
+                            </label>
+                        </div>
                     </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Can't find the things
-                        </label>
-                    </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Too hard to use
-                        </label>
-                    </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Missing feature
-                        </label>
-                    </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Too slow to load
-                        </label>
-                    </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Difficult to learn
-                        </label>
-                    </div>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn">
-                            <input type="checkbox" checked autocomplete="off"> Others
-                        </label>
+                    <div class="row justify-content-center">
+                        <div class="col-10 mt-3">
+                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                rows="4">Something else you want to say?</textarea>
+                        </div>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-10 mt-3 mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                            rows="4">Something else you want to say?</textarea>
-                    </div>
-                    <div class="col-10 mb-3 justify-content-end d-flex">
+                    <div class="col-10 mb-3 mt-3 justify-content-end d-flex">
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

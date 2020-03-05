@@ -2131,9 +2131,6 @@ section.sectionReady .button {
 .rating label:hover ~ input:checked ~ label:before {
   content: 'star';
 }
-.rating.popupRate {
-  pointer-events: none;
-}
 .rating.popupRate > label {
   color: #979797;
 }
