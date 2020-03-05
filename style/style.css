@@ -1615,11 +1615,11 @@ section.sectionReady .button {
 .setupModal .modal-content {
   border-radius: 15px;
 }
-.setupModal#skipModal .modal-content {
+.setupModal.modal-1 .modal-content {
   padding: 50px;
   text-align: center;
 }
-.setupModal#skipModal a[aria-label="Close"] {
+.setupModal.modal-1 a[aria-label="Close"] {
   position: absolute;
   right: -1em;
   top: 0.2em;
@@ -1627,9 +1627,19 @@ section.sectionReady .button {
   color: grey;
   line-height: 0.5;
 }
-.setupModal#skipModal a[aria-label="Close"]:hover {
+.setupModal.modal-1 a[aria-label="Close"]:hover {
   text-decoration: none;
   opacity: 0.8;
+}
+.setupModal#sampleModal .modal-dialog {
+  max-width: 768px;
+}
+.setupModal#sampleModal .modal-content {
+  padding: 10px;
+}
+.setupModal#sampleModal img {
+  width: 100%;
+  border-radius: 15px;
 }
 .congratsPage .contentArea {
   max-width: 1220px;

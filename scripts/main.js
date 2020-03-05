@@ -118,6 +118,7 @@ var setupInit = function () {
     var mySwiper = new Swiper('.setupSwiper', {
         observer: true,
         observeParents: true,
+        autoHeight: true,
         allowTouchMove: false,
         // initialSlide: 5,
         autoHeight: true,
@@ -149,6 +150,14 @@ var setupInit = function () {
         this.checked ? $('#limitReferralForm').show() : $('#limitReferralForm').hide()
     })
 
+    $('.sampleModalTrigger').click(function(e) {
+        e.preventDefault()
+        $('#sampleModal img').attr('src', $(this).data('img'))
+        $('#sampleModal img').on('load', function() {
+            $('#sampleModal').modal('show')
+        })
+    })
+
     // bOUNCER VALIDATIONS
     mySwiper.on('slideChangeTransitionEnd', e => {
         if (mySwiper.isEnd) {
@@ -171,6 +180,7 @@ var setupInit = function () {
                 $('.setupSwiper-pagination .swiper-pagination-bullet-active').addClass('swiper-pagination-bullet-completed')
                 mySwiper.slideNext();
             }
+            mySwiper.updateAutoHeight(500);
         } else {
             $('.setupSwiper-pagination .swiper-pagination-bullet-active').addClass('swiper-pagination-bullet-pending')
             mySwiper.slideNext()
