@@ -18,10 +18,11 @@
 <body>
   <div class="grOnboarding" ng-app="grOnboarding" ng-controller="onBoardController">
   <div class="setupPage">
+
     <header>
       <div class="grad">
         <a href="#" class="logo">
-          <img src="images/logo_gr_white.png" alt="Gratisfaction">
+          <img src="images/logo_gr_white.png" alt="Gratisfaction" />
         </a>
       </div>
       <div class="head">
@@ -42,6 +43,7 @@
         <a href="#" data-toggle="modal" data-target="#skipModal" class="btn btn-outline-success">Proceed</a>
       </div>
     </header>
+
     <div class="setupContainer" id="setupAccordion">
       <div id="setupBlock" class="card setupBlock active">
         <div class="card-header" data-toggle="collapse" data-target="#setup" aria-expanded="true" aria-controls="setup">
@@ -910,5 +912,18 @@
   <script src="scripts/main.js"></script>
 </div>
 </body>
+
+<style>
+  .recommendFloater,
+  .setupPage header .head .paginate li {
+    cursor: pointer;
+  }
+  .setupContainer .recommendFloater .floaterTxt {
+    display: none;
+  }
+  .setupContainer .recommendFloater:hover .floaterTxt {
+    display: block;
+  }
+</style>
 
 </html>

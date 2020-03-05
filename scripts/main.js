@@ -1,6 +1,13 @@
 var grApp = angular.module('grOnboarding', []);
 grApp.controller('onBoardController', function ($scope) {
     $scope.clientCount = 11256;
+    $scope.activeSetupStep = 1;
+
+    
+    $scope.clientCount = 11256;
+    $scope.clientCount = 11256;
+
+
 });
 
 
