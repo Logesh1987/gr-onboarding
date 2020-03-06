@@ -107,8 +107,9 @@ var guideInit = function () {
 
 var setupInit = function () {
     $('[data-rangeslider]').rangeslider();
-    $('#setupAccordion').on('hidden.bs.collapse', function (e) {
-        $(e.target).parent('.card').removeClass('active')
+    $('#setupAccordion').on('shown.bs.collapse', function (e) {
+        $('.card').removeClass('active')
+        $(e.target).parent('.card').addClass('active')
     })
     $('#setupAccordion').on('show.bs.collapse', function (e) {
         $('#setupPaginate li').removeClass('current')
@@ -196,16 +197,22 @@ var setupInit = function () {
 
     $('#saveProcess').click(e => {
         var ongoingSetup = $('.card.active').attr('id')
-
+        
         if (ongoingSetup === 'setupBlock') {
             //SAVE SETUP FORMS
             // THEN
             $('#rewards').collapse('show');
+            $(`.card-header[aria-controls="rewards"`).removeClass('disabled');
         } else if (ongoingSetup === "rewardsBlock") {
             $('#themes').collapse('show');
-        } else if (ongoingSetup === "themesBlock") {
-            window.reload = "https://logeshkrds.github.io/gr-onboarding/congrats.html";
-        }
+            $('#saveProcess').hide();
+            $('#publishProcess').show()
+        } 
+    })
+    $('#publishProcess').click(e => {
+        e.preventDefault();
+        //SAVE OTHER FORMS
+        window.location = '/congrats.html';
     })
 
     // FORM VALIDATION RULES
