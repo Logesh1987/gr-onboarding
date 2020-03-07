@@ -1056,7 +1056,7 @@ section.sectionReady .button {
   content: none !important;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-pending {
-  background-color: #D3BA36;
+  background-color: #d3ba36;
   opacity: 1;
 }
 .setupContainer .setupSwiper-navigator .setupSwiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-pending:before {
@@ -1224,38 +1224,6 @@ section.sectionReady .button {
 .setupContainer .resetSetting i {
   margin-right: 0.4rem;
   font-size: 2.2em;
-}
-.setupContainer .btnGrpCheck input {
-  position: absolute;
-  opacity: 0;
-}
-.setupContainer .btnGrpCheck input:checked ~ label span.btn-outline-dark:first-child {
-  background-color: #343a40;
-  color: #fff;
-}
-.setupContainer .btnGrpCheck input:checked ~ label span.btn-outline-dark:last-child {
-  background-color: #fff;
-  color: #343a40;
-}
-.setupContainer .btnGrpCheck span.btn-outline-dark {
-  float: left;
-}
-.setupContainer .btnGrpCheck span.btn-outline-dark:first-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.setupContainer .btnGrpCheck span.btn-outline-dark:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  background-color: #343a40;
-  color: #fff;
-}
-.setupContainer .btnGrpToggle .btn-outline-dark {
-  cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0.2rem 1rem;
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
 }
 .setupContainer .recommendFloater {
   font-size: 12px;
@@ -1468,7 +1436,7 @@ section.sectionReady .button {
   color: #549d90;
 }
 .themesBlock .form-group {
-  color: #4F4F4F;
+  color: #4f4f4f;
 }
 .themesBlock .form-group label:not([for]) {
   font-weight: bold;
@@ -1618,6 +1586,122 @@ section.sectionReady .button {
 .setupModal#sampleModal img {
   width: 100%;
   border-radius: 15px;
+}
+.addRewardsModal {
+  max-width: 780px !important;
+}
+.addRewardsModal .modal-content {
+  padding: 0 !important;
+}
+.addRewardsModal .modal-head {
+  padding: 15px;
+  text-align: center;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  color: #549d90;
+}
+.addRewardsModal .color-green {
+  color: #549d90 !important;
+}
+.addRewardsModal .coverImgList img {
+  width: 23%;
+}
+.addRewardsModal .btn-file {
+  cursor: pointer;
+  background-color: #f8fcff;
+  border: 2px dotted #979797;
+  border-radius: 10px;
+  padding: 20px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.addRewardsModal .btn-file:hover {
+  background-color: #e5f1fa;
+}
+.addRewardsModal .btn-file input {
+  opacity: 0;
+  position: absolute;
+}
+.addRewardsModal sup.badge-pill {
+  background-color: #0d3e55;
+  color: #2eca71;
+}
+.btnGrpCheck input {
+  position: absolute;
+  opacity: 0;
+}
+.btnGrpCheck input:checked ~ label span.btn-outline-dark:first-child {
+  background-color: #343a40;
+  color: #fff;
+}
+.btnGrpCheck input:checked ~ label span.btn-outline-dark:last-child {
+  background-color: #fff;
+  color: #343a40;
+}
+.btnGrpCheck span.btn-outline-dark {
+  float: left;
+}
+.btnGrpCheck span.btn-outline-dark:first-child {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btnGrpCheck span.btn-outline-dark:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: #343a40;
+  color: #fff;
+}
+.btnGrpToggle .btn-outline-dark {
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.2rem 1rem;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.rewardAccordion .card {
+  border: none;
+}
+.rewardAccordion .card-header {
+  cursor: pointer;
+  background: transparent;
+  padding: 20px 30px 20px 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+}
+.rewardAccordion .card-header:after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+          transform: translateY(-50%) rotate(-45deg);
+  -webkit-transition: -webkit-transform 0.4s;
+  transition: -webkit-transform 0.4s;
+  transition: transform 0.4s;
+  transition: transform 0.4s, -webkit-transform 0.4s;
+  position: absolute;
+  margin: 0 0.5em;
+  right: 0;
+  top: 50%;
+}
+.rewardAccordion .card-header:not(.collapsed):after {
+  -webkit-transform: translateY(-50%) rotate(45deg);
+          transform: translateY(-50%) rotate(45deg);
+}
+.rewardAccordion .card-header h2 {
+  font-size: 16px;
 }
 .congratsPage .contentArea {
   max-width: 1220px;

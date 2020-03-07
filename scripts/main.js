@@ -107,6 +107,7 @@ var guideInit = function () {
 
 var setupInit = function () {
     $('[data-rangeslider]').rangeslider();
+    $('[data-toggle="popover"]').popover()
     $('#setupAccordion').on('shown.bs.collapse', function (e) {
         $('.card').removeClass('active')
         $(e.target).parent('.card').addClass('active')
@@ -163,6 +164,12 @@ var setupInit = function () {
         })
     })
 
+    $('.addReward').click(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $('#rewardsModal').modal('show')
+    })
+
     // bOUNCER VALIDATIONS
     mySwiper.on('slideChangeTransitionEnd', e => {
         if (mySwiper.isEnd) {
@@ -205,6 +212,7 @@ var setupInit = function () {
             $(`.card-header[aria-controls="rewards"`).removeClass('disabled');
         } else if (ongoingSetup === "rewardsBlock") {
             $('#themes').collapse('show');
+            $(`.card-header[aria-controls="themes"`).removeClass('disabled');
             $('#saveProcess').hide();
             $('#publishProcess').show()
         } 
