@@ -9,18 +9,17 @@
   <link href="https://fonts.googleapis.com/css?family=Heebo:400,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body ng-app="grOnboarding" ng-controller="onBoardController">
-  
-  <div class="guidePageWrapper">
+<body>  
+  <div class="guidePageWrapper" id="guide">
     <i class="circle"></i>
     <header>
       <a href="#" class="logo">
         <img src="images/logo_gr.png" alt="Gratisfaction">
       </a>
-      <a href="./setup.html" class="button buttonBordered">Skip guide <i class="icon-right-arrow"></i></a>
+      <a href="./setup.html" class="button buttonBordered">{{ head.skip_button }} <i class="icon-right-arrow"></i></a>
       <!-- <a href="mailto:info@appsmav.com" class="button buttonGrey">Write to Us</a> -->
     </header>
     <div class="mainBlock">
@@ -28,50 +27,50 @@
         <div class="contentWrapper">
           <span class="customerCount">
             <i class="icon-heart"></i>
-            <strong>{{ clientCount }}</strong>
-            <small>Happy Customers</small>
+            <strong>11245</strong>
+            <small>{{ landing.happy_customers }}</small>
           </span>
           <figure>
             <img src="images/splash.png" />
           </figure>
-          <h1>Welcome to Gratisfaction</h1>
-          <button class="button buttonBlack" onclick="fullpage_api.moveTo(2)">view Quick setup guide <i class="icon-right-arrow"></i></button>
-          <a href="./setup.html" class="skip">Skip guide and start setup</a>
+          <h1>{{ landing.head }}</h1>
+          <button class="button buttonBlack" onclick="fullpage_api.moveTo(2)">{{ landing.button }} <i class="icon-right-arrow"></i></button>
+          <a href="./setup.html" class="skip">{{ landing.link }}</a>
         </div>
       </section>
       <section class="section sectionSetup" data-step="1">
         <div class="contentWrapper">
-          <h2>How to setup</h2>
-          <h4>During onboarding we will take these <span>three quick and simple steps</span></h4>
+          <h2>{{ setup.head }}</h2>
+          <h4 v-html="setup.desc"></h4>
           <nav class="stepsNav">
             <i></i>
             <a href="#" data-step="1">Setup</a>
             <a href="#" data-step="2">Rewards</a>
             <a href="#" data-step="3">Themes</a>
           </nav>
-          <div class="setUpStepsWrapper">
+          <div class="setupStepsWrapper">
             <div class="setupSteps step-1">
               <figure><img src="images/step-1.jpg" alt=""></figure>
               <div class="stepInfo">
                 <i>1</i>
-                <h5>Start with basic <br>settings</h5>
-                <p>You can pause or edit the <br>program at anytime. Even if the <br>program is live. You are in <br>control of your program</p>
+                <h5 v-html="setup.heading_1"></h5>
+                <p v-html="setup.desc_1"></p>
               </div>
             </div>
             <div class="setupSteps step-2">
               <figure><img src="images/step-2.jpg" alt=""></figure>
               <div class="stepInfo">
                 <i>2</i>
-                <h5>Setup your <br>Loyalty Rewards</h5>
-                <p>You can pause or edit the <br>program at anytime. Even if the <br>program is live. You are in <br>control of your program</p>
+                <h5 v-html="setup.heading_2"></h5>
+                <p v-html="setup.desc_2"></p>
               </div>
             </div>
             <div class="setupSteps step-3">
               <figure><img src="images/step-3.jpg" alt=""></figure>
               <div class="stepInfo">
                 <i>3</i>
-                <h5>Customize <br>plugin's UI</h5>
-                <p>Customize the plugin's UI, <br>placement of the plugins <br><br>You can change the theme <br>to align with your websites.</p>
+                <h5 v-html="setup.heading_3"></h5>
+                <p v-html="setup.desc_3"></p>
               </div>
             </div>
           </div>
@@ -106,15 +105,15 @@
           </svg>
         </span>
         <div class="contentWrapper">
-          <h3>You are ready! <br> Get started.</h3>
+          <h3 v-html="end.head"></h3>
           <ul>
             <li>
               <i class="icon-settings"></i>
-              <p>You can pause and <br> edit any of these <br> features at any time</p>
+              <p v-html="end.desc_1"></p>
             </li>
             <li>
               <i class="icon-list"></i>
-              <p>More features are <br>available after the <br>initial setup</p>
+              <p v-html="end.desc_2"></p>
             </li>
           </ul>
           <a href="./setup.html" class="button buttonOrange">setup now <i class="icon-right-arrow"></i></a>
@@ -123,7 +122,7 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.js"></script>
+  <script src="scripts/guide.js"></script>
   <script src="scripts/main.js"></script>
 </body>
-
 </html>

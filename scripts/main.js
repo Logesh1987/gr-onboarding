@@ -1,14 +1,14 @@
-var grApp = angular.module('grOnboarding', []);
-grApp.controller('onBoardController', function ($scope) {
-    $scope.clientCount = 11256;
-    $scope.activeSetupStep = 1;
+// var grApp = angular.module('grOnboarding', []);
+// grApp.controller('onBoardController', function ($scope) {
+//     $scope.clientCount = 11256;
+//     $scope.activeSetupStep = 1;
 
 
-    $scope.clientCount = 11256;
-    $scope.clientCount = 11256;
+//     $scope.clientCount = 11256;
+//     $scope.clientCount = 11256;
 
 
-});
+// });
 
 
 var guideInit = function () {
@@ -128,18 +128,18 @@ var setupInit = function () {
             el: '.setupSwiper-pagination',
         }
     })
-    $('label.switch input').change(function () {
-        if (this.checked)
-            $(this).parents('.setupSteps').removeClass('disabled')
-        else
-            $(this).parents('.setupSteps').addClass('disabled')
-    })
     $('.colorpicker-component').colorpicker();
+    // $('label.switch input').change(function () {
+    //     if (this.checked)
+    //         $(this).parents('.setupSteps').removeClass('disabled')
+    //     else
+    //         $(this).parents('.setupSteps').addClass('disabled')
+    // })
 
-    $('input[name="loyaltyPoints"]').change(function (e) {
-        $('.loyaltyPtForm').hide()
-        $(`#input_${e.target.id}`).show()
-    })
+    // $('input[name="loyaltyPoints"]').change(function (e) {
+    //     $('.loyaltyPtForm').hide()
+    //     $(`#input_${e.target.id}`).show()
+    // })
     $('input[name="rType"]').change(function (e) {
         $('.referralOffer').hide()
         $(`#referral_${e.target.id}`).show()

@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/overwrite-bootstrap.css">
   <link rel="stylesheet" href="scripts/libs/colorpicker/bootstrap-colorpicker.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-  <div class="grOnboarding" ng-app="grOnboarding" ng-controller="onBoardController">
+  <div class="grOnboarding">
     <div class="setupPage">
       <header>
         <div class="grad">
@@ -28,11 +28,11 @@
           <div>
             <h1>Welcome, Start with a quick setup.</h1>
             <ul class="paginate" id="setupPaginate">
-              <li data-paginate="setup" ng-class="{'active': activeSetupStep > 1, 'current': activeSetupStep == 1}">1
+              <li data-paginate="setup" v-bind:class="{current: quickStep == 1}">1
               </li>
-              <li data-paginate="rewards" ng-class="{'active': activeSetupStep > 2, 'current': activeSetupStep == 2}">2
+              <li data-paginate="rewards" v-bind:class="{current: quickStep == 2}">2
               </li>
-              <li data-paginate="themes" ng-class="{'active': activeSetupStep > 3, 'current': activeSetupStep == 3}">3
+              <li data-paginate="themes" v-bind:class="{current: quickStep == 3}">3
               </li>
             </ul>
           </div>
@@ -58,12 +58,12 @@
               <div class="swiper-container setupSwiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.points_program.enabled}">
                       <div class="stepHead">
                         <h3>Points Program</h3>
                         <p>Start rewarding your customers for purchases</p>
                         <label class="switch" for="pointsProgram">
-                          <input type="checkbox" name="mainSwitch" checked id="pointsProgram" />
+                          <input type="checkbox" name="mainSwitch" v-model="setup.points_program.enabled" id="pointsProgram" />
                           <i></i>
                         </label>
                       </div>
@@ -80,36 +80,29 @@
                         <div class="stepWrapper">
                           <h6>Loyalty Points</h6>
                           <form id="form-points-program" class="mb-0">
-                            <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                              <label class="btn btn-outline-dark active">
-                                <input type="radio" name="loyaltyPoints" id="fixed" autocomplete="off" ng-model=""
-                                  checked> Fixed
-                              </label>
-                              <label class="btn btn-outline-dark">
-                                <input type="radio" name="loyaltyPoints" id="percentage" autocomplete="off"> Percentage
-                              </label>
-                            </div><br><br>
-                            <div id="input_fixed" class="loyaltyPtForm form-row align-items-start">
+                            <radio-grp name="loyaltyPoints" :options="{'fixed': 'Fixed', 'percentage': 'Percentage'}" v-model="setup.points_program.lPoints"></radio-grp>
+                            <br><br>
+                            <div id="input_fixed" v-if="setup.points_program.lPoints === 'fixed'" class="loyaltyPtForm form-row align-items-start">
                               <div class="form-group fLabel col-md-5">
                                 <div class="input-group-prepend">€</div>
                                 <label for="purchaseFor">Purchase for</label>
-                                <input type="number" class="form-control" id="purchaseFor" name="purchaseFor" value="1">
+                                <input type="number" class="form-control" id="purchaseFor" name="purchaseFor" v-model="setup.points_program.priceValue">
                               </div>
                               <div class="col-md-2 text-center mt-4 pt-1">
                                 to get
                               </div>
                               <div class="form-group fLabel  col-md-5">
                                 <label for="rewardPoint">Reward Point</label>
-                                <input type="number" class="form-control" id="rewardPoint" name="rewardPoint" value="1">
+                                <input type="number" class="form-control" id="rewardPoint" name="rewardPoint" v-model="setup.points_program.rewardPoint">
                               </div>
                               <div class="col-6" id="purchaseFor-errorWrap"></div>
                               <div class="col-6" id="rewardPoint-errorWrap"></div>
                             </div>
-                            <div id="input_percentage" class="loyaltyPtForm form-row" style="display: none;">
+                            <div id="input_percentage" class="loyaltyPtForm form-row" v-if="setup.points_program.lPoints === 'percentage'">
                               <div class="form-group fLabel col-md-5">
                                 <label for="purchasePercent">% of purchase amount.</label>
                                 <input type="number" class="form-control" id="purchasePercent" name="purchasePercent"
-                                  value="1">
+                                v-model="setup.points_program.percentageValue">
                               </div>
                             </div>
                           </form>
@@ -127,17 +120,17 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.signup_bonus.enabled}">
                       <div class="stepHead">
                         <h3>Sign Up Bonus</h3>
                         <p>Reward customers for creating an account on your store</p>
                         <label class="switch" for="signupBonus">
-                          <input type="checkbox" name="mainSwitch" checked id="signupBonus" />
+                          <input type="checkbox" name="mainSwitch" v-model="setup.signup_bonus.enabled" id="signupBonus" />
                           <i></i>
                         </label>
                       </div>
                       <div class="stepBody">
-                        <div class="alert alert-warning upmarketing">
+                        <div v-if="!setup.signup_bonus.enabled" class="alert alert-warning upmarketing">
                           This feature could boost your sales by <br>200% from our customers reviews
                         </div>
                         <div class="stepWrapper">
@@ -146,7 +139,7 @@
                               <div class="form-group fLabel col-md-6">
                                 <label for="welcomeBonus">Welcome Bonus Point</label>
                                 <input type="number" class="form-control" name="welcomeBonus" id="welcomeBonus"
-                                  value="100">
+                                  v-model="setup.signup_bonus.welcome_points">
                               </div>
                             </div>
                             <!-- <br><h6>Welcome Note</h6>
@@ -184,12 +177,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.payby_points.enabled}">
                       <div class="stepHead">
                         <h3>Pay by Points</h3>
                         <p>Setup if customers can pay using their points</p>
                         <label class="switch" for="payPoints">
-                          <input type="checkbox" name="mainSwitch" checked id="payPoints" />
+                          <input type="checkbox" name="mainSwitch" v-model="setup.payby_points.enabled" id="payPoints" />
                           <i></i>
                         </label>
                       </div>
@@ -206,7 +199,7 @@
                               <div class="form-group fLabel col-md-4">
                                 <label for="pbpRewardpoints">Reward Point</label>
                                 <input type="number" class="form-control" id="pbpRewardpoints" name="pbpRewardpoints"
-                                  value="100">
+                                  v-model="setup.payby_points.rewardPoint">
                               </div>
                               <div class="col-md-2 text-center mt-4">
                                 <a href="#" class="btn btn-link sampleModalTrigger"
@@ -1162,6 +1155,7 @@
     <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
     <script src="scripts/libs/colorpicker/bootstrap-colorpicker.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/setup.js"></script>
   </div>
 </body>
 
