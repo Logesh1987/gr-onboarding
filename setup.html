@@ -214,12 +214,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps"  v-bind:class="{disabled: !setup.referral_program.enabled}">
                       <div class="stepHead">
                         <h3>Referral Program</h3>
                         <p>Setup refer a friend program</p>
                         <label class="switch" for="referralProgram">
-                          <input type="checkbox" name="mainSwitch" checked id="referralProgram" />
+                          <input type="checkbox" name="mainSwitch"  v-model="setup.referral_program.enabled" id="referralProgram" />
                           <i></i>
                         </label>
                       </div>
@@ -229,16 +229,9 @@
                           <form id="form-referral-program" class="mb-0">
                             <div class="row">
                               <div class="col-md-12 mt-2 mb-3">
-                                <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                                  <label class="btn btn-outline-dark active">
-                                    <input type="radio" name="rType" id="fixed" autocomplete="off" checked> Fixed
-                                  </label>
-                                  <label class="btn btn-outline-dark">
-                                    <input type="radio" name="rType" id="percentage" autocomplete="off"> Percentage
-                                  </label>
-                                </div>
+                                <radio-grp name="rPoints" :options="{'fixed': 'Fixed', 'percentage': 'Percentage'}" v-model="setup.referral_program.rpType"></radio-grp>
                               </div>
-                              <div class="referralOffer" id="referral_fixed">
+                              <div class="referralOffer" id="referral_fixed" v-if="setup.referral_program.rpType === 'fixed'">
                                 <div class="d-flex">
                                   <div class="mt-2 mb-2 form-group fLabel col-md-5">
                                     <label for="">Reward points</label>
@@ -252,7 +245,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="referralOffer" id="referral_percentage" style="display: none;">
+                              <div class="referralOffer" id="referral_percentage"  v-if="setup.referral_program.rpType === 'percentage'">
                                 <div class="d-flex row m-0">
                                   <div class="mt-2 mb-2 form-group fLabel col-md-5">
                                     <label for="">Reward Percentage</label>
@@ -312,19 +305,9 @@
                                   <span class="badge badge-pill badge-primary">i</span>
                                   We will create coupon automatically on your webstore
                                 </div>
-                                <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                                  <label class="btn btn-outline-dark active">
-                                    <input type="radio" name="cType" id="fixed" autocomplete="off" checked> Fixed off
-                                  </label>
-                                  <label class="btn btn-outline-dark">
-                                    <input type="radio" name="cType" id="percentage" autocomplete="off"> Percentage off
-                                  </label>
-                                  <label class="btn btn-outline-dark">
-                                    <input type="radio" name="cType" id="freeship" autocomplete="off"> Free shipping
-                                  </label>
-                                </div>
+                                <radio-grp name="cType" :options="{'fixed': 'Fixed off', 'percentage': 'Percentage off', 'freeship': 'Free shipping'}" v-model="setup.referral_program.rpCouponType"></radio-grp>
                               </div>
-                              <div class="row col-md-12 maxCouponValue">
+                              <div class="row col-md-12 maxCouponValue" v-if="setup.referral_program.rpCouponType !== 'freeship'">
                                 <div class="form-group fLabel col-md-6">
                                   <div class="input-group-prepend">€</div>
                                   <label for="">Max. Coupon Value</label>
@@ -354,12 +337,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.facebook_share.enabled}">
                       <div class="stepHead">
                         <h3>Facebook Share Setup</h3>
                         <p>When members share your message on Facebook</p>
                         <label class="switch" for="fbShareSetup">
-                          <input type="checkbox" name="mainSwitch" checked id="fbShareSetup" />
+                          <input type="checkbox" name="mainSwitch" v-model="setup.facebook_share.enabled" id="fbShareSetup" />
                           <i></i>
                         </label>
                       </div>
@@ -404,12 +387,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.twitter_share.enabled}">
                       <div class="stepHead">
                         <h3>Twitter Share Setup</h3>
                         <p>When members share your message on Twitter</p>
                         <label class="switch" for="twShareSetup">
-                          <input type="checkbox" name="mainSwitch" checked id="twShareSetup" />
+                          <input type="checkbox" name="mainSwitch" v-model="setup.twitter_share.enabled" id="twShareSetup" />
                           <i></i>
                         </label>
                       </div>
@@ -453,13 +436,13 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.birthday_rewards.enabled}">
                       <div class="stepHead">
                         <h3>Birthday Rewards</h3>
                         <p>This event will appear on your site's loyalty program, <br>prompting visitors and members to
                           enter a date</p>
-                        <label class="switch" for="fbShareSetup">
-                          <input type="checkbox" name="mainSwitch" checked id="fbShareSetup" />
+                        <label class="switch" for="bdaySetup">
+                          <input type="checkbox" name="mainSwitch" v-model="setup.birthday_rewards.enabled" id="bdaySetup" />
                           <i></i>
                         </label>
                       </div>
@@ -513,12 +496,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.woo_rewards.enabled}">
                       <div class="stepHead">
                         <h3>WOOReview Rewards</h3>
                         <p>Reward reviews of products, services by incentivizing</p>
-                        <label class="switch" for="twShareSetup">
-                          <input type="checkbox" name="mainSwitch" checked id="twShareSetup" />
+                        <label class="switch" for="wooSetup">
+                          <input type="checkbox" name="mainSwitch"  v-model="setup.woo_rewards.enabled" id="wooSetup" />
                           <i></i>
                         </label>
                       </div>
@@ -550,12 +533,12 @@
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="setupSteps">
+                    <div class="setupSteps" v-bind:class="{disabled: !setup.news_letter.enabled}">
                       <div class="stepHead">
                         <h3>Subscribe to Newsletter Setup</h3>
                         <p>Incentivize users for signing up to your newsletters.</p>
-                        <label class="switch" for="fbShareSetup">
-                          <input type="checkbox" checked id="fbShareSetup" />
+                        <label class="switch" for="newsletterSetup">
+                          <input type="checkbox" v-model="setup.news_letter.enabled" id="newsletterSetup" />
                           <i></i>
                         </label>
                       </div>
@@ -683,14 +666,17 @@
                 <div class="tab-pane fade show active popupSetup" id="popup-tab" role="tabpanel"
                   aria-labelledby="popup-tab">
                   <div class="row justify-content-between">
-                    <div class="col-md-5">sad</div>
+                    <div class="col-md-7">
+                      <img src="images/popup_preview_mobile.jpg" class="previewImg" v-if="setup.themes.active_popup === 'mobile'">
+                      <img src="images/popup_preview_desktop.jpg" class="previewImg" v-if="setup.themes.active_popup === 'desktop'">
+                    </div>
                     <div class="col-md-5">
                       <nav>
                         <div class="nav nav-pills mb-4" id="popup-tab" role="tablist">
                           <a class="nav-item nav-link active" id="nav-mobile-tab" data-toggle="tab" href="#nav-mobile"
-                            role="tab" aria-controls="nav-mobile" aria-selected="true">Home</a>
+                            role="tab" aria-controls="nav-mobile" aria-selected="true" v-on:click="setup.themes.active_popup = 'mobile'">Mobile</a>
                           <a class="nav-item nav-link" id="nav-desktop-tab" data-toggle="tab" href="#nav-desktop"
-                            role="tab" aria-controls="nav-desktop" aria-selected="false">Profile</a>
+                            role="tab" aria-controls="nav-desktop" aria-selected="false"  v-on:click="setup.themes.active_popup = 'desktop'">Desktop</a>
                         </div>
                       </nav>
                       <div class="tab-content" id="popup-tabContent">
@@ -762,18 +748,21 @@
                 </div>
                 <div class="tab-pane fade widgetSetup" id="widget-tab" role="tabpanel" aria-labelledby="widget-tab">
                   <div class="row justify-content-between">
-                    <div class="col-md-5">sad</div>
+                    <div class="col-md-7">
+                      <img src="images/widget_preview_mobile.jpg" class="previewImg" v-if="setup.themes.active_widget === 'mobile'">
+                      <img src="images/widget_preview_desktop.jpg" class="previewImg" v-if="setup.themes.active_widget === 'desktop'">
+                    </div>
                     <div class="col-md-5">
                       <ul class="nav nav-tabs widget-tabs-nav" id="widgetPlacement" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link active" id="widget-placement-mobile-tab" data-toggle="tab"
                             href="#widget-placement-mobile" role="tab" aria-controls="widget-placement-mobile"
-                            aria-selected="true">Mobile</a>
+                            aria-selected="true"  v-on:click="setup.themes.active_widget = 'mobile'">Mobile</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" id="widget-placement-desktop-tab" data-toggle="tab"
                             href="#widget-placement-desktop" role="tab" aria-controls="widget-placement-desktop"
-                            aria-selected="false">Desktop</a>
+                            aria-selected="false"  v-on:click="setup.themes.active_widget = 'desktop'">Desktop</a>
                         </li>
                       </ul>
                       <div class="tab-content widget-tabs-panes" id="widgetPlacementContent">
@@ -1086,19 +1075,9 @@
                                   <span class="badge badge-pill badge-primary">i</span>
                                   We will create coupon automatically on your webstore
                                 </div>
-                                <div class="btn-group btn-group-toggle btnGrpToggle" data-toggle="buttons">
-                                  <label class="btn btn-outline-dark active">
-                                    <input type="radio" name="cType" id="fixed" autocomplete="off" checked> Fixed off
-                                  </label>
-                                  <label class="btn btn-outline-dark">
-                                    <input type="radio" name="cType" id="percentage" autocomplete="off"> Percentage off
-                                  </label>
-                                  <label class="btn btn-outline-dark">
-                                    <input type="radio" name="cType" id="freeship" autocomplete="off"> Free shipping
-                                  </label>
-                                </div>
+                                <radio-grp name="cTyp" :options="{'fixed': 'Fixed off', 'percentage': 'Percentage off', 'freeship': 'Free shipping'}" v-model="setup.referral_program.rpCouponType"></radio-grp>
                               </div>
-                              <div class="row col-md-12 maxCouponValue">
+                              <div class="row col-md-12 maxCouponValue"  v-if="setup.referral_program.rpCouponType !== 'freeship'">
                                 <div class="form-group fLabel col-md-4">
                                   <div class="input-group-prepend">€</div>
                                   <label for="">Max. Coupon Value</label>

@@ -26,6 +26,32 @@ var setup = new Vue({
             payby_points: {
                 enabled: true,
                 rewardPoint: 100
+            },
+            referral_program: {
+                enabled: true,
+                rpType: 'fixed',
+                rpCouponType: 'fixed',
+            },
+            facebook_share: {
+                enabled: true
+            },
+            twitter_share: {
+                enabled: true
+            },
+            birthday_rewards: {
+                enabled: true
+            },
+            woo_rewards: {
+                enabled: true
+            },
+            news_letter: {
+                enabled: true
+            },
+            limit_referral_rewards: true,
+            reward_as_coupon: true,
+            themes: {
+                active_popup: 'mobile',
+                active_widget: 'mobile'
             }
         }
 

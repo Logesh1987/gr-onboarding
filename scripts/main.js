@@ -129,28 +129,6 @@ var setupInit = function () {
         }
     })
     $('.colorpicker-component').colorpicker();
-    // $('label.switch input').change(function () {
-    //     if (this.checked)
-    //         $(this).parents('.setupSteps').removeClass('disabled')
-    //     else
-    //         $(this).parents('.setupSteps').addClass('disabled')
-    // })
-
-    // $('input[name="loyaltyPoints"]').change(function (e) {
-    //     $('.loyaltyPtForm').hide()
-    //     $(`#input_${e.target.id}`).show()
-    // })
-    $('input[name="rType"]').change(function (e) {
-        $('.referralOffer').hide()
-        $(`#referral_${e.target.id}`).show()
-    })
-
-    $('input[name="cType"]').change(function (e) {
-        if (e.target.id === "freeship")
-            $('.maxCouponValue').hide()
-        else
-            $('.maxCouponValue').show()
-    })
 
     $('#limitReferral').change(function (e) {
         this.checked ? $('#limitReferralForm').show() : $('#limitReferralForm').hide()
@@ -354,13 +332,13 @@ var setupInit = function () {
 }
 
 var congratsInit = () => {
-    $('#programSwitch').change(e => {
-        if (e.target.checked) {
-            $('.congratsPage').removeClass('paused')
-        } else {
-            $('.congratsPage').addClass('paused')
-        }
-    })
+    // $('#programSwitch').change(e => {
+    //     if (e.target.checked) {
+    //         $('.congratsPage').removeClass('paused')
+    //     } else {
+    //         $('.congratsPage').addClass('paused')
+    //     }
+    // })
 
     $('.feedbackRating input').change(e => {
         if (e.target.value < 5) {
